@@ -45,6 +45,8 @@ apis:
       - type: OpenAPI
         url: openapi/astrology-api-openapi.yml
 common:
+  - type: GitHubOrganization
+    url: https://github.com/astrologyapi
   - type: Portal
     url: https://astrologyapi.com/
     title: Astrology API Website
