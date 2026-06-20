@@ -9,7 +9,7 @@ description: >-
   moon phases, and daily/monthly horoscope predictions. The API is JSON-based
   with SDK support and Postman collections available for testing.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Astrology
   - Horoscopes
