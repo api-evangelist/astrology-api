@@ -53,7 +53,7 @@ common:
   - type: Documentation
     url: https://astrologyapi.com/docs
     title: Documentation
-  - type: SignUp
+  - type: Signup
     url: https://astrologyapi.com/signup
     title: Sign Up
   - type: Pricing
