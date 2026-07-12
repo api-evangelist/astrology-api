@@ -45,6 +45,8 @@ apis:
       - type: OpenAPI
         url: openapi/astrology-api-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/astrology-api-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/astrologyapi
   - type: Portal
