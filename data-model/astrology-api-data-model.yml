@@ -1,0 +1,153 @@
+generated: '2026-09-07'
+method: derived
+source: openapi/astrology-api-json-openapi.yml, openapi/astrology-api-pdf-openapi.yml,
+  openapi/astrology-api-face-reading-openapi.yml, openapi/astrology-api-palmistry-openapi.json
+description: >-
+  AstrologyAPI has almost no persistent data model. It is a calculation service: 216 operations take
+  an input tuple and return a computed document, and nothing is stored under an account for the caller
+  to fetch, list, update or delete. There are no resource identifiers, no collection endpoints and no
+  entity lifecycle. The two exceptions are the Vision products, which do mint a server-side
+  identifier. What follows is therefore an input-model graph rather than an entity-relationship graph.
+model_shape: calculation-service
+persistent_entities: 2
+entities:
+  - name: BirthMoment
+    kind: value-object
+    persisted: false
+    detail: >-
+      The dominant input across the platform. It is passed on every call rather than created once,
+      so two calls about the same person share no server-side identity — the tuple IS the identity.
+      The provider's own caching guidance treats it exactly that way, telling clients to cache natal
+      results keyed on this tuple indefinitely because the same input always yields the same output.
+    fields:
+      - {name: day, occurrences: 147, required: true}
+      - {name: month, occurrences: 147, required: true}
+      - {name: year, occurrences: 147, required: true}
+      - {name: hour, occurrences: 128, required: true}
+      - {name: min, occurrences: 124, required: true}
+      - {name: lat, occurrences: 123, required: true}
+      - {name: lon, occurrences: 123, required: true}
+      - {name: tzone, occurrences: 124, required: true}
+    natural_key: [day, month, year, hour, min, lat, lon, tzone]
+    variants:
+      - name: Ayanamsha selector
+        field: ayanamsha
+        occurrences: 68
+        detail: >-
+          Present on 68 Vedic operations. Changes the sidereal reference frame and therefore the
+          answer, so it is part of the cache key on any Vedic call. Default LAHIRI; documented values
+          KP, KP_OLD, KP_NEW, YUKTESHWAR, RAMAN, JN_BHASIN, FAGAN_BRADLEY.
+      - name: House system selector
+        field: house_type
+        detail: Western equivalent. Default placidus; also koch, topocentric, poryphry, equal_house, whole_sign.
+  - name: CoupleBirthMoments
+    kind: value-object
+    persisted: false
+    detail: >-
+      Matchmaking, synastry and composite operations take two BirthMoments in one request, prefixed
+      m_ (male / first subject) and f_ (female / second subject). It is a doubled input tuple, not a
+      relationship entity — no couple is stored.
+    fields: [m_day, m_month, m_year, m_hour, m_min, m_lat, m_lon, m_tzone, f_day, f_month, f_year, f_hour, f_min, f_lat, f_lon, f_tzone]
+    occurrences: 11
+    relationships:
+      - {type: has_many, target: BirthMoment, via: m_* and f_* field prefixes, cardinality: 2}
+  - name: Place
+    kind: value-object
+    persisted: false
+    detail: >-
+      Resolved rather than stored. geo_details takes a place name and returns coordinates;
+      timezone_with_dst takes coordinates plus a date and returns the correct offset. Together they
+      produce the lat/lon/tzone third of a BirthMoment, which is why the provider documents them as
+      the first step of every integration chain.
+    fields: [place, maxRows, latitude, longitude, date]
+    operations: [geo_details, timezone_with_dst]
+    relationships:
+      - {type: belongs_to, target: BirthMoment, via: 'lat, lon, tzone'}
+  - name: PalmReading
+    kind: entity
+    persisted: true
+    identifier: palm_id
+    id_format: UUID v4
+    id_example: c48d0b00-1d49-4af8-8c05-e778b3d7a00f
+    detail: >-
+      The one genuine two-step resource on the platform. POST an image URL or base64 data URL plus a
+      date of birth and gender to /palmistry/get-palm-id, receive a palm_id, then call fifteen
+      analysis and reading operations that take only that palm_id. The server holds the extracted
+      features between calls.
+    creating_operation: palm_scanner_palmistry_get_palm_id_post
+    consuming_operations:
+      [get_hand_type, get_fingers, get_major_lines, get_minor_lines, get_mounts, get_special_features,
+       get_summary, get_personality, get_career, get_money, get_love, get_marriage, get_health,
+       get_challenges, get_luck, api_processed_palm]
+    schemas: [PalmIDRequest, PalmReadingRequest, PredictRequestBase64, PredictRequestUrl, PredictRequestPalmID]
+    input_constraints:
+      formats: [jpeg, jpg, png, webp]
+      max_size: 5MB
+      delivery: public URL or base64 data URL
+      source: https://astrologyapi.com/llms.txt
+    lifecycle:
+      retention: undocumented
+      deletion_operation: null
+      expiry: undocumented
+    relationships:
+      - {type: has_many, target: PalmAnalysis, via: palm_id}
+  - name: FaceReading
+    kind: entity
+    persisted: true
+    identifier: face_id
+    detail: >-
+      The same two-step shape as PalmReading. POST an image_url plus day/month/year and gender to
+      /get-face-id, then call 23 analysis and reading operations that take face_id alone. face_id is
+      the second most common request field on the whole platform after the birth tuple itself.
+    creating_operation: get_face_id
+    occurrences: 23
+    lifecycle:
+      retention: undocumented
+      deletion_operation: null
+      expiry: undocumented
+    relationships:
+      - {type: has_many, target: FaceAnalysis, via: face_id}
+  - name: PdfReport
+    kind: artifact
+    persisted: true
+    identifier: pdf_url
+    detail: >-
+      The PDF operations return a hosted download URL rather than an identifier that can be looked
+      up, listed or revoked. The report exists at that URL; there is no operation to enumerate past
+      reports or delete one.
+    fields_beyond_birth: [name, gender, language, footer_link, logo_url, domain_url, company_name, company_info, company_email, company_landline, company_mobile]
+    branding_note: >-
+      Eleven white-label fields appear on all twelve PDF operations — logo, domain, footer link and
+      six company contact fields — so branding is supplied per request rather than configured once on
+      the account. There is no account-level branding resource.
+    lifecycle:
+      retention: undocumented
+      deletion_operation: null
+      access_control: undocumented
+      note: >-
+        Whether pdf_url is guessable, signed or time-limited is not documented. Since the reports
+        carry named individuals' birth data, that is a material unknown.
+relationships_summary:
+  - {from: BirthMoment, to: Place, type: belongs_to, via: 'lat, lon, tzone'}
+  - {from: CoupleBirthMoments, to: BirthMoment, type: has_many, via: 'm_/f_ prefixes'}
+  - {from: PalmReading, to: PalmAnalysis, type: has_many, via: palm_id}
+  - {from: FaceReading, to: FaceAnalysis, type: has_many, via: face_id}
+  - {from: PdfReport, to: BirthMoment, type: belongs_to, via: 'inline birth fields'}
+identifier_conventions:
+  prefixed_ids: false
+  detail: >-
+    No typed or prefixed identifiers anywhere. palm_id is a bare UUID v4 and face_id is undocumented
+    in format, so an id gives an agent no signal about what it addresses.
+findings:
+  - >-
+    Only 2 of 216 operations create anything that persists, and neither has a documented retention
+    period, expiry or deletion operation — while both ingest a photograph of a person's hand or face
+    together with their date of birth and gender.
+  - >-
+    There is no account, project, user, key or usage resource in the API. Everything about billing
+    and credentials lives in the dashboard UI and is unreachable programmatically, so an agent cannot
+    read its own remaining credit balance.
+  - >-
+    Because BirthMoment is a value object with a natural key, the whole read surface is trivially
+    cacheable — which the provider documents — and this is the single largest cost lever available to
+    an integrator.

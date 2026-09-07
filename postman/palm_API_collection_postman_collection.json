@@ -1,0 +1,676 @@
+{
+  "info": {
+    "_postman_id": "0c7b6327-7f3c-4db6-be57-090c2fdd9e85",
+    "name": "Palmistry API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52126420",
+    "_collection_link": "https://go.postman.co/collection/52126420-0c7b6327-7f3c-4db6-be57-090c2fdd9e85?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "get-palm-id",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"image_url\": \"https://sample_image.jpg\",\n    \"day\": 30,\n    \"month\": 7,\n    \"year\": 2000,\n    \"gender\": \"male\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/get-palm-id",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "get-palm-id"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "hand-type",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/hand-type",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "hand-type"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "fingers",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/fingers",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "fingers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "major-lines",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/major-lines",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "major-lines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "minor-lines",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/minor-lines",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "minor-lines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "mounts",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/mounts",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "mounts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "special-features",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a000f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/special-features",
+          "protocol": "https",
+          "host": ["vision", "astrologyapi", "com"],
+          "path": ["special-features"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "personality",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/personality",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "personality"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "career",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/career",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "career"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "money",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/money",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "money"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "love",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/love",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "love"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "marriage",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/marriage",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "marriage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "health",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/health",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "challenges",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/challenges",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "challenges"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "luck",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/luck",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "luck"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get-palm-image",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "<YOUR_ACCESS_TOKEN>"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"palm_id\": \"c48d0b00-1d49-4af8-8c05-e778b3d7a00f\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://vision.astrologyapi.com/palmistry/get-palm-image",
+          "protocol": "https",
+          "host": [
+            "vision",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "palmistry",
+            "get-palm-image"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

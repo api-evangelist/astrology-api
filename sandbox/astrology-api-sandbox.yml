@@ -1,0 +1,80 @@
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/pricing, https://astrologyapi.com/developers/v1/guides/production-checklist,
+  https://astrologyapi.com/dashboard/v2/playground
+description: >-
+  AstrologyAPI has no separate sandbox environment. There is no test host, no test-vs-live key
+  prefix, and no mode flag — what the provider calls "the sandbox" is the production API called with
+  free credits. Evaluation is metered rather than isolated.
+sandbox_environment:
+  separate_host: false
+  test_mode_flag: false
+  key_prefixes:
+    test: null
+    live: null
+    note: >-
+      Credentials carry no environment prefix. Access tokens are shown in the docs in the form
+      ak-…, but that is a token-type prefix, not a test/live distinction, and the same token works
+      against production.
+  detail: >-
+    Every call — including the first one — goes to the production hosts json.astrologyapi.com,
+    pdf.astrologyapi.com and vision.astrologyapi.com and draws down real credits.
+free_evaluation:
+  credits: 150
+  credit_card_required: false
+  scope: >-
+    The pricing FAQ says the free credits work across all endpoints "in the sandbox, including
+    Kundli, AI Chat, PDF generation, and the MCP Server".
+  contradiction: >-
+    The same pricing page states elsewhere, under the PDF Generator entry, that "Trial wallet credits
+    cannot be used for PDF generation". The two statements conflict and the provider does not
+    reconcile them. Recorded as published; not resolved here because doing so would need a funded
+    account.
+  source: https://astrologyapi.com/pricing
+interactive_tools:
+  - name: API Playground
+    url: https://astrologyapi.com/dashboard/v2/playground
+    auth_required: true
+    detail: >-
+      Dashboard environment for exploring endpoint parameters, validating request bodies and running
+      live calls with an access token. Behind login, so it could not be exercised anonymously.
+  - name: PDF Generator
+    url: https://astrologyapi.com/dashboard/v2/pdf-generator
+    auth_required: true
+    detail: >-
+      Select a PDF report, validate the request, preview the documented sample and generate a branded
+      PDF. The provider notes trial wallet credits cannot be used here.
+  - name: Postman collections
+    url: https://astrologyapi.com/developers/v1/postman-collection
+    auth_required: false
+    detail: >-
+      Eight downloadable Postman collections covering 218 requests. These are the closest thing to a
+      test fixture set the provider publishes — every request carries a working example payload.
+      Downloadable without an account; running them needs a real credential.
+test_data:
+  fixtures_published: true
+  detail: >-
+    No magic test identifiers, no test cards, no simulator values — but every request in the eight
+    Postman collections ships a complete example payload with real birth data, coordinates and
+    timezone offsets, which serves as the fixture set. Examples include the birth tuple
+    day=10 month=5 year=1990 hour=19 min=55 lat=19.20 lon=25.2 tzone=5.5 ayanamsha=LAHIRI on the
+    Vedic endpoints, and a documented MCP tools/call example on birth_details.
+  captured_in:
+    - openapi/astrology-api-json-openapi.yml
+    - openapi/astrology-api-pdf-openapi.yml
+    - openapi/astrology-api-face-reading-openapi.yml
+    - postman/
+  warning: >-
+    Two of the provider's own published Postman collections (Indian Astrology PDF and Western
+    Astrology PDF) ship with a populated Basic-auth block containing what appears to be a real user
+    ID and API key rather than a placeholder. The pipeline secret sanitizer did not match them —
+    the key carries no vendor prefix and is pattern-indistinguishable from ordinary text — so they
+    were redacted explicitly when the collections were saved here. The values were not exercised and
+    are not stored in this repository. They remain live on the provider's public download endpoint.
+    Recorded in security/astrology-api-vulnerability-disclosure.yml.
+time_simulation:
+  supported: false
+  detail: >-
+    No test clock. Time is an input rather than ambient state on almost every operation — birth
+    moment for natal calculations, target date for transits, dashas and panchang — so a caller
+    simulates a moment by passing it, not by moving a clock.

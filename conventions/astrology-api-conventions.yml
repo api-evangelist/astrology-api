@@ -1,0 +1,205 @@
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/developers/v1/guides/production-checklist,
+  https://astrologyapi.com/developers/v1/guides/tokens-vs-api-keys,
+  https://www.astrologyapi.com/developers/v1/access-token-usage-guide,
+  https://astrologyapi.com/developers/v1/postman-collection
+description: >-
+  Cross-cutting runtime semantics for the AstrologyAPI surface, read from the provider's own guides
+  and confirmed against the 216 operations derived from its published Postman collections and the
+  first-party Palmistry spec.
+authentication:
+  styles:
+    - name: HTTP Basic
+      credential: User ID (username) + API key (password)
+      body_encoding: application/x-www-form-urlencoded
+      applies_to: Subscription endpoints for the plan the key belongs to
+      example: "curl --user '<USER_ID>:<API_KEY>' --data-urlencode 'day=12' https://json.astrologyapi.com/v1/western_horoscope"
+    - name: Wallet Access Token
+      credential: Access token in an x-astrologyapi-key header
+      body_encoding: application/json
+      applies_to: Wallet-billed endpoints and the Chat APIs; also the MCP server
+      example: "curl --header 'x-astrologyapi-key: <ACCESS_TOKEN>' --data '{\"day\":12}' https://json.astrologyapi.com/v1/western_horoscope"
+  note: >-
+    Both credentials are issued from the same dashboard Credentials page. The provider recommends the
+    access token for new projects. The choice of credential also changes the body encoding, which is
+    unusual and worth surfacing to an integrator: Basic auth goes with form-encoded fields, the token
+    goes with JSON.
+  cors:
+    supported: false
+    detail: >-
+      json.astrologyapi.com sends no CORS headers, so a browser-direct call fails by design. The
+      provider instructs developers to route every call through their own server.
+    source: https://astrologyapi.com/developers/v1/guides/production-checklist
+  reference: authentication/astrology-api-authentication.yml
+idempotency:
+  supported: false
+  coverage: none
+  mechanism: null
+  header: null
+  detail: >-
+    No idempotency key, request-deduplication header, or replay-protection mechanism is documented
+    anywhere in the AstrologyAPI developer documentation, and none appears in any of the eight
+    Postman collections the provider publishes. The practical exposure is bounded but real: the
+    calculation endpoints are pure functions of their inputs, so a duplicate call returns the same
+    answer and merely costs credits twice, but the PDF Reports endpoints and the Chat API mint
+    billable artifacts, and a retried PDF request generates and bills a second report with no way to
+    signal that it is the same request.
+  mitigation: >-
+    The provider's production guide instead tells clients to retry only on 5xx and network errors,
+    never on 4xx, with exponential backoff — which limits duplicate spend but does not prevent it,
+    because a 5xx returned after the report was generated is exactly the case a retry duplicates.
+  source: https://astrologyapi.com/developers/v1/guides/production-checklist
+reversibility:
+  grade: na
+  detail: >-
+    There is no write surface to reverse. All 216 operations are POST requests that compute a result
+    from supplied birth, location or image inputs; none creates, updates or deletes a resource that
+    persists in the caller's account, so there is nothing to cancel, void, refund or restore. The two
+    operations that mint a durable artifact are the PDF Reports endpoints, which return a hosted
+    pdf_url, and the palm/face ID endpoints, which return an identifier for a submitted image —
+    neither has a documented deletion, revocation or expiry operation.
+  write_surfaces:
+    - surface: PDF Reports API (pdf.astrologyapi.com/v1, 12 operations)
+      creates: A hosted PDF at a returned pdf_url, billed per report
+      reversal_operation: null
+      window: null
+      note: >-
+        No cancel, void or delete operation is published. Commercially the position is stated and it
+        is the opposite of reversible: the provider's Refund and Cancellation Policy says all
+        purchases are final and non-refundable, and the pricing page adds that trial wallet credits
+        cannot be used for PDF generation at all.
+    - surface: Palmistry / Face Reading ID endpoints (vision.astrologyapi.com)
+      creates: A palm_id or face_id bound to an uploaded image
+      reversal_operation: null
+      window: null
+      note: No documented endpoint deletes a stored palm_id/face_id or its source image.
+  source: https://astrologyapi.com/legal/refund-and-cancellation
+dry_run_mode:
+  supported: false
+  coverage: na
+  detail: >-
+    No dry-run, preview or simulation parameter is documented. The nearest published equivalents are
+    the dashboard API Playground and the PDF Generator preview, both of which are interactive tools
+    rather than an API flag. New accounts receive 150 free credits for evaluation.
+pagination:
+  applicable: false
+  detail: >-
+    No operation in the published surface returns a paged collection. Every operation computes a
+    single result document for one subject (or one pair of subjects, for matchmaking and synastry),
+    so no pagination style, cursor or page parameter exists.
+versioning:
+  style: URI path
+  current: v1
+  detail: >-
+    The version is a path segment — https://json.astrologyapi.com/v1/... and
+    https://pdf.astrologyapi.com/v1/... The Palmistry and Face Reading hosts are unversioned
+    (https://vision.astrologyapi.com/palmistry/..., .../face-reading/...), so the newer image
+    products are NOT under the v1 contract that covers the rest of the platform. No version header,
+    no version negotiation, and no second major version has been published.
+  reference: lifecycle/astrology-api-lifecycle.yml
+error_envelope:
+  format: proprietary
+  rfc9457: false
+  content_type: application/json
+  shapes:
+    - trigger: Authentication failure
+      status: 401
+      body: '{"status": false, "msg": "API authentication failed!"}'
+      observed: '2026-09-07'
+    - trigger: Unknown endpoint or wrong HTTP method
+      status: 404
+      body: >-
+        {"status": false, "statusCode": 404, "error_msg": "The requested API endpoint is not
+        available. Kindly check your api name/url or HTTP method type."}
+      observed: '2026-09-07'
+  detail: >-
+    Two different envelopes are returned by the same host: the 401 uses a "msg" key with no
+    statusCode, the 404 uses "error_msg" plus a statusCode. A client cannot read one field to get the
+    message. No application/problem+json, no error code registry, and no machine-readable error
+    catalogue is published.
+  reference: errors/astrology-api-problem-types.yml
+rate_limit_signaling:
+  headers_published: false
+  status_on_exhaustion: null
+  detail: >-
+    No X-RateLimit-*, RateLimit-* or Retry-After header is documented, and no rate limit is stated
+    for any published tier. The only quantified runtime signal is commercial rather than technical:
+    the pricing pages promise an automated alert at 80% of the included quota, and overage past the
+    quota bills at ₹20 per 1,000 calls rather than being refused. Enterprise plans reference "custom
+    rate limits" without publishing numbers.
+  reference: rate-limits/astrology-api-rate-limits.yml
+retry_semantics:
+  published: true
+  policy: >-
+    Retry with exponential backoff on 5xx responses and network errors only. Never retry a 4xx — the
+    provider states a bad request stays bad and a retry only wastes credits. Set a request timeout on
+    every call.
+  reference_implementation: >-
+    The production guide ships a working Node wrapper using AbortController with a 10 000 ms timeout,
+    4 attempts, and 1s/2s/4s backoff.
+  source: https://astrologyapi.com/developers/v1/guides/production-checklist
+caching:
+  published: true
+  guidance: >-
+    The provider documents cache keys explicitly. Daily horoscope content is generated once per sign
+    per day and should be cached server-side keyed on (sign, date). Natal chart data from endpoints
+    such as planets never changes for a fixed birth moment and should be cached indefinitely keyed on
+    the birth-detail tuple (day, month, year, hour, min, lat, lon, tzone). This is the same tuple that
+    forms the primary key in data-model/astrology-api-data-model.yml.
+  source: https://astrologyapi.com/developers/v1/guides/production-checklist
+request_id_tracing:
+  supported: false
+  detail: No request-id, correlation-id or trace header is documented on request or response.
+field_expansion:
+  supported: false
+  detail: >-
+    No sparse-fieldset or expansion parameter. Response breadth is instead selected by calling a
+    different endpoint — for example planets versus planets/extended, or the per-aspect Palmistry
+    endpoints versus palmistry/summary.
+metadata:
+  supported: false
+  detail: No customer-supplied metadata field is accepted on any documented request.
+localisation:
+  supported: true
+  detail: >-
+    A language parameter is accepted on many endpoints, and the horoscope content feeds are
+    advertised in 22+ languages with 8 regional languages available on PDF reports.
+options_and_defaults:
+  ayanamsha:
+    applies_to: Vedic endpoints
+    default: LAHIRI
+    values: [LAHIRI, KP, KP_OLD, KP_NEW, YUKTESHWAR, RAMAN, JN_BHASIN, FAGAN_BRADLEY]
+    source: Postman collection field description on /birth_details, and llms.txt
+  house_type:
+    applies_to: Western endpoints
+    default: placidus
+    values: [placidus, koch, topocentric, poryphry, equal_house, whole_sign]
+    source: https://astrologyapi.com/llms.txt
+naming_consistency:
+  consistent: false
+  detail: >-
+    The same concept is spelled differently across the surface, and the split runs along product
+    lines rather than being random. The Vedic and Western JSON operations take min, lat, lon and
+    tzone. Several PDF operations — natal_horoscope_report/tropical, solar_return_report/tropical,
+    life_forecast_report/tropical, star_sign_compatibility_report and synastry_couple_report/tropical
+    — take minute, latitude, longitude and timezone instead, while other PDF operations in the same
+    collection (mini_horoscope_pdf, basic_horoscope_pdf, pro_horoscope_pdf) use the short forms. The
+    geo helpers add a third spelling: timezone_with_dst takes latitude and longitude, geo_details
+    returns them, and the Vedic endpoints then want lat and lon. Matchmaking prefixes subjects m_/f_
+    on the JSON host but p_ on the synastry PDF operation.
+  impact: >-
+    A caller cannot pass one birth object through the platform. Any client, SDK or agent has to hold
+    a per-operation field map, and the mismatch is silent — a wrongly named field is simply absent,
+    which surfaces as a validation error rather than as a mapping bug.
+  evidence: openapi/astrology-api-pdf-openapi.yml, openapi/astrology-api-json-openapi.yml
+  affected_operations:
+    short_form: [birth_details, astro_details, planets, mini_horoscope_pdf, basic_horoscope_pdf, pro_horoscope_pdf, basic_gemstone_report_pdf, pro_numerology_report]
+    long_form: [natal_horoscope_report_tropical, solar_return_report_tropical, life_forecast_report_tropical, star_sign_compatibility_report, synastry_couple_report_tropical, match_making_pdf]
+    mixed: [varshphal_horoscope_pdf]
+references:
+  errors: errors/astrology-api-problem-types.yml
+  lifecycle: lifecycle/astrology-api-lifecycle.yml
+  authentication: authentication/astrology-api-authentication.yml
+  rate_limits: rate-limits/astrology-api-rate-limits.yml
+  data_model: data-model/astrology-api-data-model.yml

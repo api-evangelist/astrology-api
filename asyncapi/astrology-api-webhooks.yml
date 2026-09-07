@@ -1,0 +1,61 @@
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/pricing/indian-astrology-pricing,
+  https://astrologyapi.com/pricing/western-astrology-pricing, https://astrologyapi.com/developers/v1
+description: >-
+  AstrologyAPI has no event, streaming or message surface, and publishes no AsyncAPI. It advertises
+  webhook delivery for one narrow purpose — handing off a generated PDF report — but publishes no
+  documentation for it anywhere in the developer hub.
+asyncapi:
+  published: false
+  searched:
+    - https://astrologyapi.com/asyncapi.yaml
+    - https://astrologyapi.com/developers/v1
+    - https://github.com/astrologyapi
+  result: none found
+event_surface:
+  streaming: false
+  websockets: false
+  message_queue: false
+  server_sent_events: false
+  detail: >-
+    Every one of the 216 published operations is a synchronous request/response POST. Nothing in the
+    API is subscribe-shaped.
+webhooks:
+  advertised: true
+  documented: false
+  status: advertised-undocumented
+  purpose: PDF report delivery
+  evidence:
+    - quote: Trigger delivery via webhook, email, or download link
+      url: https://astrologyapi.com/pricing/indian-astrology-pricing
+      http_status: 200
+      checked: '2026-09-07'
+    - quote: Trigger delivery via webhook, email, or download link
+      url: https://astrologyapi.com/pricing/western-astrology-pricing
+      http_status: 200
+      checked: '2026-09-07'
+    - quote: >-
+        On-demand PDF generation for Kundli, matchmaking, Varshaphal, natal, synastry, and life
+        forecast reports — white-labeled, multi-language, delivered by link or webhook.
+      url: https://astrologyapi.com/developers/v1
+      http_status: 200
+      checked: '2026-09-07'
+  gaps:
+    - No event catalogue — no list of event types is published.
+    - No payload schema for any webhook delivery.
+    - No subscription or endpoint-registration operation appears in any of the 216 published operations.
+    - No signature, shared secret or verification scheme is documented, so a receiver cannot authenticate a delivery.
+    - No retry or redelivery policy is stated.
+    - No webhook configuration appears in the dashboard documentation or in any of the eight Postman collections.
+  assessment: >-
+    The capability is claimed on three of the provider's own pages, so it is not invented — but a
+    developer cannot integrate against it from the public documentation, and no consumer or agent can
+    discover the event shape without contacting sales. Recorded as advertised and undocumented. No
+    Webhooks pointer was added to apis.yml, because a pointer would assert the provider publishes a
+    webhook surface a reader can use, and it does not.
+callbacks_in_spec:
+  present: false
+  detail: >-
+    None of the twelve PDF operations declares an OpenAPI callback, and the provider's own Postman
+    collections carry no webhook request or example.

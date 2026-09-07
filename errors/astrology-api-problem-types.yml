@@ -1,0 +1,133 @@
+generated: '2026-09-07'
+method: probed
+source: live unauthenticated requests to json.astrologyapi.com, vision.astrologyapi.com and
+  mcp.astrologyapi.com on 2026-09-07, plus
+  https://astrologyapi.com/developers/v1/guides/production-checklist
+description: >-
+  AstrologyAPI publishes no error reference page and no error-code registry. The catalogue below is
+  built from error envelopes observed on live requests plus the handling guidance in the provider's
+  production checklist. Absent an error reference, this is the whole of what a consumer can know
+  about failure modes before their first outage.
+format: proprietary
+rfc9457: false
+content_type: application/json
+envelopes:
+  - name: auth-failure
+    status: 401
+    hosts: [json.astrologyapi.com, pdf.astrologyapi.com]
+    schema:
+      status: boolean
+      msg: string
+    example: '{"status": false, "msg": "API authentication failed!"}'
+    observed: '2026-09-07'
+    observed_at: https://json.astrologyapi.com/v1/openapi.json
+  - name: unknown-endpoint
+    status: 404
+    hosts: [json.astrologyapi.com]
+    schema:
+      status: boolean
+      statusCode: integer
+      error_msg: string
+    example: >-
+      {"status": false, "statusCode": 404, "error_msg": "The requested API endpoint is not
+      available. Kindly check your api name/url or HTTP method type."}
+    observed: '2026-09-07'
+    observed_at: https://json.astrologyapi.com/openapi.json
+  - name: mcp-invalid-token
+    status: 401
+    hosts: [mcp.astrologyapi.com]
+    schema:
+      error: string
+      error_description: string
+      requires_reauth: boolean
+    example: >-
+      {"error": "invalid_token", "error_description": "Missing authentication. Provide Bearer token
+      or x-astrology headers.", "requires_reauth": true}
+    observed: '2026-09-07'
+    observed_at: https://mcp.astrologyapi.com/mcp
+    note: >-
+      A third, unrelated envelope shape. The MCP server uses OAuth-style error/error_description
+      keys, while the REST hosts use status/msg or status/statusCode/error_msg.
+problem_types:
+  - type: authentication-failed
+    status: 401
+    title: API authentication failed
+    envelope: auth-failure
+    detail: >-
+      Returned when the User ID / API key pair or the x-astrologyapi-key access token is missing,
+      malformed, or not valid for the endpoint being called. Also returned when a subscription key is
+      used against an endpoint outside its plan, and when the plan the key belongs to has expired or
+      been cancelled.
+    remediation: >-
+      Do not retry — the provider states a 401 with a wrong key fails identically forever. Verify the
+      credential on the dashboard Credentials page and check that the endpoint is inside the
+      subscribed plan's package.
+    retryable: false
+  - type: endpoint-not-found
+    status: 404
+    title: The requested API endpoint is not available
+    envelope: unknown-endpoint
+    detail: >-
+      Returned for an unknown path and, per the message itself, for the wrong HTTP method against a
+      known path. Every documented operation is POST, so a GET to a valid endpoint surfaces here
+      rather than as a 405.
+    remediation: Check the endpoint name, the host, and that the method is POST.
+    retryable: false
+  - type: bad-request
+    status: 400
+    title: Malformed request
+    envelope: auth-failure
+    detail: >-
+      Documented only by implication. The production checklist names "a 400 with a malformed date" as
+      a canonical non-retryable failure, but no field-level validation error catalogue is published,
+      so which field failed and why is not machine-readable.
+    remediation: Do not retry. Validate birth fields, and compute tzone with timezone_with_dst rather than assuming an offset.
+    retryable: false
+    evidence: https://astrologyapi.com/developers/v1/guides/production-checklist
+  - type: server-error
+    status: 5xx
+    title: Server error
+    envelope: unspecified
+    detail: >-
+      No 5xx body shape is published. The provider's guidance treats the whole 5xx class as a single
+      retryable condition without distinguishing between them.
+    remediation: >-
+      Retry with exponential backoff — the provider's reference implementation uses four attempts at
+      1s/2s/4s with a 10-second request timeout — and treat network errors and timeouts the same way.
+    retryable: true
+    evidence: https://astrologyapi.com/developers/v1/guides/production-checklist
+  - type: insufficient-credits
+    status: unknown
+    title: Wallet balance exhausted
+    envelope: unspecified
+    detail: >-
+      Credits are the real consumption limit on this platform, but no status code, envelope or error
+      identifier is published for running out of them. The provider addresses it operationally
+      instead — monitor the wallet on the cost analysis page and fire your own alert if it runs low —
+      which means a client cannot detect exhaustion from the response.
+    remediation: Monitor wallet balance out of band; there is no documented in-band signal.
+    retryable: false
+    evidence: https://astrologyapi.com/developers/v1/guides/production-checklist
+  - type: rate-limited
+    status: null
+    title: Not published
+    envelope: unspecified
+    detail: >-
+      No 429 or throttling error is documented anywhere. Overage bills rather than failing. See
+      rate-limits/astrology-api-rate-limits.yml.
+    retryable: unknown
+handling_policy:
+  published: true
+  source: https://astrologyapi.com/developers/v1/guides/production-checklist
+  rules:
+    - Treat any non-200 response as a failure; read the status code before deciding what to do.
+    - Retry with exponential backoff on 5xx and network errors only.
+    - Never retry a 4xx — a bad request stays bad and the retry only spends credits.
+    - Set a request timeout on every call so a hung connection cannot block the app.
+    - Surface a friendly message to end users rather than raw API JSON.
+gaps:
+  - No error reference page or error-code registry is published.
+  - Three mutually incompatible error envelopes across the REST hosts and the MCP host.
+  - No field-level validation error detail, so a 400 cannot be handled programmatically.
+  - No documented signal for credit exhaustion, which is the platform's actual limiting condition.
+  - No error catalogue in any of the eight Postman collections; none carries a saved example response.

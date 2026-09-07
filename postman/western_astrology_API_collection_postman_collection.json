@@ -1,0 +1,3549 @@
+{
+  "info": {
+    "_postman_id": "0b8a63ea-1465-492e-95ca-f0b704414be6",
+    "name": "Business Plan (User Collection)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22644900"
+  },
+  "item": [
+    {
+      "name": "planets/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/planets/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "planets", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "house_cusps/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/house_cusps/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "house_cusps", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "western_horoscope",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            },
+            {
+              "key": "is_asteroids",
+              "value": "true",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/western_horoscope",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "western_horoscope"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "natal_wheel_chart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "type": "text",
+              "uuid": "10d51b81-a20b-4420-abee-f89d924873ef",
+              "disabled": true
+            },
+            {
+              "key": "planet_icon_color",
+              "value": "#F57C00",
+              "type": "text",
+              "uuid": "342ead30-b078-4fa6-9d42-60197b57a6f6",
+              "disabled": true
+            },
+            {
+              "key": "inner_circle_background",
+              "value": "#FFF8E1",
+              "type": "text",
+              "uuid": "5bae2832-a9b9-48bf-b345-5163beed60f7",
+              "disabled": true
+            },
+            {
+              "key": "sign_icon_color",
+              "value": "red",
+              "type": "text",
+              "uuid": "e8428de6-5135-4f31-8a7b-54fb2c26db40",
+              "disabled": true
+            },
+            {
+              "key": "sign_background",
+              "value": "#ffffff",
+              "type": "text",
+              "uuid": "086fa73b-79a9-41b7-af81-8eeafcca50e8",
+              "disabled": true
+            },
+            {
+              "key": "chart_size",
+              "value": "500",
+              "type": "text",
+              "uuid": "88e00814-4421-4504-b468-3f9b3ee863ee",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/natal_wheel_chart",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "natal_wheel_chart"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "natal_chart_interpretation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/natal_chart_interpretation",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "natal_chart_interpretation"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "house_cusps/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/house_cusps/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "house_cusps", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "house_cusps_report/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/house_cusps_report/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "house_cusps_report", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "natal_house_cusp_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/natal_house_cusp_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "natal_house_cusp_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_ascendant_report/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_ascendant_report/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_ascendant_report", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_sign_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_sign_report", "tropical", ":planetName"],
+          "variable": [
+            {
+              "key": "planetName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_house_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_house_report/tropical/:planetName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_house_report", "tropical", ":planetName"],
+          "variable": [
+            {
+              "key": "planetName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "moon_phase_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/moon_phase_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "moon_phase_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lunar metrics",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/lunar_metrics",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "lunar_metrics"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "western_chart_data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/western_chart_data",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "western_chart_data"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "solar_return_details",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/solar_return_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "solar_return_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tropical_transits/monthly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "prediction_timezone",
+              "value": "-4",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/tropical_transits/monthly",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "tropical_transits", "monthly"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tropical_transits/daily",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "prediction_timezone",
+              "value": "-4",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/tropical_transits/daily",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "tropical_transits", "daily"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tropical_transits/weekly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "prediction_timezone",
+              "value": "-4",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/tropical_transits/weekly",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "tropical_transits", "weekly"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "natal_transits/daily",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "prediction_timezone",
+              "value": "-4",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            },
+            {
+              "key": "start_transit_date",
+              "value": "03-1-2026",
+              "type": "text",
+              "description": "to view monthly transits",
+              "disabled": true
+            },
+            {
+              "key": "end_transit_date",
+              "value": "03-31-2026",
+              "type": "text",
+              "description": "to view monthly transits",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/natal_transits/daily",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "natal_transits", "daily"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "natal_transits/weekly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "prediction_timezone",
+              "value": "-4",
+              "type": "text",
+              "disabled": true
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/natal_transits/weekly",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "natal_transits", "weekly"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "solar_return_planets",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            },
+            {
+              "key": "solar_year",
+              "value": "2027",
+              "type": "text",
+              "uuid": "0815f7bd-7396-471c-920c-31395210d2c9"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/solar_return_planets",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "solar_return_planets"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "solar_return_house_cusps",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            },
+            {
+              "key": "solar_year",
+              "value": "2027",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/solar_return_house_cusps",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "solar_return_house_cusps"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "solar_return_planet_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            },
+            {
+              "key": "solar_year",
+              "value": "2027",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/solar_return_planet_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "solar_return_planet_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "solar_return_planet_aspects",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            },
+            {
+              "key": "solar_year",
+              "value": "2027",
+              "type": "text",
+              "uuid": "3e1e8f1c-295f-4ac5-8c10-43f772223b75"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/solar_return_planet_aspects",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "solar_return_planet_aspects"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "solar_return_aspects_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            },
+            {
+              "key": "solar_year",
+              "value": "2027",
+              "type": "text",
+              "uuid": "c817ca43-9c9e-4164-83be-a49bc1167241"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/solar_return_aspects_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "solar_return_aspects_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_sign_report/tropical/:planetName",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_sign_report/tropical/:planetName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_sign_report", "tropical", ":planetName"],
+          "variable": [
+            {
+              "key": "planetName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_house_report/tropical/:planetName",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_house_report/tropical/:planetName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_house_report", "tropical", ":planetName"],
+          "variable": [
+            {
+              "key": "planetName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "personality_report/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/personality_report/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "personality_report", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "romantic_personality_report/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/romantic_personality_report/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "romantic_personality_report", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "friendship_report/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/friendship_report/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "friendship_report", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "romantic_forecast_report/tropical",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/romantic_forecast_report/tropical",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "romantic_forecast_report", "tropical"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "karma_destiny_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/karma_destiny_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "karma_destiny_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numeroloigcal numbers",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numerological_numbers",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numerological_numbers"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lifepath_number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/lifepath_number",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "lifepath_number"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "personality_number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/personality_number",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "personality_number"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "expression_number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/expression_number",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "expression_number"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "soul_urge_number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/soul_urge_number",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "soul_urge_number"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "challenge_numbers",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/challenge_numbers",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "challenge_numbers"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sub_conscious_self_number",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sub_conscious_self_number",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sub_conscious_self_number"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "personal_day_prediction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/personal_day_prediction",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "personal_day_prediction"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "personal_month_prediction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/personal_month_prediction",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "personal_month_prediction"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "personal_year_prediction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "full name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/personal_year_prediction",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "personal_year_prediction"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "zodiac_compatibility",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/zodiac_compatibility/:zodiacName/:partnerZodiacName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": [
+            "v1",
+            "zodiac_compatibility",
+            ":zodiacName",
+            ":partnerZodiacName"
+          ],
+          "variable": [
+            {
+              "key": "zodiacName",
+              "value": ""
+            },
+            {
+              "key": "partnerZodiacName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "synastry_horoscope",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "p_day",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "p_month",
+              "value": "8",
+              "type": "text"
+            },
+            {
+              "key": "p_year",
+              "value": "2000",
+              "type": "text"
+            },
+            {
+              "key": "p_hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "p_min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "p_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "p_lon",
+              "value": "25.20",
+              "type": "text"
+            },
+            {
+              "key": "p_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "s_day",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "s_month",
+              "value": "3",
+              "type": "text"
+            },
+            {
+              "key": "s_year",
+              "value": "2000",
+              "type": "text"
+            },
+            {
+              "key": "s_hour",
+              "value": "07",
+              "type": "text"
+            },
+            {
+              "key": "s_min",
+              "value": "00",
+              "type": "text"
+            },
+            {
+              "key": "s_lat",
+              "value": "19.33",
+              "type": "text"
+            },
+            {
+              "key": "s_lon",
+              "value": "25.20",
+              "type": "text"
+            },
+            {
+              "key": "s_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/synastry_horoscope",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "synastry_horoscope"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "composite_horoscope",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "p_day",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "p_month",
+              "value": "8",
+              "type": "text"
+            },
+            {
+              "key": "p_year",
+              "value": "2000",
+              "type": "text"
+            },
+            {
+              "key": "p_hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "p_min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "p_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "p_lon",
+              "value": "25.20",
+              "type": "text"
+            },
+            {
+              "key": "p_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "s_day",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "s_month",
+              "value": "3",
+              "type": "text"
+            },
+            {
+              "key": "s_year",
+              "value": "2000",
+              "type": "text"
+            },
+            {
+              "key": "s_hour",
+              "value": "07",
+              "type": "text"
+            },
+            {
+              "key": "s_min",
+              "value": "00",
+              "type": "text"
+            },
+            {
+              "key": "s_lat",
+              "value": "19.33",
+              "type": "text"
+            },
+            {
+              "key": "s_lon",
+              "value": "25.20",
+              "type": "text"
+            },
+            {
+              "key": "s_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "house_type",
+              "value": "whole_sign",
+              "type": "text",
+              "description": "default : placidus\nother values : koch,topocentric,poryphry,equal_house",
+              "disabled": true
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/composite_horoscope",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "composite_horoscope"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tarot_predictions",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "love",
+              "value": "12",
+              "type": "text"
+            },
+            {
+              "key": "career",
+              "value": "23",
+              "type": "text"
+            },
+            {
+              "key": "finance",
+              "value": "45",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/tarot_predictions",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "tarot_predictions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "yes_no_tarot",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "tarot_id",
+              "value": "5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/yes_no_tarot",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "yes_no_tarot"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "chinese_zodiac",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/chinese_zodiac",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "chinese_zodiac"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "chinese_year_forecast",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1992",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "21",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "30",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/chinese_year_forecast",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "chinese_year_forecast"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sun_sign_prediction/daily",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "timezone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sun_sign_prediction/daily/:zodiacName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sun_sign_prediction", "daily", ":zodiacName"],
+          "variable": [
+            {
+              "key": "zodiacName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sun_sign_prediction/next",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "timezone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sun_sign_prediction/next/:zodiacName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sun_sign_prediction", "next", ":zodiacName"],
+          "variable": [
+            {
+              "key": "zodiacName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sun_sign_prediction/previous",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "timezone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sun_sign_prediction/previous/:zodiacName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sun_sign_prediction", "previous", ":zodiacName"],
+          "variable": [
+            {
+              "key": "zodiacName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sun_sign_consolidated/daily",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "timezone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sun_sign_consolidated/daily/:zodiacName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sun_sign_consolidated", "daily", ":zodiacName"],
+          "variable": [
+            {
+              "key": "zodiacName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "horoscope_prediction/monthly",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "your_access_token_here",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "timezone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/horoscope_prediction/monthly/:zodiacName",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "horoscope_prediction", "monthly", ":zodiacName"],
+          "variable": [
+            {
+              "key": "zodiacName",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    }
+  ]
+}

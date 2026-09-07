@@ -1,0 +1,51 @@
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/developers/v1/sdk-reference, https://www.astrologyapi.com/products/astro-pages,
+  https://www.astrologyapi.com/products/astrology-wordpress-theme
+description: >-
+  Client-side and no-code surfaces AstrologyAPI ships alongside the API. These are distinct from the
+  language SDKs in packages/ — a rendering library and two hosted/installable site products rather
+  than API clients.
+components:
+  - family: Visualisation
+    name: D3 Horoscope Chart
+    type: javascript-library
+    detail: >-
+      JavaScript chart library for horoscope visualisations, advertised on the SDK Reference page as
+      supporting interactive charts and multiple chart types with customisable styles.
+    url: https://astrologyapi.com/developers/v1/sdk-reference
+    loader: null
+    registry: null
+    version: null
+    note: >-
+      Listed on the SDK Reference page with a Download action rather than a package install. No npm
+      or CDN distribution and no public repository in the astrologyapi GitHub organisation was found,
+      so there is no version to pin and no loader URL to record.
+  - family: Server-side rendering
+    name: Horoscope Chart Image / Natal Wheel Chart Image
+    type: api-rendered-asset
+    detail: >-
+      Rather than a client-side widget, the API itself returns rendered chart artwork — the
+      horo_chart_image operation on the Vedic surface and natal_wheel_chart on the Western surface.
+      An integrator embeds the returned image instead of running a charting component.
+    operations:
+      - horo_chart_image
+      - natal_wheel_chart
+    captured_in: openapi/astrology-api-json-openapi.yml
+no_code_products:
+  - name: AstroPages Website Builder
+    type: hosted-site-builder
+    detail: Build and customise astrology websites without writing code.
+    url: https://www.astrologyapi.com/products/astro-pages
+  - name: Astrology WordPress Theme
+    type: cms-theme
+    detail: WordPress theme tailored for astrology websites, wired to the API.
+    url: https://www.astrologyapi.com/products/astrology-wordpress-theme
+summary:
+  embeddable_components: 1
+  api_rendered_assets: 2
+  no_code_products: 2
+  note: >-
+    There is no embeddable web-component library, no hosted checkout or dashboard widget, and no
+    element/iframe surface. The one true client-side component is the D3 chart library, and it is
+    distributed as a download rather than a package.

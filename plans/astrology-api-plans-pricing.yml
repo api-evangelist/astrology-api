@@ -1,151 +1,194 @@
 specification: API Commons Plans
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Astrology API
+provider: AstrologyAPI
 providerId: astrology-api
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/pricing, https://astrologyapi.com/pricing/indian-astrology-pricing,
+  https://astrologyapi.com/pricing/western-astrology-pricing, https://astrologyapi.com/pricing/horoscopes-pricing
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+note: >-
+  Replaces the generated scaffold written by the 2026-05-04 bulk sweep, whose USD tier names, quotas
+  and rate limits were placeholder defaults and did not match anything AstrologyAPI publishes. Every
+  figure below was read from the provider's own pricing pages on 2026-09-07.
 tags:
   - Astrology
   - Horoscopes
   - Zodiac
   - Vedic Astrology
   - Western Astrology
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: >-
+  AstrologyAPI bills in Indian rupees on a unified credit wallet. All accounts reach the same 300+
+  endpoints; what differs is volume and price per credit. Three product suites additionally offer
+  monthly or annual subscription tiers, and PDF reports are priced per generated report on top.
+currency: INR
+secondary_currency: USD
+billing_model:
+  primary: pay-as-you-go credit wallet
+  secondary: monthly or annual suite subscription
+  mixable: true
+  credit_expiry: none
+  credit_expiry_note: Credits never expire and are not forfeited on a plan change or cancellation.
+  tax_note: Listed prices exclude GST.
+  billing_basis: Successful API calls only.
+  volume_discount: Tiered savings up to 60% off at the highest credit-purchase bands, applied automatically.
+  annual_discount: 20% off annual billing on suite subscriptions (the suite pages describe this as up to 17%).
+  overage:
+    price: '20.00'
+    currency: INR
+    unit: 1000 calls
+    usd_equivalent: '1.00'
+    behaviour: Calls past the included quota bill as overage rather than being refused.
+    alert: Automated alert at 80% of the included quota.
+free_tier:
+  credits: 150
+  credit_card_required: false
+  note: >-
+    Every new account receives 150 free credits, usable across all endpoints including Kundli, AI
+    Chat, PDF generation and the MCP server. The pricing page states trial wallet credits cannot be
+    used for PDF generation, which contradicts the FAQ on the same page — recorded as published.
 plans:
-  - id: astrology-api-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Astrology API API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+  - id: astrology-api-payg
+    name: Pay As You Go
+    type: usage-based
+    price: '1000.00'
+    currency: INR
+    billing_period: none
+    description: >-
+      Top up a credit wallet and pay per call with no recurring commitment. The pricing page's
+      reference point is ₹1,000 for 10,000 API calls, with the per-credit rate falling as the
+      top-up size rises.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
+      - label: API Calls
+        name: api_calls
         type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://json.astrologyapi.com/v1
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://json.astrologyapi.com/v1
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
+        metric: calls
+        limit: 10000
+        price: '1000.00'
+        currency: INR
+        timeFrame: none
+        note: Reference band from the pricing calculator; larger top-ups unlock lower per-call rates.
     elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Astrology API
-  - id: astrology-api-pro
-    name: Professional
-    type: paid
-    description: Production tier for Astrology API. Provides higher quotas, priority support, and access
-      to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://json.astrologyapi.com/v1
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://json.astrologyapi.com/v1
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://json.astrologyapi.com/v1
-        unit: 1000
-        price: TBD
-        userMultiplied: false
+      - name: All 300+ endpoints
+      - name: Credits never expire
+      - name: MCP server access
+      - name: AI Chat access
+  - id: astrology-api-indian-suite
+    name: Indian Astrology Suite
+    type: subscription
+    price: '1500.00'
+    price_qualifier: starting from
+    currency: INR
+    billing_period: month
+    description: >-
+      Vedic/Jyotish suite — Kundli, panchang, muhurta and matchmaking, with regional languages and
+      DST-safe timezone handling. Sold in Basic, Professional and Premium tiers; only the entry
+      price is published, per-tier prices are shown on the suite page's own selector.
+    tiers:
+      - name: Basic Plan
+        packages: [Basic Astro Details, Horoscope Charts, Vimshottari Dasha, Horoscope Dosha, Numerology, Panchang, Life Reports]
+      - name: Professional Plan
+        packages: [Advanced Panchang, Match Making, Basic Astro Details, Ashtakvarga, Horoscope Charts, Horoscope Dosha, Suggestions And Remedies, Numerology, Nakshatra Predictions, Life Reports, Vimshottari Dasha, Char Dasha, Yogini Dasha]
+      - name: Premium Plan
+        packages: [Lalkitab, Varshaphal, Krishnamurti Paddhati, Advanced Panchang, Ashtakvarga, Match Making, Basic Astro Details, Horoscope Charts, Horoscope Dosha, Suggestions And Remedies, Numerology, Nakshatra Predictions, Life Reports, Vimshottari Dasha, Char Dasha, Yogini Dasha]
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Astrology API
+      - name: Kundli, panchang, muhurta & matchmaking APIs
+      - name: Regional languages and DST-safe timezone handling
+      - name: KP, Varshaphal and Lalkitab at Premium tier
+      - name: 7-day support
+    url: https://astrologyapi.com/pricing/indian-astrology-pricing
+  - id: astrology-api-western-suite
+    name: Western Astrology Suite
+    type: subscription
+    price: '2999.00'
+    price_qualifier: starting from
+    currency: INR
+    billing_period: month
+    description: >-
+      Western suite — natal, synastry and composite charts with interpretations reviewed by senior
+      astrologers, plus white-label PDF reports. Sold in Starter, Growth and Business tiers.
+    tiers:
+      - name: Starter Plan
+        packages: [Natal Chart, Moon Phases]
+      - name: Growth Plan
+        packages: [Natal Chart, Summary Reports, Numerology, Moon Phases, Compatibility, Synastry Horoscope, Tarot Readings]
+      - name: Business Plan
+        packages: [Daily Horoscope, Monthly Horoscope, Chinese Horoscope, Solar Return, Composite Chart, Synastry Interpretations, Transit Interpretations]
+    elements:
+      - name: Natal, synastry & composite chart endpoints
+      - name: Interpretations reviewed by senior astrologers
+      - name: White-label PDF reports with branding controls
+      - name: 7-day support
+    url: https://astrologyapi.com/pricing/western-astrology-pricing
+  - id: astrology-api-horoscope-suite
+    name: Horoscope Suite
+    type: subscription
+    price: '3500.00'
+    price_qualifier: starting from
+    currency: INR
+    billing_period: month
+    description: >-
+      Scheduler-friendly JSON horoscope content feeds for all 12 signs, daily and monthly, with love,
+      career, health and luck insight and planet transit detail.
+    elements:
+      - name: Daily and monthly JSON feed for 12 zodiac signs
+      - name: Daily love, career, health and luck insight
+      - name: Monthly report including planet transit details
+      - name: 7-day support
+    url: https://astrologyapi.com/pricing/horoscopes-pricing
   - id: astrology-api-enterprise
     name: Enterprise
     type: enterprise
-    description: Custom-negotiated tier for Astrology API. Includes dedicated capacity, contractual SLAs,
-      security review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://json.astrologyapi.com/v1
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://json.astrologyapi.com/v1
-        unit: 1
-        price: custom
-        userMultiplied: false
+    price: custom
+    currency: INR
+    billing_period: negotiated
+    description: >-
+      Contact-sales tier for high-volume requirements and bespoke logic.
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Astrology API
+      - name: Volume-based pricing
+      - name: Custom API endpoints
+      - name: SLA-backed uptime
+      - name: 24/7 dedicated support
+      - name: Custom rate limits and infrastructure tuning
+    url: https://astrologyapi.com/contact-sales
+pdf_report_pricing:
+  billing: per generated report, billed from the credit wallet
+  currency: INR
+  note: Priced on top of API plans; PDF credits bill separately from call credits.
+  reports:
+    - name: Mini Horoscope PDF
+      price: '1.50'
+    - name: Basic Gemstone Report PDF
+      price: '4.00'
+    - name: Basic Horoscope PDF
+      price: '8.00'
+    - name: Match-making Horoscope PDF
+      price: '25.00'
+    - name: Pro Numerology Report PDF
+      price: '50.00'
+    - name: Professional Horoscope PDF
+      price: '60.00'
+    - name: Varshphal Horoscope PDF
+      price: '90.00'
+    - name: Natal Horoscope PDF
+      price: '100.00'
+    - name: Life Forecast PDF
+      price: '100.00'
+    - name: Solar Return PDF
+      price: '100.00'
+    - name: Synastry Report PDF
+      price: '100.00'
+    - name: Star Sign Compatibility PDF
+      price: '100.00'
+plan_count: 5
+refunds:
+  policy: All purchases are final and non-refundable.
+  url: https://astrologyapi.com/legal/refund-and-cancellation
+  cancellation: >-
+    Cancel from Account Settings → Subscription → Cancel Plan. Access continues to the end of the
+    billing period and unused credits remain in the wallet for pay-as-you-go calls afterwards.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

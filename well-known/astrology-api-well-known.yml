@@ -1,0 +1,143 @@
+generated: '2026-09-07'
+method: probed
+source: live HTTP probes of every host in apis.yml, every OpenAPI servers[] host, the docs host and
+  the MCP host, 2026-09-07
+description: >-
+  Well-known discovery probe for AstrologyAPI. Two real documents were found, both on the MCP host
+  (mcp.astrologyapi.com): an RFC 8414 OAuth authorization server metadata document and an RFC 9728
+  OAuth protected resource metadata document. No security.txt, api-catalog, openid-configuration or
+  ai-plugin.json is served on any host. On the marketing/docs host every /.well-known/* path returns
+  the site's HTML 404 page; on json/pdf/vision every path returns the API's JSON 404 envelope; on the
+  MCP host every path other than the two OAuth documents is answered by the authentication wall with
+  401, which is a gate rather than a served document.
+hosts:
+  - host: astrologyapi.com
+    role: registrable domain / marketing + docs
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: www.astrologyapi.com
+    role: www alias
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: json.astrologyapi.com
+    role: JSON API baseURL host
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: pdf.astrologyapi.com
+    role: PDF Reports API host
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: vision.astrologyapi.com
+    role: Palmistry + Face Reading API host
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: mcp.astrologyapi.com
+    role: hosted MCP server
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: astrology-api-oauth-authorization-server.json
+        note: >-
+          RFC 8414 authorization server metadata. SERVED but MALFORMED — the issuer value is the
+          JSON string '"https://mcp.astrologyapi.com/mcp"' with literal double-quote characters
+          inside it, so every endpoint derived from it renders as
+          '"https://mcp.astrologyapi.com/mcp"/oauth/authorize' and is not a resolvable URL. A strict
+          RFC 8414 client cannot complete discovery against this document.
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: astrology-api-oauth-protected-resource.json
+        note: >-
+          RFC 9728 protected resource metadata. The resource field is correct; the
+          authorization_servers entry carries the same embedded-quote defect as the issuer above.
+      - path: /.well-known/security.txt
+        status: 401
+        note: Answered by the MCP authentication wall, not a served document.
+      - path: /.well-known/openid-configuration
+        status: 401
+        note: Answered by the MCP authentication wall, not a served document.
+      - path: /.well-known/api-catalog
+        status: 401
+        note: Answered by the MCP authentication wall, not a served document.
+      - path: /.well-known/ai-plugin.json
+        status: 401
+        note: Answered by the MCP authentication wall, not a served document.
+      - path: /.well-known/agent-card.json
+        status: 401
+        note: >-
+          Answered by the MCP authentication wall with the same invalid_token envelope every path on
+          this host returns. This is NOT an agent card; no A2A artifact was written.
+      - path: /.well-known/agent.json
+        status: 401
+        note: Answered by the MCP authentication wall, not a served document.
+summary:
+  documents_served: 2
+  hosts_probed: 6
+  paths_probed: 43
+  security_txt: false
+  api_catalog: false
+  agent_card: false

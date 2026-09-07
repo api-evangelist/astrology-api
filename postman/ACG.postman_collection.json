@@ -1,0 +1,156 @@
+{
+  "info": {
+    "_postman_id": "fab3ea8d-84ce-4c4e-9841-6c5b43dc4d2a",
+    "name": "Astrocartography Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52126420",
+    "_collection_link": "https://go.postman.co/collection/52126420-fab3ea8d-84ce-4c4e-9841-6c5b43dc4d2a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Travel (Plot Coordinates)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"day\": 22,\n  \"month\": 8,\n  \"year\": 1999,\n  \"hour\": 18,\n  \"min\": 50,\n  \"second\": 0,\n  \"tzone\": 5.5,\n  \"lat\": 19.0759837,\n  \"lon\": 72.8776559,\n  \"include_parans\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/acg/travel",
+          "protocol": "https",
+          "host": [
+            "json",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "acg",
+            "travel"
+          ]
+        },
+        "description": "Returns all of a chart's astrocartography line coordinates so you can draw a full ACG map.\n\n**What it does** — For each planet it computes where on Earth that planet is exactly on one of the four angles — the MC/IC meridians (the longitudes where the planet is overhead or underfoot) and the AC/DC curves (the winding lines where it's rising or setting). Plotting these lines shows which places amplify each planet's themes for the person. Use it to render an interactive relocation/astrocartography map.\n\n**Send** — Standard `birth_details` (see the collection overview), all nine required. `include_parans` (boolean, default `false`) — set `true` to also return the latitude-crossing paran lines. Longitudes are reported east-positive.\n\n**Returns** — A JSON object with `meta` and a `lines` array, one entry per planet. Each entry holds that planet's four angle lines: the `asc`/`dsc` are `curve` objects with a `points` array of `{latitude_deg, longitude_deg}` samples (stepped by latitude) tracing the rising/setting curve, while the MC/IC come back as `meridian` objects carrying a single `longitude_deg`. When `include_parans=true`, paran latitude crossings are included in the response.\n\n**Errors** — Invalid, missing, or out-of-range input returns `400` with the offending field in `field_errors`; see the collection overview for the full error format."
+      }
+    },
+    {
+      "name": "Category Based Location",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"day\": 22,\n  \"month\": 8,\n  \"year\": 1999,\n  \"hour\": 18,\n  \"min\": 50,\n  \"second\": 0,\n  \"tzone\": 5.5,\n  \"lat\": 19.0759837,\n  \"lon\": 72.8776559,\n  \"include_parans\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/acg/location/:category",
+          "protocol": "https",
+          "host": [
+            "json",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "acg",
+            "location",
+            ":category"
+          ],
+          "variable": [
+            {
+              "key": "category",
+              "value": "LOVE",
+              "description": "Life category: LOVE, CAREER, MONEY, HEALTH, SPIRITUALITY, ADVENTURE, CREATIVITY, POWER, COMMUNICATION"
+            }
+          ]
+        },
+        "description": "Returns only the astrocartography lines for the planets tied to a chosen life category.\n\n**What it does** — Maps a life theme (love, career, money, etc.) to its associated planets and returns just those planets' angle lines, so you can highlight the places on Earth that favor that area of life rather than drawing the whole map. Use it for themed \"best places for love/career\" map views.\n\n**Send** — Standard `birth_details` (see the collection overview), all nine required. Path parameter `category` — the life area to filter by, e.g. `LOVE`, `CAREER`, `MONEY`, `HEALTH`, `SPIRITUALITY`, `ADVENTURE`, `CREATIVITY`, `POWER`, `COMMUNICATION`.\n\n**Returns** — A JSON object with `meta`, the echoed `category`, and a `lines` array structured exactly like the Travel endpoint but limited to the category's planets: each entry carries that planet's `asc`/`dsc` rising/setting curves (a `points` list of `{latitude_deg, longitude_deg}`) and MC/IC meridian longitudes. Longitudes are east-positive.\n\n**Errors** — An unknown `category` or invalid/missing `birth_details` returns `400` with the offending field in `field_errors`; see the collection overview for the full error format."
+      }
+    },
+    {
+      "name": "Planetary Line Report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"day\": 22,\n  \"month\": 8,\n  \"year\": 1999,\n  \"hour\": 18,\n  \"min\": 50,\n  \"second\": 0,\n  \"tzone\": 5.5,\n  \"lat\": 19.0759837,\n  \"lon\": 72.8776559,\n  \"include_parans\": false\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/acg/planetary-line/:category/:planet",
+          "protocol": "https",
+          "host": [
+            "json",
+            "astrologyapi",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "acg",
+            "planetary-line",
+            ":category",
+            ":planet"
+          ],
+          "variable": [
+            {
+              "key": "category",
+              "value": "MC",
+              "description": "Angle type: MC, IC, AC, or DC"
+            },
+            {
+              "key": "planet",
+              "value": "MOON",
+              "description": "Planet: SUN through PLUTO"
+            }
+          ]
+        },
+        "description": "Returns the geometry of one single planet-and-angle astrocartography line.\n\n**What it does** — Computes just one line: a specific planet on a specific angle (its Midheaven, IC, Ascendant, or Descendant line). Use it when you want the coordinates of one line in isolation rather than a whole map.\n\n**Send** — Standard `birth_details` (see the collection overview), all nine required. Path parameter `category` — the line/angle type: `MC`, `IC`, `AC`, or `DC`. Path parameter `planet` — the body, `SUN` through `PLUTO`.\n\n**Returns** — A JSON object with `meta` (engine info, the latitude step, the east-positive longitude convention, and the reference location) and a `line` object. For MC/IC the line is a `meridian` with a single `longitude_deg`, the `object` (planet) name, and the `zenith_latitude_deg` where the planet is directly overhead. For AC/DC it comes back as a `curve` with a `points` array of `{latitude_deg, longitude_deg}` samples tracing the rising/setting line.\n\n**Errors** — A bad `category`/`planet` or invalid `birth_details` returns `400` with the offending field in `field_errors`; see the collection overview for the full error format."
+      }
+    }
+  ]
+}

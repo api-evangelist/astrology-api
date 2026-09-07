@@ -1,0 +1,29 @@
+generated: '2026-09-07'
+method: derived
+source: openapi/astrology-api-json-openapi.yml, openapi/astrology-api-pdf-openapi.yml, openapi/astrology-api-vision-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic authentication. Username is your AstrologyAPI User ID, password is
+    your API key. Used with form-encoded request bodies on subscription endpoints.
+  sources:
+  - openapi/astrology-api-json-openapi.yml
+  - openapi/astrology-api-pdf-openapi.yml
+  - openapi/astrology-api-vision-openapi.yml
+- name: accessToken
+  type: apiKey
+  in: header
+  parameter: x-astrologyapi-key
+  description: Wallet Access Token sent in the x-astrologyapi-key header, used with JSON request
+    bodies on wallet-billed and Chat endpoints.
+  sources:
+  - openapi/astrology-api-json-openapi.yml
+  - openapi/astrology-api-pdf-openapi.yml
+  - openapi/astrology-api-vision-openapi.yml

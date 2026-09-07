@@ -1,0 +1,916 @@
+{
+  "info": {
+    "_postman_id": "1c5c1c42-8995-40e7-991e-0af14c3a7ddf",
+    "name": "Face Reading Service API - Production",
+    "description": "Face Reading API collection for production. Base URL is https://vision.astrologyapi.com/face-reading. Authorization uses the x-astrologyapi-key header with value access-token. Run Get Face ID first, then copy the returned face_id into the faceId collection variable for the remaining requests. Health Check is intentionally excluded.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52126420",
+    "_collection_link": "https://go.postman.co/collection/52126420-1c5c1c42-8995-40e7-991e-0af14c3a7ddf?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Face ID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"image_url\": \"{{sampleImageUrl}}\",\n  \"day\": 15,\n  \"month\": 8,\n  \"year\": 1995,\n  \"gender\": \"male\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/get-face-id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "get-face-id"
+          ]
+        },
+        "description": "Scans a face image and returns the face_id needed by the remaining Face Reading APIs. Birth details are optional; send all four fields together when used."
+      },
+      "response": []
+    },
+    {
+      "name": "Mask Outline Image",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/mask-outline-image",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "mask-outline-image"
+          ]
+        },
+        "description": "Returns a processed face image URL with mask outline data and detected traits."
+      },
+      "response": []
+    },
+    {
+      "name": "Career",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/career",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "career"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Challenges",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/challenges",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "challenges"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Family",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/family",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "family"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Love",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/love",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "love"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Luck",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/luck",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "luck"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Marriage",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/marriage",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "marriage"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Personality",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/personality",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "personality"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wealth",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/wealth",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "wealth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wisdom",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/wisdom",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "wisdom"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Face Shape",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/shape",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "shape"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eyes",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/eyes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "eyes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Nose",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/nose",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "nose"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cheeks And Cheekbones",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/cheeks-and-cheekbones",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "cheeks-and-cheekbones"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Mouth",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/mouth",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "mouth"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Chin And Jaw",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/chin-and-jaw",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "chin-and-jaw"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ears",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/ears",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "ears"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Skin Complexion",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/skin-complexion",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "skin-complexion"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Symmetry",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/symmetry",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "symmetry"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Proportions",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/proportions",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "proportions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Facial Hair",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/facial-hair",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "facial-hair"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Face Outline",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"face_id\": \"{{faceId}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/face-outline",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "face-outline"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://vision.astrologyapi.com/face-reading"
+    },
+    {
+      "key": "faceId",
+      "value": ""
+    },
+    {
+      "key": "sampleImageUrl",
+      "value": "https://sample-image.jpg"
+    }
+  ]
+}

@@ -1,0 +1,928 @@
+{
+ "info": {
+  "_postman_id": "4cb02f18-5c4a-4983-9aae-b34987dc98f0",
+  "name": "Western Astrology PDF API (User Collection)",
+  "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+  "_exporter_id": "22644900",
+  "_apievangelist_redaction": "API Evangelist redacted a populated HTTP Basic auth block that AstrologyAPI ships in this publicly downloadable collection. The original values were not exercised and are not stored in this repository. See security/astrology-api-vulnerability-disclosure.yml."
+ },
+ "item": [
+  {
+   "name": "Natal Chart PDF Report",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention access token key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Linda Ray",
+       "type": "text",
+       "uuid": "397d24b4-1d1a-4902-bbb5-cbdd826bee52"
+      },
+      {
+       "key": "day",
+       "value": "6",
+       "type": "text",
+       "uuid": "489a932f-4ca5-4b5a-89d0-0fd95cff921c"
+      },
+      {
+       "key": "month",
+       "value": "10",
+       "type": "text",
+       "uuid": "42ba34b8-0c23-49c7-bffc-0b4b8eca5dcd"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text",
+       "uuid": "c1498b90-2288-46f4-8e81-05b78a39b1a1"
+      },
+      {
+       "key": "hour",
+       "value": "7",
+       "type": "text",
+       "uuid": "bcfd370e-3d16-4e1a-a081-bd275bfe55c3"
+      },
+      {
+       "key": "minute",
+       "value": "45",
+       "type": "text",
+       "uuid": "48c88fa5-fae5-4983-81ed-0489ae7e57d6"
+      },
+      {
+       "key": "latitude",
+       "value": "19.20",
+       "type": "text",
+       "uuid": "2268ef56-0244-4ed0-8952-b15b7a523610"
+      },
+      {
+       "key": "longitude",
+       "value": "25.20",
+       "type": "text",
+       "uuid": "cc9c684f-6dee-465c-bf4e-828efefdf9d1"
+      },
+      {
+       "key": "timezone",
+       "value": "5.5",
+       "type": "text",
+       "uuid": "44bc41e7-b4df-42e2-a43e-2fb056f545f1"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text",
+       "uuid": "d93c795f-2cac-4167-afcb-ce83e25645ee"
+      },
+      {
+       "key": "footer_link",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "c236c8d9-deff-4a88-9bcd-ff8476355695"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text",
+       "uuid": "4ec9a9d3-4c0f-48c6-b1b4-650c6def4dd3"
+      },
+      {
+       "key": "company_name",
+       "value": "astrologyapi",
+       "type": "text",
+       "uuid": "03981775-6c36-45bf-8085-740c85be7b77"
+      },
+      {
+       "key": "company_info",
+       "value": "this is astrologyapi",
+       "type": "text",
+       "uuid": "3a11c655-d3f7-4609-9517-b806c1110940"
+      },
+      {
+       "key": "domain_url",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "48a7d2e0-32bd-4017-82d6-cd4aadcc1d0f"
+      },
+      {
+       "key": "company_email",
+       "value": "mail@astrologyapi.com",
+       "type": "text",
+       "uuid": "db5572e8-51e0-4b8e-b61f-f724a03ea2f0"
+      },
+      {
+       "key": "company_landline",
+       "value": "+91- 221232 22",
+       "type": "text",
+       "uuid": "2321831e-653b-467e-bdd9-df6e76dfb256"
+      },
+      {
+       "key": "company_mobile",
+       "value": "+91 1212 1212 12",
+       "type": "text",
+       "uuid": "d6b7a96f-e75b-4a93-99df-1e9d7ba02b9b"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text",
+       "uuid": "329bdf04-ea53-4309-b430-f7792efc9dc7"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/natal_horoscope_report/tropical",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "natal_horoscope_report",
+      "tropical"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Star Sign Compatibility Report PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention access token key here",
+      "type": "text"
+     },
+     {
+      "key": "Authorization",
+      "value": "Basic mention base64 credentials here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Linda Ray",
+       "type": "text",
+       "uuid": "397d24b4-1d1a-4902-bbb5-cbdd826bee52"
+      },
+      {
+       "key": "day",
+       "value": "6",
+       "type": "text",
+       "uuid": "489a932f-4ca5-4b5a-89d0-0fd95cff921c"
+      },
+      {
+       "key": "month",
+       "value": "10",
+       "type": "text",
+       "uuid": "42ba34b8-0c23-49c7-bffc-0b4b8eca5dcd"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text",
+       "uuid": "c1498b90-2288-46f4-8e81-05b78a39b1a1"
+      },
+      {
+       "key": "hour",
+       "value": "7",
+       "type": "text",
+       "uuid": "bcfd370e-3d16-4e1a-a081-bd275bfe55c3"
+      },
+      {
+       "key": "minute",
+       "value": "45",
+       "type": "text",
+       "uuid": "48c88fa5-fae5-4983-81ed-0489ae7e57d6"
+      },
+      {
+       "key": "latitude",
+       "value": "19.20",
+       "type": "text",
+       "uuid": "2268ef56-0244-4ed0-8952-b15b7a523610"
+      },
+      {
+       "key": "longitude",
+       "value": "25.20",
+       "type": "text",
+       "uuid": "cc9c684f-6dee-465c-bf4e-828efefdf9d1"
+      },
+      {
+       "key": "timezone",
+       "value": "5.5",
+       "type": "text",
+       "uuid": "44bc41e7-b4df-42e2-a43e-2fb056f545f1"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text",
+       "uuid": "d93c795f-2cac-4167-afcb-ce83e25645ee"
+      },
+      {
+       "key": "footer_link",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "c236c8d9-deff-4a88-9bcd-ff8476355695"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text",
+       "uuid": "4ec9a9d3-4c0f-48c6-b1b4-650c6def4dd3"
+      },
+      {
+       "key": "company_name",
+       "value": "astrologyapi",
+       "type": "text",
+       "uuid": "03981775-6c36-45bf-8085-740c85be7b77"
+      },
+      {
+       "key": "company_info",
+       "value": "this is astrologyapi",
+       "type": "text",
+       "uuid": "3a11c655-d3f7-4609-9517-b806c1110940"
+      },
+      {
+       "key": "domain_url",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "48a7d2e0-32bd-4017-82d6-cd4aadcc1d0f"
+      },
+      {
+       "key": "company_email",
+       "value": "mail@astrologyapi.com",
+       "type": "text",
+       "uuid": "db5572e8-51e0-4b8e-b61f-f724a03ea2f0"
+      },
+      {
+       "key": "company_landline",
+       "value": "+91- 221232 22",
+       "type": "text",
+       "uuid": "2321831e-653b-467e-bdd9-df6e76dfb256"
+      },
+      {
+       "key": "company_mobile",
+       "value": "+91 1212 1212 12",
+       "type": "text",
+       "uuid": "d6b7a96f-e75b-4a93-99df-1e9d7ba02b9b"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text",
+       "uuid": "329bdf04-ea53-4309-b430-f7792efc9dc7"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/star_sign_compatibility_report",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "star_sign_compatibility_report"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Life Forecast Report PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention token access key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Linda Ray",
+       "type": "text",
+       "uuid": "397d24b4-1d1a-4902-bbb5-cbdd826bee52"
+      },
+      {
+       "key": "day",
+       "value": "6",
+       "type": "text",
+       "uuid": "489a932f-4ca5-4b5a-89d0-0fd95cff921c"
+      },
+      {
+       "key": "month",
+       "value": "10",
+       "type": "text",
+       "uuid": "42ba34b8-0c23-49c7-bffc-0b4b8eca5dcd"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text",
+       "uuid": "c1498b90-2288-46f4-8e81-05b78a39b1a1"
+      },
+      {
+       "key": "hour",
+       "value": "7",
+       "type": "text",
+       "uuid": "bcfd370e-3d16-4e1a-a081-bd275bfe55c3"
+      },
+      {
+       "key": "minute",
+       "value": "45",
+       "type": "text",
+       "uuid": "48c88fa5-fae5-4983-81ed-0489ae7e57d6"
+      },
+      {
+       "key": "latitude",
+       "value": "19.20",
+       "type": "text",
+       "uuid": "2268ef56-0244-4ed0-8952-b15b7a523610"
+      },
+      {
+       "key": "longitude",
+       "value": "25.20",
+       "type": "text",
+       "uuid": "cc9c684f-6dee-465c-bf4e-828efefdf9d1"
+      },
+      {
+       "key": "timezone",
+       "value": "5.5",
+       "type": "text",
+       "uuid": "44bc41e7-b4df-42e2-a43e-2fb056f545f1"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text",
+       "uuid": "d93c795f-2cac-4167-afcb-ce83e25645ee"
+      },
+      {
+       "key": "footer_link",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "c236c8d9-deff-4a88-9bcd-ff8476355695"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text",
+       "uuid": "4ec9a9d3-4c0f-48c6-b1b4-650c6def4dd3"
+      },
+      {
+       "key": "company_name",
+       "value": "astrologyapi",
+       "type": "text",
+       "uuid": "03981775-6c36-45bf-8085-740c85be7b77"
+      },
+      {
+       "key": "company_info",
+       "value": "this is astrologyapi",
+       "type": "text",
+       "uuid": "3a11c655-d3f7-4609-9517-b806c1110940"
+      },
+      {
+       "key": "domain_url",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "48a7d2e0-32bd-4017-82d6-cd4aadcc1d0f"
+      },
+      {
+       "key": "company_email",
+       "value": "mail@astrologyapi.com",
+       "type": "text",
+       "uuid": "db5572e8-51e0-4b8e-b61f-f724a03ea2f0"
+      },
+      {
+       "key": "company_landline",
+       "value": "+91- 221232 22",
+       "type": "text",
+       "uuid": "2321831e-653b-467e-bdd9-df6e76dfb256"
+      },
+      {
+       "key": "company_mobile",
+       "value": "+91 1212 1212 12",
+       "type": "text",
+       "uuid": "d6b7a96f-e75b-4a93-99df-1e9d7ba02b9b"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text",
+       "uuid": "329bdf04-ea53-4309-b430-f7792efc9dc7"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/life_forecast_report/tropical",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "life_forecast_report",
+      "tropical"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Solar Return PDF Report",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention access token key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Linda Ray",
+       "type": "text",
+       "uuid": "397d24b4-1d1a-4902-bbb5-cbdd826bee52"
+      },
+      {
+       "key": "day",
+       "value": "6",
+       "type": "text",
+       "uuid": "489a932f-4ca5-4b5a-89d0-0fd95cff921c"
+      },
+      {
+       "key": "month",
+       "value": "10",
+       "type": "text",
+       "uuid": "42ba34b8-0c23-49c7-bffc-0b4b8eca5dcd"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text",
+       "uuid": "c1498b90-2288-46f4-8e81-05b78a39b1a1"
+      },
+      {
+       "key": "hour",
+       "value": "7",
+       "type": "text",
+       "uuid": "bcfd370e-3d16-4e1a-a081-bd275bfe55c3"
+      },
+      {
+       "key": "minute",
+       "value": "45",
+       "type": "text",
+       "uuid": "48c88fa5-fae5-4983-81ed-0489ae7e57d6"
+      },
+      {
+       "key": "latitude",
+       "value": "19.20",
+       "type": "text",
+       "uuid": "2268ef56-0244-4ed0-8952-b15b7a523610"
+      },
+      {
+       "key": "longitude",
+       "value": "25.20",
+       "type": "text",
+       "uuid": "cc9c684f-6dee-465c-bf4e-828efefdf9d1"
+      },
+      {
+       "key": "timezone",
+       "value": "5.5",
+       "type": "text",
+       "uuid": "44bc41e7-b4df-42e2-a43e-2fb056f545f1"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text",
+       "uuid": "d93c795f-2cac-4167-afcb-ce83e25645ee"
+      },
+      {
+       "key": "footer_link",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "c236c8d9-deff-4a88-9bcd-ff8476355695"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text",
+       "uuid": "4ec9a9d3-4c0f-48c6-b1b4-650c6def4dd3"
+      },
+      {
+       "key": "company_name",
+       "value": "astrologyapi",
+       "type": "text",
+       "uuid": "03981775-6c36-45bf-8085-740c85be7b77"
+      },
+      {
+       "key": "company_info",
+       "value": "this is astrologyapi",
+       "type": "text",
+       "uuid": "3a11c655-d3f7-4609-9517-b806c1110940"
+      },
+      {
+       "key": "domain_url",
+       "value": "astrologyapi.com",
+       "type": "text",
+       "uuid": "48a7d2e0-32bd-4017-82d6-cd4aadcc1d0f"
+      },
+      {
+       "key": "company_email",
+       "value": "mail@astrologyapi.com",
+       "type": "text",
+       "uuid": "db5572e8-51e0-4b8e-b61f-f724a03ea2f0"
+      },
+      {
+       "key": "company_landline",
+       "value": "+91- 221232 22",
+       "type": "text",
+       "uuid": "2321831e-653b-467e-bdd9-df6e76dfb256"
+      },
+      {
+       "key": "company_mobile",
+       "value": "+91 1212 1212 12",
+       "type": "text",
+       "uuid": "d6b7a96f-e75b-4a93-99df-1e9d7ba02b9b"
+      },
+      {
+       "key": "solar_year",
+       "value": "2025",
+       "type": "text",
+       "uuid": "15aaa20a-d2d8-40ee-b430-e900ad8b2591"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text",
+       "uuid": "25e87082-f514-4bd8-a44e-4113ebf6db8c"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/solar_return_report/tropical",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "solar_return_report",
+      "tropical"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Synastry PDF Report",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention token access key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "p_first_name",
+       "value": "Trent",
+       "type": "text"
+      },
+      {
+       "key": "p_last_name",
+       "value": "Rodrigues",
+       "type": "text"
+      },
+      {
+       "key": "p_day",
+       "value": "19",
+       "type": "text"
+      },
+      {
+       "key": "p_month",
+       "value": "04",
+       "type": "text"
+      },
+      {
+       "key": "p_year",
+       "value": "1980",
+       "type": "text"
+      },
+      {
+       "key": "p_hour",
+       "value": "10",
+       "type": "text"
+      },
+      {
+       "key": "p_minute",
+       "value": "30",
+       "type": "text"
+      },
+      {
+       "key": "p_latitude",
+       "value": "-23.6938",
+       "type": "text"
+      },
+      {
+       "key": "p_longitude",
+       "value": "-46.565",
+       "type": "text"
+      },
+      {
+       "key": "p_timezone",
+       "value": "-3",
+       "type": "text"
+      },
+      {
+       "key": "s_first_name",
+       "value": "Brenda",
+       "type": "text"
+      },
+      {
+       "key": "s_last_name",
+       "value": "Newman",
+       "type": "text"
+      },
+      {
+       "key": "s_day",
+       "value": "22",
+       "type": "text"
+      },
+      {
+       "key": "s_month",
+       "value": "08",
+       "type": "text"
+      },
+      {
+       "key": "s_year",
+       "value": "1980",
+       "type": "text"
+      },
+      {
+       "key": "s_hour",
+       "value": "10",
+       "type": "text"
+      },
+      {
+       "key": "s_minute",
+       "value": "00",
+       "type": "text"
+      },
+      {
+       "key": "s_latitude",
+       "value": "-23.66389",
+       "type": "text"
+      },
+      {
+       "key": "s_longitude",
+       "value": "-46.565",
+       "type": "text"
+      },
+      {
+       "key": "s_timezone",
+       "value": "3",
+       "type": "text"
+      },
+      {
+       "key": "p_place",
+       "value": "S\u00e3o Bernardo, Spain",
+       "type": "text"
+      },
+      {
+       "key": "s_place",
+       "value": "Santo Andr\u00e9",
+       "type": "text"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text"
+      },
+      {
+       "key": "company_name",
+       "value": "astrologyapi",
+       "type": "text"
+      },
+      {
+       "key": "company_info",
+       "value": "this is astrologyapi",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "astrologyapi.com",
+       "type": "text"
+      },
+      {
+       "key": "company_email",
+       "value": "mail@astrologyapi.com",
+       "type": "text"
+      },
+      {
+       "key": "company_landline",
+       "value": "+91- 221232 22",
+       "type": "text"
+      },
+      {
+       "key": "company_mobile",
+       "value": "+91 1212 1212 12",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/synastry_couple_report/tropical",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "synastry_couple_report",
+      "tropical"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "geo_details",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "place",
+       "value": "mumbai",
+       "type": "text",
+       "uuid": "429700d7-b8d5-4394-bf90-b2bbbeb6188c"
+      },
+      {
+       "key": "maxRows",
+       "value": "6",
+       "type": "text",
+       "uuid": "255ab66e-5a97-4d5d-a4ad-1ff4329c1d2e"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://json.astrologyapi.com/v1/geo_details",
+     "protocol": "https",
+     "host": [
+      "json",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "geo_details"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "timezone_with_dst",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "latitude",
+       "value": "5.866",
+       "type": "text"
+      },
+      {
+       "key": "longitude",
+       "value": "-55.166",
+       "type": "text"
+      },
+      {
+       "key": "date",
+       "value": "04-11-1978",
+       "type": "text",
+       "description": "mm-dd-yyyy"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://json.astrologyapi.com/v1/timezone_with_dst",
+     "protocol": "https",
+     "host": [
+      "json",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "timezone_with_dst"
+     ]
+    }
+   },
+   "response": []
+  }
+ ],
+ "auth": {
+  "type": "basic",
+  "basic": [
+   {
+    "key": "password",
+    "value": "REDACTED_API_KEY_SEE_security_vulnerability_disclosure_yml",
+    "type": "string"
+   },
+   {
+    "key": "username",
+    "value": "REDACTED_USER_ID",
+    "type": "string"
+   }
+  ]
+ },
+ "event": [
+  {
+   "listen": "prerequest",
+   "script": {
+    "type": "text/javascript",
+    "packages": {},
+    "requests": {},
+    "exec": [
+     ""
+    ]
+   }
+  },
+  {
+   "listen": "test",
+   "script": {
+    "type": "text/javascript",
+    "packages": {},
+    "requests": {},
+    "exec": [
+     ""
+    ]
+   }
+  }
+ ]
+}

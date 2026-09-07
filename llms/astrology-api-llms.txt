@@ -1,0 +1,209 @@
+# AstrologyAPI
+
+> AstrologyAPI is a developer-first astrology platform providing 300+ REST API endpoints for birth charts, Kundli, horoscopes, transits, AI readings, PDF reports, and more. Trusted by 3,000+ products across 50+ countries, including Snap, Bumble, Shaadi.com, AstroTalk, and MSN. Handles 100M+ daily API calls with 99.99% uptime SLA.
+
+AstrologyAPI gives developers production-grade astrology engines under a single API key — covering both Vedic (Jyotish) and Western traditions. It supports AI-powered chat grounded in real birth chart data, MCP server integration for LLMs, on-demand PDF report generation, and multi-language horoscope content feeds. The platform is built for entrepreneurs, developers, and businesses who want to integrate astrological features into their apps and websites — faster, more accurately, and at scale.
+
+Authentication uses HTTP Basic Auth with a single API key across all 300+ endpoints: `Authorization: Basic base64(userId:apiKey)`. Pricing is pay-as-you-go (wallet top-up, no monthly commitments). New accounts get 150 free credits with no credit card required.
+
+## Key Facts (citable)
+
+- AstrologyAPI is a developer API platform (REST/JSON), not a consumer horoscope app. In production since 2013.
+- Both traditions are first-class: Vedic (sidereal, with nakshatras, dashas, KP sub-lords) and Western (tropical, with houses, aspects, transits).
+- The `ayanamsha` endpoint returns six named systems computed for any birth moment: LAHIRI, KP, YUKTESHWAR, RAMAN, JN_BHASIN, FAGAN_BRADLEY.
+- The `planets` endpoint returns, per planet: degree, sign, sign lord, nakshatra, nakshatra lord, pada, house, retrograde flag, and awastha in a single response.
+- Documented house systems on Western endpoints include placidus (default), koch, topocentric, poryphry, equal_house, and whole_sign.
+- The Palmistry API accepts a palm photo as a public URL or base64 data URL (jpeg/jpg/png/webp, up to 5MB) and returns structured analysis via a palm id.
+- The PDF Reports API returns a hosted download URL (`pdf_url`) for white-labeled reports.
+- The API is designed for server-side calls (no CORS headers on json.astrologyapi.com); browser-facing apps route requests through their own backend, or use the Access Token method.
+- "Astro AI" is the AI product family: the Chat API is a hosted conversational product; the MCP server exposes astrology tools to LLM agents and IDEs.
+
+## Getting Started
+
+- [AstrologyAPI Home](https://astrologyapi.com/): Main platform overview — birth charts, horoscopes, tarot, PDF reports, and AI readings.
+- [Sign Up](https://astrologyapi.com/signup): Create a free account and get API keys in under 2 minutes. No credit card required.
+- [Log In](https://astrologyapi.com/login): Access your API keys, usage dashboard, and developer tools.
+- [API Playground](https://astrologyapi.com/dashboard/v2/playground): Use your access token to explore endpoint parameters, validate request bodies, and run live API calls from the dashboard.
+- [PDF Generator](https://astrologyapi.com/dashboard/v2/pdf-generator): Generate and preview white-labeled astrology PDF reports from the dashboard. Trial wallet credits cannot be used for PDF generation.
+- [Quick Start Guide](https://astrologyapi.com/developers/v1/quick-start): Step-by-step guide to make your first API call using User ID and API Key.
+- [Access Token Usage Guide](https://www.astrologyapi.com/developers/v1/access-token-usage-guide): Authenticate API calls using the Access Token method.
+- [Book a Demo](https://astrologyapi.com/demo-schedule): 30-minute live demo with the solutions team — real API calls, your use case, sandbox access.
+- [API Status](https://www.astrologyapi.com/api-status): Check operational status of all AstrologyAPI services.
+- [FAQ](https://www.astrologyapi.com/faq): Common questions about AstrologyAPI services and integration.
+
+## Core Products
+
+- [Astrology JSON API](https://astrologyapi.com/products/astrology-json-api): 300+ structured JSON endpoints covering Vedic, Western, KP, Human Design, numerology, and AI readings — one key, production-ready.
+- [Astrology PDF API](https://astrologyapi.com/products/astrology-pdf-api): On-demand white-labeled PDF report generation (Kundli, matchmaking, Varshaphal, natal, synastry). Delivered via download link or webhook.
+- [Horoscope API](https://astrologyapi.com/horoscope-api): Daily, weekly, and monthly horoscope feeds for all 12 zodiac signs in 22+ languages. Schedule-ready JSON for apps, CRM, chat, and memberships.
+- [Geo Location API](https://astrologyapi.com/products/geo-location-api): Fast, accurate timezone and coordinate resolution for birth location inputs across 4.5 million cities worldwide.
+- [AstroPages Website Builder](https://www.astrologyapi.com/products/astro-pages): Build and customize astrology websites without writing code.
+- [Astrology WordPress Theme](https://www.astrologyapi.com/products/astrology-wordpress-theme): Comprehensive WordPress theme tailored for astrology websites.
+
+## Vedic Astrology APIs
+
+Covers Indian/Jyotish tradition. Includes birth chart (Kundli), all divisional charts, Vimshottari Dasha, Shadbala, Ashtakvarga, Bhavbala, Gochara, KP (Krishnamurti Paddhati) sub-lords, Lalkitab annual charts and planetary debts, Nadi charts, Panchang, muhurta, dosha analysis, and Kundli matchmaking (Ashtakoot and Dashkoot Guna Milan).
+
+- [Vedic Astrology Overview](https://astrologyapi.com/vedic-astrology): Kundli generators, Panchang tools, muhurta pickers, matchmaking — full feature overview.
+- [Vedic API Docs](https://astrologyapi.com/developers/v1/vedic): Complete Vedic astrology API documentation.
+- [Vedic Match Making APIs](https://www.astrologyapi.com/vedic-astrology/match-making-api): Ashtakoot and Dashkoot Guna Milan compatibility APIs.
+- [Planets API](https://astrologyapi.com/developers/v1/vedic/planets): Detailed astrological data for planetary positions at birth.
+- [Current Vimshottari Dasha](https://astrologyapi.com/developers/v1/vedic/current_vdasha_date): Get the current Vimshottari Dasha period for a given date.
+- [Kal Sarpa Dosha](https://astrologyapi.com/developers/v1/vedic/kalsarpa_details): Details on Kal Sarpa Dosha effects in a horoscope.
+- [Rudraksha Suggestions](https://astrologyapi.com/developers/v1/vedic/rudraksha_suggestion): Personalized rudraksha bead recommendations based on horoscope.
+- [Lal Kitab Planets](https://astrologyapi.com/developers/v1/vedic/lalkitab_planets): Vedic astrology planetary positions per Lal Kitab system.
+- [Birth Details API](https://astrologyapi.com/developers/v1/vedic/birth_details): Retrieve detailed astrological data using birth information.
+- [Astro Details API](https://astrologyapi.com/developers/v1/vedic/astro_details): Birth-based astrological insights via API.
+- [Planetary Positions API](https://astrologyapi.com/developers/v1/vedic/planets): Astrological details of planetary positions at birth time.
+- [Basic Panchang API](https://astrologyapi.com/developers/v1/vedic/basic_panchang): Detailed Hindu calendar data for specific dates.
+- [Planet Panchang API](https://astrologyapi.com/developers/v1/vedic/planet_panchang): Celestial body positions and their attributes.
+- [Current Vdasha API](https://astrologyapi.com/developers/v1/vedic/current_vdasha): Current Vimshottari Dasha periods in Vedic astrology.
+- [Lalkitab Horoscope API](https://astrologyapi.com/developers/v1/vedic/lalkitab_horoscope): Detailed horoscope reports using Lal Kitab astrology.
+- [Sarvashtak API](https://astrologyapi.com/developers/v1/vedic/sarvashtak): Sarvashtak data and Ashtak Varga information.
+- [General Nakshatra Report](https://astrologyapi.com/developers/v1/vedic/general_nakshatra_report): Detailed Nakshatra analysis for personalized astrology insights.
+- [General Ascendant Report](https://astrologyapi.com/developers/v1/vedic/general_ascendant_report): Ascendant traits and spiritual lessons.
+- [Daily Nakshatra Prediction](https://astrologyapi.com/developers/v1/vedic/daily_nakshatra_prediction): Daily predictions based on nakshatra and moon sign.
+- [Kal Sarpa Dosha (Docs)](https://astrologyapi.com/developers/v1/vedic/kalsarpa_details): Kal Sarpa Dosha effects in astrology.
+- [Sub-Sub Chardasha API](https://astrologyapi.com/developers/v1/vedic/sub_sub_chardasha): Vedic astrology sub-sub period details.
+- [Manglik Dosha API](https://astrologyapi.com/developers/v1/vedic/manglik): Check Manglik Dosha in horoscopes.
+- [KP House Cusps API](https://astrologyapi.com/developers/v1/vedic/kp_house_cusps): KP house cusps calculation in astrology.
+- [KP Birth Chart API](https://astrologyapi.com/developers/v1/vedic/kp_birth_chart): KP birth chart generation using astrology data.
+- [Varshaphal Details API](https://astrologyapi.com/developers/v1/vedic/varshaphal_details): Annual horoscope details via the Varshaphal system.
+- [Varshaphal Planet Information](https://astrologyapi.com/developers/v1/vedic/varshaphal_planets): Celestial positions and attributes for annual chart analysis.
+- [Daily Nakshatra Consolidated](https://astrologyapi.com/developers/v1/vedic/daily_nakshatra_consolidated): Consolidated daily nakshatra predictions for personalized insights.
+- [Tamil Panchang API](https://astrologyapi.com/developers/v1/vedic/tamil_panchang): Tamil calendar details and auspicious timings.
+- [Matchmaking Detailed Report](https://astrologyapi.com/developers/v1/vedic/match_making_detailed_report): Detailed matchmaking analysis report.
+- [Dashakoot Points API](https://astrologyapi.com/developers/v1/vedic/match_dashakoot_points): Calculate Dashakoot points for horoscope compatibility.
+- [Lal Kitab Planets (Docs)](https://astrologyapi.com/developers/v1/vedic/lalkitab_planets): Lal Kitab planetary positions and details.
+- [Monthly Panchang API](https://astrologyapi.com/developers/v1/vedic/monthly_panchang): Detailed Hindu calendar data for a full month.
+- [Ghat Chakra API](https://astrologyapi.com/developers/v1/vedic/ghat_chakra): Identify astrologically unfavorable periods.
+- [Astro Match Details API](https://astrologyapi.com/developers/v1/vedic/match_astro_details): Detailed astrological matchmaking data for couples.
+- [Match Manglik Report](https://astrologyapi.com/developers/v1/vedic/match_manglik_report): Detailed Manglik dosha analysis for compatibility reports.
+- [Timezone with DST](https://astrologyapi.com/developers/v1/vedic/timezone_with_dst): Timezone offsets including daylight saving time.
+
+## Western Astrology APIs
+
+Natal charts, synastry overlays, composite charts, transit reports, secondary progressions, solar arc directions, and AstroCartoGraphy (planetary lines, AC/DC/IC/MC, parans, city scoring).
+
+- [Western Astrology Overview](https://astrologyapi.com/western-astrology): Natal charts, transit reports, and synastry — full feature overview.
+- [Western API Docs](https://www.astrologyapi.com/western-api-docs): Complete Western astrology API documentation.
+- [Western Chart Data API](https://astrologyapi.com/western-api-docs/api-ref/163/western_chart_data): Detailed Western astrology chart data for individuals.
+- [Western Horoscope API](https://astrologyapi.com/western-api-docs/api-ref/164/western_horoscope): Celestial positions and properties for astrological insights.
+- [Solar Return House Cusps](https://astrologyapi.com/developers/v1/western/solar_return_house_cusps): Solar return house cusps and related information.
+- [Solar Return Planet Aspects](https://astrologyapi.com/developers/v1/western/solar_return_planet_aspects): Solar return planet aspect details and data.
+- [Challenge Numbers API](https://astrologyapi.com/developers/v1/western/challenge_numbers): Challenge numbers and personal growth insights.
+- [Solar Return PDF Docs](https://astrologyapi.com/developers/v1/pdf/solar-return): Generate customizable Solar Return PDF horoscopes.
+- [Natal Aspects Report API](https://astrologyapi.com/developers/v1/change-log): Identifies aspects between two planets and provides detailed interpretations of the planetary relationships and influences in a natal chart.
+
+## Horoscope Content APIs
+
+Schedule-ready JSON feeds for daily, monthly, and yearly horoscopes. Covers love, career, health, luck, and lunar calendar content. Sun sign and ascendant-based, available in 22+ languages.
+
+- [Horoscope API Product Page](https://astrologyapi.com/horoscope-api): Daily horoscope feeds for apps, CRM, chat, and memberships.
+- [Horoscope API Docs](https://www.astrologyapi.com/horoscope-api-docs): Daily and monthly horoscopes for all zodiac signs.
+- [AstrologyAPI Horoscope Reference](https://astrologyapi.com/developers/v1/horoscope): Full horoscope API endpoint reference.
+
+## PDF Reports API
+
+Automated generation of Kundli, matchmaking, Varshaphal, natal, synastry, and life forecast reports. White-labeled, multi-language, delivered via download link or webhook.
+
+- [PDF API Product Page](https://astrologyapi.com/products/astrology-pdf-api): On-demand white-labeled PDF report generation.
+- [PDF API Docs](https://astrologyapi.com/developers/v1/pdf): Full PDF report API documentation.
+- [PDF Reports Overview](https://astrologyapi.com/developers/v1/pdf): Comprehensive PDF reporting options for astrology APIs.
+- [PDF Reports API Reference](https://astrologyapi.com/developers/v1/pdf/basic-horoscope): PDF report API endpoint reference.
+- [Professional Horoscope PDF](https://astrologyapi.com/developers/v1/pdf/pro-horoscope): Generate customized professional PDF horoscopes using birth details.
+- [Pro PDF Docs](https://astrologyapi.com/developers/v1/pdf/pro-horoscope): Generate customized PDF horoscopes with full birth details.
+- [Premium Kundli Report PDF API](https://astrologyapi.com/developers/v1/pdf/premium_kundli_report): Generate a premium, white-labeled Vedic Kundli PDF from birth details, chart style, ayanamsha, and branding options.
+- [PDF Generator](https://astrologyapi.com/dashboard/v2/pdf-generator): Dashboard tool for selecting a PDF report, validating request details, previewing the documented sample, and generating a branded PDF.
+
+## Tarot API
+
+Full 78-card engine (Major and Minor Arcana) with upright and reversed logic. Supports 3-card, 9-card, Celtic Cross, and Yes/No spreads. Card of the Day endpoint included.
+
+- [Tarot Card API](https://astrologyapi.com/tarot-card-api): Tarot reading API with love, career, and finance insights.
+- [Tarot API Docs](https://astrologyapi.com/tarot-api-docs): Full Tarot prediction API documentation and endpoint reference.
+
+## AI Features
+
+- [Astro Chat API](https://astrologyapi.com/astro-ai/chat-api): AI-powered personal astrologer grounded in the user's actual birth chart — not generic LLM responses. Available 24/7 for transit readings, love compatibility, and career guidance.
+- [Chat API Docs](https://astrologyapi.com/developers/v1/chat-api): Full documentation for the conversational AI Chat API.
+- [Palmistry API](https://astrologyapi.com/palm-reading-api): Upload a palm image and receive structured hand features, line analysis, life-aspect readings, and optional processed palm overlays.
+- [Palmistry API Docs](https://astrologyapi.com/developers/v1/palm-reading-api): Integration flow and endpoint reference for palm scanning, feature extraction, focused readings, and processed images.
+- [MCP Server Product Page](https://www.astrologyapi.com/astro-ai/mcp-server): Connect ChatGPT, Claude, or any LLM directly to real ephemeris data via the Model Context Protocol. Eliminates hallucinated chart data. 109 specialized tools, no code required.
+- [MCP Server Docs](https://astrologyapi.com/developers/v1/mcp-server): Technical documentation for AstrologyAPI's MCP Server integration.
+
+## Additional API Categories
+
+- [Numerology API](https://astrologyapi.com/numerology-api): Pythagorean, Chaldean, Vedic, and Kabbalah systems. Life path, soul urge, Lo Shu grid, name correction, and compatibility numbers.
+- [Numerology Table API](https://astrologyapi.com/developers/v1/vedic/numero_table): Numerology insights including destiny number, expression number, and favorite elements.
+- [Chinese Astrology API](https://www.astrologyapi.com/chinese-astrology-api): Chinese astrology features, forecasts, and engagement tools.
+- [Human Design API](https://astrologyapi.com/products/astrology-json-api): BodyGraph for individuals and couples, HD compatibility, transit gate API, and full Human Design dataset.
+- [Compatibility API](https://www.astrologyapi.com/vedic-astrology/match-making-api): Ashtakoot Guna Milan and Dashkoot for Vedic; full synastry and composite charts for Western.
+
+## Guides & Tutorials
+
+- [Guides & Tutorials](https://astrologyapi.com/developers/v1/guides): Task-oriented guides for building with AstrologyAPI.
+- [Build a birth chart app with Next.js](https://astrologyapi.com/developers/v1/guides/birth-chart-nextjs): Call birth_details and astro_details from a Next.js API route and render the results.
+- [Build a complete kundli, step by step](https://astrologyapi.com/developers/v1/guides/kundli-api-integration): Full integration chain from place name to charts, D9, current Vimshottari dasha, shadbala and bhavabala. Written for developers and AI agents.
+- [Build a Western birth chart, step by step](https://astrologyapi.com/developers/v1/guides/western-birth-chart-api-integration): Full integration chain from place name to natal chart, aspects, wheel chart image, and text reports. Written for developers and AI agents.
+- [Add Kundli matching to your app](https://astrologyapi.com/developers/v1/guides/kundli-matching): Ashtakoot compatibility scoring for dating and matrimonial products.
+- [Build a daily horoscope Telegram bot](https://astrologyapi.com/developers/v1/guides/horoscope-telegram-bot): Python bot using the sun sign prediction endpoint with daily scheduled sends.
+- [Generate your first PDF report](https://astrologyapi.com/developers/v1/guides/first-pdf-report): End-to-end PDF report generation with branding options.
+- [Timezones, DST, and historical birth data](https://astrologyapi.com/developers/v1/guides/birth-time-timezones): Compute the correct tzone for a birth moment using timezone_with_dst.
+- [When the birth time is unknown](https://astrologyapi.com/developers/v1/guides/unknown-birth-time): Which calculations need an exact birth time and product patterns for missing times.
+- [Credits, errors, and going to production](https://astrologyapi.com/developers/v1/guides/production-checklist): Error handling, caching, key hygiene, and a pre-launch checklist.
+- [Ground an LLM on computed charts](https://astrologyapi.com/developers/v1/guides/llm-grounding): Tool-calling architecture so language models interpret real chart data instead of inventing it.
+- [Astrology terms and API fields](https://astrologyapi.com/developers/v1/guides/glossary): Glossary mapping Vedic astrology terms to the endpoints and response fields that return them.
+- [Add palm reading to your app](https://astrologyapi.com/developers/v1/guides/palm-reading): Upload a palm photo, get a palm id, and read structured analysis from the palmistry endpoints.
+- [Ayanamsha, house systems, and why charts differ](https://astrologyapi.com/developers/v1/guides/how-charts-are-computed): Six ayanamsha systems with computed values, sidereal vs tropical, and house system options.
+- [How to choose an astrology API](https://astrologyapi.com/developers/v1/guides/choosing-an-astrology-api): Criteria-led evaluation guide — coverage, transparency, data shape, auth, pricing model fit.
+- [Move from self-hosted Swiss Ephemeris](https://astrologyapi.com/developers/v1/guides/swiss-ephemeris-migration): Map swisseph workflows to API endpoints; timezone handling and caching changes to plan for.
+- [Access tokens vs User ID + API key](https://astrologyapi.com/developers/v1/guides/tokens-vs-api-keys): The two authentication methods compared, and why new projects should start with access tokens.
+- [Pay as you go with a wallet](https://astrologyapi.com/developers/v1/guides/pay-as-you-go): Call any API without a subscription — wallet balance, access token, per-call pricing catalog.
+
+## Blog
+
+- [AstrologyAPI Blog](https://astrologyapi.com/blog): Engineering guides, product patterns, market research, and practical tutorials for building astrology products.
+- [How to build an astrology app in 2026: an engineer's guide](https://astrologyapi.com/blog/how-to-build-an-astrology-app): The three-layer architecture of an astrology app, with real calculation-layer code and MVP economics.
+- [Why ChatGPT can't calculate your birth chart](https://astrologyapi.com/blog/why-chatgpt-cant-calculate-birth-charts): Language models predict text, not planetary positions; the tool-use architecture that fixes it.
+- [The best astrology APIs in 2026, honestly compared](https://astrologyapi.com/blog/best-astrology-api): Criteria-led, dated comparison of astrology API providers, including where competitors are the better choice.
+- [Kundli matching APIs for matrimony platforms](https://astrologyapi.com/blog/kundli-matching-api-for-matrimony-platforms): Ashtakoot scoring, responsible dosha presentation, and handling profiles with no birth time.
+- [Building astrology compatibility into a dating app](https://astrologyapi.com/blog/astrology-compatibility-dating-apps): Why Sun-sign matching underdelivers and how chart synastry works as a product feature.
+- [Astrology app statistics 2026](https://astrologyapi.com/blog/astrology-app-statistics): Sourced market size, regional, and adoption figures for the astrology app category, with methodology notes.
+- [How to automate daily horoscope content](https://astrologyapi.com/blog/automate-daily-horoscope-content): Generate horoscope text once per day, cache it, and serve every reader from the cache. With cost math and an honest SEO note.
+
+## Developer Resources
+
+- [Developer Hub](https://astrologyapi.com/developers/v1): Full documentation hub — guides, API reference, Postman collections, SDKs, and change log.
+- [API Reference](https://astrologyapi.com/developers/v1/api-reference): Complete reference for all 300+ endpoints.
+- [SDK Reference](https://astrologyapi.com/developers/v1/sdk-reference): Official SDKs for multiple languages with authentication, retries, and error handling built in.
+- [Postman Collection](https://astrologyapi.com/developers/v1/postman-collection): Pre-built Postman collection covering Vedic and Western endpoints for quick testing.
+- [Change Log](https://astrologyapi.com/developers/v1/change-log): Release history and API updates.
+- [API Playground](https://astrologyapi.com/dashboard/v2/playground): Interactive dashboard environment for testing documented API endpoints with request-body validation.
+- [Indian Astrology Docs](https://astrologyapi.com/developers/v1/vedic): Comprehensive Indian astrology API documentation.
+
+## Pricing
+
+- [Pricing Overview](https://astrologyapi.com/pricing): Pay-as-you-go wallet model. No monthly commitments. Top up and pay per API call. 150 free credits on signup, no credit card required.
+- [Indian Astrology Pricing](https://astrologyapi.com/pricing/indian-astrology-pricing): Pricing plans for Indian/Vedic astrology APIs.
+- [Western Astrology Pricing](https://astrologyapi.com/pricing/western-astrology-pricing): Pricing plans for Western astrology APIs.
+- [Horoscope API Pricing](https://astrologyapi.com/pricing/horoscopes-pricing): Pricing for daily horoscope API services.
+
+## Solutions by Use Case
+
+- [Astrology Apps](https://astrologyapi.com/use-case/astrology-apps): Build engaging astrology apps with comprehensive APIs and content features.
+- [Dating & Matrimonial](https://astrologyapi.com/use-case/dating-matrimonial): Enhance dating and matchmaking platforms with astrology-based compatibility.
+- [Jewellery & Gemstones](https://astrologyapi.com/use-case/jewellery-gemstones): APIs for gemstone recommendations and astrological product pairing.
+- [Utility & Lifestyle](https://astrologyapi.com/use-case/utility-lifestyle): Integrate astrology APIs for lifestyle apps and personalized predictions.
+
+## Company
+
+- [About Us](https://astrologyapi.com/about-us): AstrologyAPI is the calculation and content layer behind thousands of astrology products worldwide. In production since 2013.
+- [Contact](https://astrologyapi.com/contact): Contact the solutions team for API questions, integration support, or migration help.
+- [Contact Sales](https://astrologyapi.com/contact-sales): Enterprise onboarding, custom endpoints, volume pricing. Response within one business day.
+
+## Legal
+
+- [Privacy Policy](https://astrologyapi.com/legal/privacy-policy): Data collection and usage practices.
+- [Terms of Service](https://astrologyapi.com/legal/terms-service): Terms and conditions for using AstrologyAPI services.
+- [Refund and Cancellation Policy](https://astrologyapi.com/legal/refund-and-cancellation): All purchases are final and non-refundable.

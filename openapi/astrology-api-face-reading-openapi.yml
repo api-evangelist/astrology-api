@@ -1,0 +1,1287 @@
+# generated: '2026-09-07'
+# method: derived
+# source: https://astrologyapi.com/developers/v1/postman-collection (Face Reading Postman collection)
+openapi: 3.1.0
+info:
+  title: AstrologyAPI Face Reading API
+  version: 1.0.0
+  description: Face Reading endpoints. Submit a face photo to obtain a face_id, then read structured facial-feature
+    analysis and per-aspect readings keyed on that identifier.
+  contact:
+    name: AstrologyAPI Support
+    email: support@astrologyapi.com
+    url: https://astrologyapi.com/contact
+  termsOfService: https://astrologyapi.com/legal/terms-service
+  license:
+    name: Proprietary
+    url: https://astrologyapi.com/legal/terms-service
+externalDocs:
+  description: Face Reading API
+  url: https://astrologyapi.com/face-reading-api
+servers:
+- url: https://vision.astrologyapi.com/face-reading
+  description: Face Reading production host (the baseUrl variable in the provider Postman collection)
+x-generated-from: postman-collection
+x-generated-note: Derived from the Face Reading Postman collection AstrologyAPI publishes at https://astrologyapi.com/developers/v1/postman-collection.
+  Paths, methods, request fields and example values are taken verbatim from that collection; the server
+  URL is the collection's own baseUrl variable. The 401/404 envelopes were observed on live unauthenticated
+  requests on 2026-09-07. The provider publishes no response schemas, so 200 bodies are typed only as
+  objects rather than invented. Palmistry, which shares this host, is covered instead by the first-party
+  spec the provider serves at https://vision.astrologyapi.com/openapi.json. This is an API Evangelist
+  derivation, not a contract published by AstrologyAPI.
+x-source-collections:
+- https://astrologyapi.com/postman/face_reading_API_collection_postman_collection.json
+tags:
+- name: Face Reading
+security:
+- basicAuth: []
+- accessToken: []
+paths:
+  /career:
+    post:
+      operationId: career
+      summary: Career
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /challenges:
+    post:
+      operationId: challenges
+      summary: Challenges
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /cheeks-and-cheekbones:
+    post:
+      operationId: cheeks_and_cheekbones
+      summary: Cheeks And Cheekbones
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /chin-and-jaw:
+    post:
+      operationId: chin_and_jaw
+      summary: Chin And Jaw
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /ears:
+    post:
+      operationId: ears
+      summary: Ears
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /eyes:
+    post:
+      operationId: eyes
+      summary: Eyes
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /face-outline:
+    post:
+      operationId: face_outline
+      summary: Face Outline
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /facial-hair:
+    post:
+      operationId: facial_hair
+      summary: Facial Hair
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /family:
+    post:
+      operationId: family
+      summary: Family
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /get-face-id:
+    post:
+      operationId: get_face_id
+      summary: Get Face ID
+      tags:
+      - Face Reading
+      description: Scans a face image and returns the face_id needed by the remaining Face Reading APIs.
+        Birth details are optional; send all four fields together when used.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                image_url:
+                  type: string
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                gender:
+                  type: string
+              required:
+              - image_url
+              - day
+              - month
+              - year
+              - gender
+            example:
+              image_url: ''
+              day: 15
+              month: 8
+              year: 1995
+              gender: male
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /health:
+    post:
+      operationId: health
+      summary: Health
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /love:
+    post:
+      operationId: love
+      summary: Love
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /luck:
+    post:
+      operationId: luck
+      summary: Luck
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /marriage:
+    post:
+      operationId: marriage
+      summary: Marriage
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /mask-outline-image:
+    post:
+      operationId: mask_outline_image
+      summary: Mask Outline Image
+      tags:
+      - Face Reading
+      description: Returns a processed face image URL with mask outline data and detected traits.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /mouth:
+    post:
+      operationId: mouth
+      summary: Mouth
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /nose:
+    post:
+      operationId: nose
+      summary: Nose
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /personality:
+    post:
+      operationId: personality
+      summary: Personality
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /proportions:
+    post:
+      operationId: proportions
+      summary: Proportions
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /shape:
+    post:
+      operationId: shape
+      summary: Face Shape
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /skin-complexion:
+    post:
+      operationId: skin_complexion
+      summary: Skin Complexion
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /symmetry:
+    post:
+      operationId: symmetry
+      summary: Symmetry
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /wealth:
+    post:
+      operationId: wealth
+      summary: Wealth
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+  /wisdom:
+    post:
+      operationId: wisdom
+      summary: Wisdom
+      tags:
+      - Face Reading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                face_id:
+                  type: string
+              required:
+              - face_id
+            example:
+              face_id: ''
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url
+                  or HTTP method type.
+      externalDocs:
+        description: Face Reading API
+        url: https://astrologyapi.com/face-reading-api
+      x-postman-collection: Face Reading Service API - Production
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Username is your AstrologyAPI User ID, password is your
+        API key.
+    accessToken:
+      type: apiKey
+      in: header
+      name: x-astrologyapi-key
+      description: Wallet Access Token sent in the x-astrologyapi-key header.
+  schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
+          type: string
+    NotFound:
+      type: object
+      properties:
+        status:
+          type: boolean
+        statusCode:
+          type: integer
+        error_msg:
+          type: string

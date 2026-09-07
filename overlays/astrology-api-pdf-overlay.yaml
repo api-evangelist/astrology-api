@@ -1,0 +1,56 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for AstrologyAPI PDF Reports API
+  version: 1.0.0
+extends: astrology-api-pdf-openapi.yml
+x-generated: '2026-09-07'
+x-method: generated
+x-note: Captures API Evangelist enrichment as an OpenAPI Overlay rather than mutating the source document.
+  The palmistry spec is the provider's own first-party OpenAPI and must not be edited; the other three
+  are API Evangelist derivations from the provider's published Postman collections.
+actions:
+- target: $.info
+  description: Record the API Evangelist provenance and the enrichment date on the document itself.
+  update:
+    x-apievangelist-enriched: '2026-09-07'
+    x-apievangelist-source: https://github.com/api-evangelist/astrology-api
+- target: $.info
+  description: Attach the machine-readable conventions, error catalogue and data model derived for this
+    API.
+  update:
+    x-conventions: conventions/astrology-api-conventions.yml
+    x-error-catalog: errors/astrology-api-problem-types.yml
+    x-data-model: data-model/astrology-api-data-model.yml
+    x-lifecycle: lifecycle/astrology-api-lifecycle.yml
+- target: $.info
+  description: 'Record the agent-facing posture measured for this provider: no idempotency mechanism,
+    no published rate limits, no reversal path.'
+  update:
+    x-idempotency-coverage: none
+    x-rate-limit-signal: none
+    x-reversibility: na
+    x-cors: false
+- target: $
+  description: Point at the hosted MCP server, which is the agent-native entry point to this platform.
+  update:
+    x-mcp-server:
+      endpoint: https://mcp.astrologyapi.com/mcp
+      auth: x-astrologyapi-key header
+      tools_claimed: 109
+      manifest: mcp/astrology-api-mcp.yml
+- target: $
+  description: Record the pricing model, because on this platform cost is per call and varies by operation.
+  update:
+    x-pricing:
+      model: credit wallet, pay-as-you-go or suite subscription
+      currency: INR
+      overage: INR 20 per 1000 calls
+      free_credits: 150
+      artifact: plans/astrology-api-plans-pricing.yml
+- target: $.paths.*.post
+  description: 'Flag every PDF operation as billable and irreversible: each call generates and bills a
+    report, and the provider states all purchases are final and non-refundable.'
+  update:
+    x-billable: true
+    x-reversible: false
+    x-consequence: creates a billed, non-refundable artifact

@@ -1,0 +1,1124 @@
+generated: '2026-09-07'
+method: derived
+source: mcp/astrology-api-mcp.yml + openapi/astrology-api-json-openapi.yml
+description: 'Crosswalk between the AstrologyAPI hosted MCP server and the REST operations that back it.
+  The live tool list is authentication-gated (an anonymous tools/list returns HTTP 401 invalid_token),
+  so only ONE binding is verified: the provider''s MCP documentation invokes tools/call with the tool
+  name ''birth_details'' and the same eight birth fields the REST operation /birth_details takes. That
+  single documented example establishes the naming convention — MCP tools are named after the REST endpoint
+  — and every other row below is a name-identity CANDIDATE derived from that convention, not an observed
+  tool. Confirming them needs an authenticated tools/list.'
+surfaces:
+  mcp:
+    endpoint: https://mcp.astrologyapi.com/mcp
+    gated: true
+    tool_count_claimed: 109
+    tool_count_observed: null
+    note: The provider advertises 109 tools 'covering both Vedic (Jyotish) and Western astrology systems'.
+      That figure equals the Indian Astrology endpoint count shown in the provider's own docs sidebar
+      (109), while Western is listed separately at 51, so which operations the 109 actually spans could
+      not be resolved without an authenticated tools/list.
+  openapi:
+  - file: openapi/astrology-api-json-openapi.yml
+    server: https://json.astrologyapi.com/v1
+    operations: 158
+    gated: false
+    method: derived
+  - file: openapi/astrology-api-pdf-openapi.yml
+    server: https://pdf.astrologyapi.com/v1
+    operations: 12
+    gated: false
+    method: derived
+  - file: openapi/astrology-api-palmistry-openapi.json
+    server: https://vision.astrologyapi.com
+    operations: 22
+    gated: false
+    method: searched
+  - file: openapi/astrology-api-face-reading-openapi.yml
+    server: https://vision.astrologyapi.com/face-reading
+    operations: 24
+    gated: false
+    method: derived
+  graphql: null
+crosswalk:
+- tool: birth_details
+  category: Vedic Astrology
+  rest:
+  - birth_details
+  binding: name-identity
+  confidence: high
+  note: 'Verified: the provider''s own MCP documentation calls tools/call with name ''birth_details''
+    and the eight birth fields, and /birth_details is the REST operation of the same name with the same
+    fields.'
+candidate_crosswalk:
+- tool: acg_location_category
+  category: Astrocartography
+  rest:
+  - acg_location_category
+  binding: name-identity
+  confidence: medium
+- tool: acg_planetary_line_category_planet
+  category: Astrocartography
+  rest:
+  - acg_planetary_line_category_planet
+  binding: name-identity
+  confidence: medium
+- tool: acg_travel
+  category: Astrocartography
+  rest:
+  - acg_travel
+  binding: name-identity
+  confidence: medium
+- tool: advanced_panchang
+  category: Vedic Astrology
+  rest:
+  - advanced_panchang
+  binding: name-identity
+  confidence: medium
+- tool: advanced_panchang_sunrise
+  category: Vedic Astrology
+  rest:
+  - advanced_panchang_sunrise
+  binding: name-identity
+  confidence: medium
+- tool: astro_details
+  category: Vedic Astrology
+  rest:
+  - astro_details
+  binding: name-identity
+  confidence: medium
+- tool: ayanamsha
+  category: Vedic Astrology
+  rest:
+  - ayanamsha
+  binding: name-identity
+  confidence: medium
+- tool: basic_gem_suggestion
+  category: Vedic Astrology
+  rest:
+  - basic_gem_suggestion
+  binding: name-identity
+  confidence: medium
+- tool: basic_panchang
+  category: Vedic Astrology
+  rest:
+  - basic_panchang
+  binding: name-identity
+  confidence: medium
+- tool: basic_panchang_sunrise
+  category: Vedic Astrology
+  rest:
+  - basic_panchang_sunrise
+  binding: name-identity
+  confidence: medium
+- tool: bhav_madhya
+  category: Vedic Astrology
+  rest:
+  - bhav_madhya
+  binding: name-identity
+  confidence: medium
+- tool: bhavabala
+  category: Vedic Astrology
+  rest:
+  - bhavabala
+  binding: name-identity
+  confidence: medium
+- tool: biorhythm
+  category: Vedic Astrology
+  rest:
+  - biorhythm
+  binding: name-identity
+  confidence: medium
+- tool: challenge_numbers
+  category: Western Astrology
+  rest:
+  - challenge_numbers
+  binding: name-identity
+  confidence: medium
+- tool: chaughadiya_muhurta
+  category: Vedic Astrology
+  rest:
+  - chaughadiya_muhurta
+  binding: name-identity
+  confidence: medium
+- tool: chinese_year_forecast
+  category: Western Astrology
+  rest:
+  - chinese_year_forecast
+  binding: name-identity
+  confidence: medium
+- tool: chinese_zodiac
+  category: Western Astrology
+  rest:
+  - chinese_zodiac
+  binding: name-identity
+  confidence: medium
+- tool: composite_horoscope
+  category: Western Astrology
+  rest:
+  - composite_horoscope
+  binding: name-identity
+  confidence: medium
+- tool: current_chardasha
+  category: Vedic Astrology
+  rest:
+  - current_chardasha
+  binding: name-identity
+  confidence: medium
+- tool: current_vdasha
+  category: Vedic Astrology
+  rest:
+  - current_vdasha
+  binding: name-identity
+  confidence: medium
+- tool: current_vdasha_all
+  category: Vedic Astrology
+  rest:
+  - current_vdasha_all
+  binding: name-identity
+  confidence: medium
+- tool: current_yogini_dasha
+  category: Vedic Astrology
+  rest:
+  - current_yogini_dasha
+  binding: name-identity
+  confidence: medium
+- tool: daily_nakshatra_prediction
+  category: Vedic Astrology
+  rest:
+  - daily_nakshatra_prediction
+  binding: name-identity
+  confidence: medium
+- tool: daily_nakshatra_prediction_next
+  category: Vedic Astrology
+  rest:
+  - daily_nakshatra_prediction_next
+  binding: name-identity
+  confidence: medium
+- tool: daily_nakshatra_prediction_previous
+  category: Vedic Astrology
+  rest:
+  - daily_nakshatra_prediction_previous
+  binding: name-identity
+  confidence: medium
+- tool: expression_number
+  category: Western Astrology
+  rest:
+  - expression_number
+  binding: name-identity
+  confidence: medium
+- tool: friendship_report_tropical
+  category: Western Astrology
+  rest:
+  - friendship_report_tropical
+  binding: name-identity
+  confidence: medium
+- tool: general_ascendant_report
+  category: Vedic Astrology
+  rest:
+  - general_ascendant_report
+  binding: name-identity
+  confidence: medium
+- tool: general_ascendant_report_tropical
+  category: Western Astrology
+  rest:
+  - general_ascendant_report_tropical
+  binding: name-identity
+  confidence: medium
+- tool: general_house_report_planet_name
+  category: Vedic Astrology
+  rest:
+  - general_house_report_planet_name
+  binding: name-identity
+  confidence: medium
+- tool: general_house_report_tropical_planetName
+  category: Western Astrology
+  rest:
+  - general_house_report_tropical_planetName
+  binding: name-identity
+  confidence: medium
+- tool: general_nakshatra_report
+  category: Vedic Astrology
+  rest:
+  - general_nakshatra_report
+  binding: name-identity
+  confidence: medium
+- tool: general_rashi_report_planet_name
+  category: Vedic Astrology
+  rest:
+  - general_rashi_report_planet_name
+  binding: name-identity
+  confidence: medium
+- tool: general_sign_report_tropical_planetName
+  category: Western Astrology
+  rest:
+  - general_sign_report_tropical_planetName
+  binding: name-identity
+  confidence: medium
+- tool: geo_details
+  category: Vedic Astrology
+  rest:
+  - geo_details
+  binding: name-identity
+  confidence: medium
+- tool: ghat_chakra
+  category: Vedic Astrology
+  rest:
+  - ghat_chakra
+  binding: name-identity
+  confidence: medium
+- tool: hora_muhurta
+  category: Vedic Astrology
+  rest:
+  - hora_muhurta
+  binding: name-identity
+  confidence: medium
+- tool: hora_muhurta_dinman
+  category: Vedic Astrology
+  rest:
+  - hora_muhurta_dinman
+  binding: name-identity
+  confidence: medium
+- tool: horo_chart_chartId
+  category: Vedic Astrology
+  rest:
+  - horo_chart_chartId
+  binding: name-identity
+  confidence: medium
+- tool: horo_chart_extended
+  category: Vedic Astrology
+  rest:
+  - horo_chart_extended
+  binding: name-identity
+  confidence: medium
+- tool: horo_chart_image_chartId
+  category: Vedic Astrology
+  rest:
+  - horo_chart_image_chartId
+  binding: name-identity
+  confidence: medium
+- tool: horoscope_prediction_monthly_zodiacName
+  category: Western Astrology
+  rest:
+  - horoscope_prediction_monthly_zodiacName
+  binding: name-identity
+  confidence: medium
+- tool: house_cusps_report_tropical
+  category: Western Astrology
+  rest:
+  - house_cusps_report_tropical
+  binding: name-identity
+  confidence: medium
+- tool: house_cusps_tropical
+  category: Western Astrology
+  rest:
+  - house_cusps_tropical
+  binding: name-identity
+  confidence: medium
+- tool: human_design
+  category: Human Design
+  rest:
+  - human_design
+  binding: name-identity
+  confidence: medium
+- tool: human_design_analysis
+  category: Human Design
+  rest:
+  - human_design_analysis
+  binding: name-identity
+  confidence: medium
+- tool: human_design_chart_data
+  category: Human Design
+  rest:
+  - human_design_chart_data
+  binding: name-identity
+  confidence: medium
+- tool: human_design_chart_interpretation
+  category: Human Design
+  rest:
+  - human_design_chart_interpretation
+  binding: name-identity
+  confidence: medium
+- tool: human_design_traits_interpretation
+  category: Human Design
+  rest:
+  - human_design_traits_interpretation
+  binding: name-identity
+  confidence: medium
+- tool: kalsarpa_details
+  category: Vedic Astrology
+  rest:
+  - kalsarpa_details
+  binding: name-identity
+  confidence: medium
+- tool: karma_destiny_report
+  category: Western Astrology
+  rest:
+  - karma_destiny_report
+  binding: name-identity
+  confidence: medium
+- tool: kp_birth_chart
+  category: Vedic Astrology
+  rest:
+  - kp_birth_chart
+  binding: name-identity
+  confidence: medium
+- tool: kp_horoscope
+  category: Vedic Astrology
+  rest:
+  - kp_horoscope
+  binding: name-identity
+  confidence: medium
+- tool: kp_house_cusps
+  category: Vedic Astrology
+  rest:
+  - kp_house_cusps
+  binding: name-identity
+  confidence: medium
+- tool: kp_house_significator
+  category: Vedic Astrology
+  rest:
+  - kp_house_significator
+  binding: name-identity
+  confidence: medium
+- tool: kp_planet_significator
+  category: Vedic Astrology
+  rest:
+  - kp_planet_significator
+  binding: name-identity
+  confidence: medium
+- tool: kp_planets
+  category: Vedic Astrology
+  rest:
+  - kp_planets
+  binding: name-identity
+  confidence: medium
+- tool: lalkitab_debts
+  category: Vedic Astrology
+  rest:
+  - lalkitab_debts
+  binding: name-identity
+  confidence: medium
+- tool: lalkitab_horoscope
+  category: Vedic Astrology
+  rest:
+  - lalkitab_horoscope
+  binding: name-identity
+  confidence: medium
+- tool: lalkitab_houses
+  category: Vedic Astrology
+  rest:
+  - lalkitab_houses
+  binding: name-identity
+  confidence: medium
+- tool: lalkitab_planets
+  category: Vedic Astrology
+  rest:
+  - lalkitab_planets
+  binding: name-identity
+  confidence: medium
+- tool: lalkitab_remedies_planet_name
+  category: Vedic Astrology
+  rest:
+  - lalkitab_remedies_planet_name
+  binding: name-identity
+  confidence: medium
+- tool: lifepath_number
+  category: Western Astrology
+  rest:
+  - lifepath_number
+  binding: name-identity
+  confidence: medium
+- tool: lunar_metrics
+  category: Western Astrology
+  rest:
+  - lunar_metrics
+  binding: name-identity
+  confidence: medium
+- tool: major_chardasha
+  category: Vedic Astrology
+  rest:
+  - major_chardasha
+  binding: name-identity
+  confidence: medium
+- tool: major_vdasha
+  category: Vedic Astrology
+  rest:
+  - major_vdasha
+  binding: name-identity
+  confidence: medium
+- tool: match_ashtakoot_points
+  category: Vedic Astrology
+  rest:
+  - match_ashtakoot_points
+  binding: name-identity
+  confidence: medium
+- tool: match_astro_details
+  category: Vedic Astrology
+  rest:
+  - match_astro_details
+  binding: name-identity
+  confidence: medium
+- tool: match_birth_details
+  category: Vedic Astrology
+  rest:
+  - match_birth_details
+  binding: name-identity
+  confidence: medium
+- tool: match_dashakoot_points
+  category: Vedic Astrology
+  rest:
+  - match_dashakoot_points
+  binding: name-identity
+  confidence: medium
+- tool: match_making_detailed_report
+  category: Vedic Astrology
+  rest:
+  - match_making_detailed_report
+  binding: name-identity
+  confidence: medium
+- tool: match_making_report
+  category: Vedic Astrology
+  rest:
+  - match_making_report
+  binding: name-identity
+  confidence: medium
+- tool: match_manglik_report
+  category: Vedic Astrology
+  rest:
+  - match_manglik_report
+  binding: name-identity
+  confidence: medium
+- tool: match_obstructions
+  category: Vedic Astrology
+  rest:
+  - match_obstructions
+  binding: name-identity
+  confidence: medium
+- tool: match_percentage
+  category: Vedic Astrology
+  rest:
+  - match_percentage
+  binding: name-identity
+  confidence: medium
+- tool: match_planet_details
+  category: Vedic Astrology
+  rest:
+  - match_planet_details
+  binding: name-identity
+  confidence: medium
+- tool: monthly_panchang
+  category: Vedic Astrology
+  rest:
+  - monthly_panchang
+  binding: name-identity
+  confidence: medium
+- tool: moon_biorhythm
+  category: Vedic Astrology
+  rest:
+  - moon_biorhythm
+  binding: name-identity
+  confidence: medium
+- tool: moon_phase_report
+  category: Western Astrology
+  rest:
+  - moon_phase_report
+  binding: name-identity
+  confidence: medium
+- tool: natal_chart_interpretation
+  category: Western Astrology
+  rest:
+  - natal_chart_interpretation
+  binding: name-identity
+  confidence: medium
+- tool: natal_house_cusp_report
+  category: Western Astrology
+  rest:
+  - natal_house_cusp_report
+  binding: name-identity
+  confidence: medium
+- tool: natal_transits_daily
+  category: Western Astrology
+  rest:
+  - natal_transits_daily
+  binding: name-identity
+  confidence: medium
+- tool: natal_transits_weekly
+  category: Western Astrology
+  rest:
+  - natal_transits_weekly
+  binding: name-identity
+  confidence: medium
+- tool: natal_wheel_chart
+  category: Western Astrology
+  rest:
+  - natal_wheel_chart
+  binding: name-identity
+  confidence: medium
+- tool: numero_fasts_report
+  category: Vedic Astrology
+  rest:
+  - numero_fasts_report
+  binding: name-identity
+  confidence: medium
+- tool: numero_fav_lord
+  category: Vedic Astrology
+  rest:
+  - numero_fav_lord
+  binding: name-identity
+  confidence: medium
+- tool: numero_fav_mantra
+  category: Vedic Astrology
+  rest:
+  - numero_fav_mantra
+  binding: name-identity
+  confidence: medium
+- tool: numero_fav_time
+  category: Vedic Astrology
+  rest:
+  - numero_fav_time
+  binding: name-identity
+  confidence: medium
+- tool: numero_place_vastu
+  category: Vedic Astrology
+  rest:
+  - numero_place_vastu
+  binding: name-identity
+  confidence: medium
+- tool: numero_prediction_daily
+  category: Vedic Astrology
+  rest:
+  - numero_prediction_daily
+  binding: name-identity
+  confidence: medium
+- tool: numero_report
+  category: Vedic Astrology
+  rest:
+  - numero_report
+  binding: name-identity
+  confidence: medium
+- tool: numero_table
+  category: Vedic Astrology
+  rest:
+  - numero_table
+  binding: name-identity
+  confidence: medium
+- tool: numerological_numbers
+  category: Western Astrology
+  rest:
+  - numerological_numbers
+  binding: name-identity
+  confidence: medium
+- tool: panchada_maitri
+  category: Vedic Astrology
+  rest:
+  - panchada_maitri
+  binding: name-identity
+  confidence: medium
+- tool: panchang_chart_sunrise
+  category: Vedic Astrology
+  rest:
+  - panchang_chart_sunrise
+  binding: name-identity
+  confidence: medium
+- tool: panchang_festival
+  category: Vedic Astrology
+  rest:
+  - panchang_festival
+  binding: name-identity
+  confidence: medium
+- tool: personal_day_prediction
+  category: Western Astrology
+  rest:
+  - personal_day_prediction
+  binding: name-identity
+  confidence: medium
+- tool: personal_month_prediction
+  category: Western Astrology
+  rest:
+  - personal_month_prediction
+  binding: name-identity
+  confidence: medium
+- tool: personal_year_prediction
+  category: Western Astrology
+  rest:
+  - personal_year_prediction
+  binding: name-identity
+  confidence: medium
+- tool: personality_number
+  category: Western Astrology
+  rest:
+  - personality_number
+  binding: name-identity
+  confidence: medium
+- tool: personality_report_tropical
+  category: Western Astrology
+  rest:
+  - personality_report_tropical
+  binding: name-identity
+  confidence: medium
+- tool: pitra_dosha_report
+  category: Vedic Astrology
+  rest:
+  - pitra_dosha_report
+  binding: name-identity
+  confidence: medium
+- tool: planet_ashtak_planet_name
+  category: Vedic Astrology
+  rest:
+  - planet_ashtak_planet_name
+  binding: name-identity
+  confidence: medium
+- tool: planet_nature
+  category: Vedic Astrology
+  rest:
+  - planet_nature
+  binding: name-identity
+  confidence: medium
+- tool: planet_panchang
+  category: Vedic Astrology
+  rest:
+  - planet_panchang
+  binding: name-identity
+  confidence: medium
+- tool: planet_panchang_sunrise
+  category: Vedic Astrology
+  rest:
+  - planet_panchang_sunrise
+  binding: name-identity
+  confidence: medium
+- tool: planets
+  category: Vedic Astrology
+  rest:
+  - planets
+  binding: name-identity
+  confidence: medium
+- tool: planets_extended
+  category: Vedic Astrology
+  rest:
+  - planets_extended
+  binding: name-identity
+  confidence: medium
+- tool: planets_tropical
+  category: Western Astrology
+  rest:
+  - planets_tropical
+  binding: name-identity
+  confidence: medium
+- tool: puja_suggestion
+  category: Vedic Astrology
+  rest:
+  - puja_suggestion
+  binding: name-identity
+  confidence: medium
+- tool: romantic_forecast_report_tropical
+  category: Western Astrology
+  rest:
+  - romantic_forecast_report_tropical
+  binding: name-identity
+  confidence: medium
+- tool: romantic_personality_report_tropical
+  category: Western Astrology
+  rest:
+  - romantic_personality_report_tropical
+  binding: name-identity
+  confidence: medium
+- tool: rudraksha_suggestion
+  category: Vedic Astrology
+  rest:
+  - rudraksha_suggestion
+  binding: name-identity
+  confidence: medium
+- tool: sadhesati_current_status
+  category: Vedic Astrology
+  rest:
+  - sadhesati_current_status
+  binding: name-identity
+  confidence: medium
+- tool: sadhesati_life_details
+  category: Vedic Astrology
+  rest:
+  - sadhesati_life_details
+  binding: name-identity
+  confidence: medium
+- tool: sadhesati_remedies
+  category: Vedic Astrology
+  rest:
+  - sadhesati_remedies
+  binding: name-identity
+  confidence: medium
+- tool: sarvashtak
+  category: Vedic Astrology
+  rest:
+  - sarvashtak
+  binding: name-identity
+  confidence: medium
+- tool: shadbala
+  category: Vedic Astrology
+  rest:
+  - shadbala
+  binding: name-identity
+  confidence: medium
+- tool: solar_return_aspects_report
+  category: Western Astrology
+  rest:
+  - solar_return_aspects_report
+  binding: name-identity
+  confidence: medium
+- tool: solar_return_details
+  category: Western Astrology
+  rest:
+  - solar_return_details
+  binding: name-identity
+  confidence: medium
+- tool: solar_return_house_cusps
+  category: Western Astrology
+  rest:
+  - solar_return_house_cusps
+  binding: name-identity
+  confidence: medium
+- tool: solar_return_planet_aspects
+  category: Western Astrology
+  rest:
+  - solar_return_planet_aspects
+  binding: name-identity
+  confidence: medium
+- tool: solar_return_planet_report
+  category: Western Astrology
+  rest:
+  - solar_return_planet_report
+  binding: name-identity
+  confidence: medium
+- tool: solar_return_planets
+  category: Western Astrology
+  rest:
+  - solar_return_planets
+  binding: name-identity
+  confidence: medium
+- tool: soul_urge_number
+  category: Western Astrology
+  rest:
+  - soul_urge_number
+  binding: name-identity
+  confidence: medium
+- tool: sub_chardasha_md
+  category: Vedic Astrology
+  rest:
+  - sub_chardasha_md
+  binding: name-identity
+  confidence: medium
+- tool: sub_conscious_self_number
+  category: Western Astrology
+  rest:
+  - sub_conscious_self_number
+  binding: name-identity
+  confidence: medium
+- tool: sub_sub_sub_sub_vdasha_md_ad_pd_sd
+  category: Vedic Astrology
+  rest:
+  - sub_sub_sub_sub_vdasha_md_ad_pd_sd
+  binding: name-identity
+  confidence: medium
+- tool: sub_sub_sub_vdasha_md_ad_pd
+  category: Vedic Astrology
+  rest:
+  - sub_sub_sub_vdasha_md_ad_pd
+  binding: name-identity
+  confidence: medium
+- tool: sub_sub_vdasha_md_ad
+  category: Vedic Astrology
+  rest:
+  - sub_sub_vdasha_md_ad
+  binding: name-identity
+  confidence: medium
+- tool: sub_vdasha_md
+  category: Vedic Astrology
+  rest:
+  - sub_vdasha_md
+  binding: name-identity
+  confidence: medium
+- tool: sun_sign_consolidated_daily_zodiacName
+  category: Western Astrology
+  rest:
+  - sun_sign_consolidated_daily_zodiacName
+  binding: name-identity
+  confidence: medium
+- tool: sun_sign_prediction_daily_zodiacName
+  category: Western Astrology
+  rest:
+  - sun_sign_prediction_daily_zodiacName
+  binding: name-identity
+  confidence: medium
+- tool: sun_sign_prediction_next_zodiacName
+  category: Western Astrology
+  rest:
+  - sun_sign_prediction_next_zodiacName
+  binding: name-identity
+  confidence: medium
+- tool: sun_sign_prediction_previous_zodiacName
+  category: Western Astrology
+  rest:
+  - sun_sign_prediction_previous_zodiacName
+  binding: name-identity
+  confidence: medium
+- tool: synastry_horoscope
+  category: Western Astrology
+  rest:
+  - synastry_horoscope
+  binding: name-identity
+  confidence: medium
+- tool: tamil_month_panchang
+  category: Vedic Astrology
+  rest:
+  - tamil_month_panchang
+  binding: name-identity
+  confidence: medium
+- tool: tamil_panchang
+  category: Vedic Astrology
+  rest:
+  - tamil_panchang
+  binding: name-identity
+  confidence: medium
+- tool: tarot_predictions
+  category: Western Astrology
+  rest:
+  - tarot_predictions
+  binding: name-identity
+  confidence: medium
+- tool: timezone_with_dst
+  category: Vedic Astrology
+  rest:
+  - timezone_with_dst
+  binding: name-identity
+  confidence: medium
+- tool: tropical_transits_daily
+  category: Western Astrology
+  rest:
+  - tropical_transits_daily
+  binding: name-identity
+  confidence: medium
+- tool: tropical_transits_monthly
+  category: Western Astrology
+  rest:
+  - tropical_transits_monthly
+  binding: name-identity
+  confidence: medium
+- tool: tropical_transits_weekly
+  category: Western Astrology
+  rest:
+  - tropical_transits_weekly
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_details
+  category: Vedic Astrology
+  rest:
+  - varshaphal_details
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_harsha_bala
+  category: Vedic Astrology
+  rest:
+  - varshaphal_harsha_bala
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_month_chart
+  category: Vedic Astrology
+  rest:
+  - varshaphal_month_chart
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_mudda_dasha
+  category: Vedic Astrology
+  rest:
+  - varshaphal_mudda_dasha
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_muntha
+  category: Vedic Astrology
+  rest:
+  - varshaphal_muntha
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_panchavargeeya_bala
+  category: Vedic Astrology
+  rest:
+  - varshaphal_panchavargeeya_bala
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_planets
+  category: Vedic Astrology
+  rest:
+  - varshaphal_planets
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_saham_points
+  category: Vedic Astrology
+  rest:
+  - varshaphal_saham_points
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_year_chart
+  category: Vedic Astrology
+  rest:
+  - varshaphal_year_chart
+  binding: name-identity
+  confidence: medium
+- tool: varshaphal_yoga
+  category: Vedic Astrology
+  rest:
+  - varshaphal_yoga
+  binding: name-identity
+  confidence: medium
+- tool: western_chart_data
+  category: Western Astrology
+  rest:
+  - western_chart_data
+  binding: name-identity
+  confidence: medium
+- tool: western_horoscope
+  category: Western Astrology
+  rest:
+  - western_horoscope
+  binding: name-identity
+  confidence: medium
+- tool: yes_no_tarot
+  category: Western Astrology
+  rest:
+  - yes_no_tarot
+  binding: name-identity
+  confidence: medium
+- tool: zodiac_compatibility_zodiacName_partnerZodiacName
+  category: Western Astrology
+  rest:
+  - zodiac_compatibility_zodiacName_partnerZodiacName
+  binding: name-identity
+  confidence: medium
+mcp_only: []
+mcp_only_note: None identifiable. With tools/list gated there is no way to see a tool that has no REST
+  counterpart.
+rest_only:
+- operationId: api_predict_url_api_predict_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: api_processed_palm_palmistry_get_palm_image_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: basic_gemstone_report_pdf
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: basic_horoscope_pdf
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: career
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: challenges
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: cheeks_and_cheekbones
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: chin_and_jaw
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: ears
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: eyes
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: face_outline
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: facial_hair
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: family
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_career_palmistry_career_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_challenges_palmistry_challenges_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_face_id
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_fingers_palmistry_fingers_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_hand_type_palmistry_hand_type_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_health_palmistry_health_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_love_palmistry_love_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_luck_palmistry_luck_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_major_lines_palmistry_major_lines_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_marriage_palmistry_marriage_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_minor_lines_palmistry_minor_lines_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_money_palmistry_money_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_mounts_palmistry_mounts_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_personality_palmistry_personality_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_special_features_palmistry_special_features_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: get_summary_palmistry_summary_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: health
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: life_forecast_report_tropical
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: love
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: luck
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: marriage
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: mask_outline_image
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: match_making_pdf
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: mini_horoscope_pdf
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: mouth
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: natal_horoscope_report_tropical
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: nose
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: palm_scanner_basic_palmistry_basic_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: palm_scanner_legacy_palmistry_legacy_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: palm_scanner_palmistry_get_palm_id_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: personality
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: predict_base64_predict_post
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: pro_horoscope_pdf
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: pro_numerology_report
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: proportions
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: read_root__get
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: shape
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: skin_complexion
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: solar_return_report_tropical
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: star_sign_compatibility_report
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: symmetry
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: synastry_couple_report_tropical
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: varshphal_horoscope_pdf
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: wealth
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+- operationId: wisdom
+  reason: No MCP tool observed; the MCP tool list is authentication-gated.
+coverage:
+  rest_operations_total: 216
+  rest_operations_json_host: 158
+  mcp_tools_claimed: 109
+  bindings_verified: 1
+  bindings_candidate: 157
+  rest_only: 58
+  confidence_note: One high-confidence binding from the provider documentation; all others medium (name-identity
+    convention) or unmapped.

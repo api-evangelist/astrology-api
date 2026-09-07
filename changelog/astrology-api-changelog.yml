@@ -1,0 +1,90 @@
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/developers/v1/change-log
+description: >-
+  AstrologyAPI publishes a dated change log covering API launches and platform changes. Eight entries
+  are listed, running from February 2026 to September 2026 — a roughly monthly cadence. Every entry
+  is additive; no breaking change, deprecation or removal appears anywhere in the published window.
+url: https://astrologyapi.com/developers/v1/change-log
+scheme:
+  versioning: URI path (v1)
+  current_version: v1
+  entry_format: Dated post with "What's Changing", "Why it Matters" and "How to start" sections, plus topic labels
+  cadence: monthly
+  breaking_changes_in_window: 0
+entries:
+  - date: '2026-09-01'
+    title: Premium Kundli Report PDF API
+    type: addition
+    breaking: false
+    labels: [feature, vedic, pdf]
+    highlights:
+      - New premium_kundli_report PDF operation generating a white-labeled Vedic Kundli from birth details, chart style, ayanamsha and branding options.
+    docs: https://astrologyapi.com/developers/v1/pdf/premium_kundli_report
+  - date: '2026-08-31'
+    title: Natal Aspects Report API
+    type: addition
+    breaking: false
+    labels: [feature, western, api]
+    highlights:
+      - New natal_aspect_report operation returning descriptions of the aspects formed between two planets in a natal chart.
+  - date: '2026-08-07'
+    title: Human Design APIs now live
+    type: addition
+    breaking: false
+    labels: [feature, human-design, api]
+    highlights:
+      - Five endpoints under /v1/human-design — human-design, chart-data, analysis, chart-interpretation and traits-interpretation.
+      - Covers the full BodyGraph stack, chart computation plus interpretation and summary outputs.
+    docs: https://astrologyapi.com/developers/v1/human-design
+  - date: '2026-07-01'
+    title: Shadbala and Bhavabala APIs
+    type: addition
+    breaking: false
+    labels: [feature, vedic, api]
+    highlights:
+      - shadbala scores each planet across its six strength sources and returns total_shadbala_rupa, total_shadbala_virupa, required_minimum_virupa, strength_percent_of_minimum, an is_strong flag and a components object.
+      - bhavabala scores all twelve houses and returns a summary with strongest_house_id, weakest_house_id and ranked_house_ids_desc.
+      - Explicitly stated as additive — "No existing response changes."
+  - date: '2026-06-01'
+    title: New transits engine
+    type: addition
+    breaking: false
+    labels: [feature, western, api]
+    highlights:
+      - Five endpoints in the Transit package — tropical_transits/daily, /weekly, /monthly, and natal_transits/daily, /weekly.
+      - Natal transits return aspect windows with exact timing.
+  - date: '2026-04-01'
+    title: Pay as you go
+    type: addition
+    breaking: false
+    labels: [platform, billing]
+    highlights:
+      - Wallet-based pay-as-you-go billing introduced alongside subscription plans, callable without a monthly commitment.
+    docs: https://astrologyapi.com/developers/v1/guides/pay-as-you-go
+  - date: '2026-03-01'
+    title: MCP servers
+    type: addition
+    breaking: false
+    labels: [platform, ai]
+    highlights:
+      - Model Context Protocol server launched, exposing astrology calculation tools to LLM agents and IDEs.
+    docs: https://astrologyapi.com/developers/v1/mcp-server
+  - date: '2026-02-01'
+    title: AstroChat API
+    type: addition
+    breaking: false
+    labels: [feature, ai]
+    highlights:
+      - Hosted conversational endpoint answering questions grounded in a single computed birth chart, in Vedic or Western mode.
+    docs: https://astrologyapi.com/developers/v1/chat-api
+summary:
+  entry_count: 8
+  window: 2026-02-01 to 2026-09-01
+  additions: 8
+  breaking: 0
+  deprecations: 0
+  note: >-
+    The log records what was added and never what was withdrawn. Across eight months of entries there
+    is no deprecation, sunset or removal notice, and no deprecation policy is published elsewhere on
+    the site — see lifecycle/astrology-api-lifecycle.yml.

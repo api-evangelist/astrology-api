@@ -1,0 +1,46 @@
+generated: '2026-09-07'
+method: probed
+source: https://mcp.astrologyapi.com/.well-known/oauth-protected-resource
+docs: https://astrologyapi.com/developers/v1/mcp-server
+description: >-
+  The only OAuth surface AstrologyAPI operates is the MCP server. Its RFC 9728 protected-resource
+  metadata declares exactly one scope. The REST API has no OAuth flow at all — it authenticates with
+  HTTP Basic credentials or a wallet access token, neither of which carries scopes — so there is no
+  scope model over the 216 REST operations. Nothing here was derived from a spec; the scope below was
+  read from the provider's own live discovery document.
+oauth_surface:
+  resource: https://mcp.astrologyapi.com/mcp
+  authorization_server_metadata: https://mcp.astrologyapi.com/.well-known/oauth-authorization-server
+  protected_resource_metadata: https://mcp.astrologyapi.com/.well-known/oauth-protected-resource
+  bearer_methods_supported: [header]
+  grant_types_supported: [authorization_code, client_credentials, refresh_token]
+  code_challenge_methods_supported: [S256, plain]
+  token_endpoint_auth_methods_supported: [none]
+  dynamic_client_registration: advertised
+  metadata_defect: >-
+    The authorization_servers entry in the protected-resource document, and the issuer in the
+    authorization-server document, both carry literal double-quote characters inside the value, so
+    the issuer they name is not a resolvable URL. See conformance/astrology-api-conformance.yml.
+scopes:
+  - name: offline_access
+    description: >-
+      Standard OIDC/OAuth scope requesting a refresh token so the client can obtain new access tokens
+      without the user being present. Declared in scopes_supported.
+    source: https://mcp.astrologyapi.com/.well-known/oauth-protected-resource
+    verified: probed
+scope_count: 1
+findings:
+  - >-
+    offline_access is a token-lifetime scope, not a permission. It says the client may keep working
+    while the user is away; it says nothing about which of the 109 advertised MCP tools the client
+    may call. There is no read/write split, no per-product scope (Vedic, Western, PDF, Vision, Chat),
+    and no way to issue an agent a credential narrower than the whole tool surface.
+  - >-
+    The REST API has no scope model whatsoever. Authorisation is by plan membership — a subscription
+    key reaches the endpoints in its package and 401s on the rest — which is a commercial boundary
+    enforced server-side, not a scope a client can request or attenuate.
+  - >-
+    A wallet access token reaches every wallet-billed endpoint including PDF generation, which is the
+    most expensive operation on the platform at up to ₹100 per report. There is no scope, no spend
+    cap, and no read-only variant, so an agent handed a token to compute a birth chart is also
+    handed the ability to bill unlimited PDF reports.

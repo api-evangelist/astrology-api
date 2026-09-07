@@ -1,0 +1,89 @@
+generated: '2026-09-07'
+method: searched
+source: https://www.astrologyapi.com/api-status, https://astrologyapi.com/developers/v1/change-log,
+  https://astrologyapi.com/llms.txt, https://astrologyapi.com/legal/terms-service
+description: >-
+  Versioning, availability and change-management posture for AstrologyAPI. The provider runs a
+  first-party status page and a dated change log. It publishes no deprecation policy, no sunset
+  commitment and no RFC 8594 headers, so a consumer has no published notice period for a withdrawal.
+versioning:
+  style: URI path
+  current: v1
+  history:
+    - version: v1
+      status: current
+      note: The only major version ever published. In production since 2013 per the provider's own About page.
+  unversioned_surfaces:
+    - host: vision.astrologyapi.com
+      products: [Palmistry, Face Reading]
+      note: >-
+        The image products sit outside the /v1 path convention entirely. Their operations are served
+        at /palmistry/* and /face-reading/* with no version segment, so a future breaking change to
+        them has no version boundary to move behind.
+status_page:
+  present: true
+  url: https://www.astrologyapi.com/api-status
+  type: first-party
+  http_status: 200
+  checked: '2026-09-07'
+  components_monitored:
+    - name: Astrology API Website
+      state_at_check: Healthy
+    - name: JSON API Server
+      state_at_check: Healthy
+    - name: PDF API Server
+      state_at_check: Healthy
+    - name: Database Server
+      state_at_check: Healthy
+  overall_at_check: All Systems Operational
+  note: >-
+    A self-hosted status page with a live refresh, not a third-party status service. It reports
+    current component health only — no incident history, no uptime percentage, no scheduled
+    maintenance calendar and no subscribe/notification channel is exposed. The MCP host, the Vision
+    (Palmistry/Face Reading) host and the Chat API are not among the monitored components.
+sla:
+  published: false
+  claims:
+    - claim: 99.99% uptime SLA
+      source: https://astrologyapi.com/llms.txt
+      note: >-
+        Asserted in the provider's own llms.txt summary and repeated in marketing copy. No SLA
+        document, credit schedule or measurement definition backs it on the public site; the pricing
+        pages attach "SLA-backed uptime" only to the Enterprise tier, negotiated with sales.
+    - claim: 100M+ daily API calls
+      source: https://astrologyapi.com/llms.txt
+deprecation:
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  notice_period: null
+  deprecated_operations: []
+  detail: >-
+    No deprecation or sunset policy exists on the developer hub, in the terms of service, or in the
+    change log. Eight change-log entries across eight months are all additive; nothing has been
+    marked deprecated. No operation in the 216 published operations carries a deprecated flag. Because
+    nothing has been withdrawn yet, this is an untested posture rather than a broken promise — but a
+    consumer planning a migration has no published notice period to plan against.
+change_management:
+  changelog: https://astrologyapi.com/developers/v1/change-log
+  changelog_artifact: changelog/astrology-api-changelog.yml
+  cadence: monthly
+  breaking_change_history: none published
+support:
+  channels:
+    - type: Contact form
+      url: https://astrologyapi.com/contact
+    - type: Sales / enterprise
+      url: https://astrologyapi.com/contact-sales
+      note: Response within one business day, per the provider.
+    - type: Demo
+      url: https://astrologyapi.com/demo-schedule
+      note: 30-minute live session with the solutions team.
+    - type: Email
+      value: support@astrologyapi.com
+      note: Declared as the author contact in the published npm and PyPI SDK metadata.
+    - type: FAQ
+      url: https://www.astrologyapi.com/faq
+  tiered: true
+  tier_note: All plans include 7-day support; Enterprise adds 24/7 dedicated support.

@@ -1,13 +1,14 @@
 aid: astrology-api
 name: Astrology API
-description: >-
-  Astrology API (astrologyapi.com) is a powerful tool that provides developers
-  with access to accurate and reliable astrological data. The API offers Indian
-  (Vedic) astrology, Western astrology, horoscope predictions, tarot readings,
-  and PDF report generation. It provides planetary positions, zodiac sign
-  information, birth chart calculations, compatibility analysis, panchang data,
-  moon phases, and daily/monthly horoscope predictions. The API is JSON-based
-  with SDK support and Postman collections available for testing.
+description: AstrologyAPI (astrologyapi.com) is a developer-first astrology calculation platform, in production
+  since 2013, providing 300+ REST endpoints across Vedic (Jyotish) and Western traditions under a single
+  API key. Coverage includes Kundli and divisional charts, Vimshottari and Yogini dashas, KP sub-lords,
+  Lal Kitab, Varshaphal, Shadbala and Bhavabala strength scoring, panchang and muhurta, Ashtakoot and
+  Dashakoot matchmaking, natal, synastry, composite and solar-return charts, transits, AstroCartoGraphy,
+  Human Design, numerology, tarot, palmistry and face reading, plus multi-language horoscope content feeds
+  and white-labeled PDF report generation. The platform also runs a hosted MCP server exposing its calculation
+  tools to LLM agents, and a chart-grounded AI chat product. Billing is a pay-as-you-go credit wallet
+  in INR with optional suite subscriptions.
 type: Index
 deliveryModel:
   model: saas
@@ -34,104 +35,285 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
 tags:
-  - Astrology
-  - Horoscopes
-  - Zodiac
-  - Vedic Astrology
-  - Western Astrology
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/astrology-api/refs/heads/main/apis.yml
+- Astrology
+- Horoscopes
+- Zodiac
+- Vedic Astrology
+- Western Astrology
+- Kundli
+- Panchang
+- Numerology
+- Tarot
+- Palmistry
+- Human Design
+- Astrocartography
+- PDF Reports
+- MCP
+- Ephemeris
+url: https://raw.githubusercontent.com/api-evangelist/astrology-api/refs/heads/main/apis.yml
 created: '2025-01-07'
-modified: '2026-04-19'
+modified: '2026-09-07'
 specificationVersion: '0.23'
 apis:
-  - aid: astrology-api:astrology-api
-    name: Astrology API
-    description: >-
-      The Astrology API provides comprehensive astrological data including
-      Indian (Vedic) astrology with panchang and dosha data, Western astrology
-      with planetary transits and synastry, daily and monthly horoscope
-      predictions, tarot readings, and PDF report generation in both Western
-      and Indian formats.
-    humanURL: https://astrologyapi.com/docs
-    baseURL: https://json.astrologyapi.com/v1
-    tags:
-      - Astrology
-      - Horoscopes
-      - Vedic
-      - Western
-    properties:
-      - type: Documentation
-        url: https://astrologyapi.com/docs
-      - type: GettingStarted
-        url: https://astrologyapi.com/docs/quickstart
-      - type: OpenAPI
-        url: openapi/astrology-api-openapi.yml
-common:
-  - type: DomainSecurity
-    url: security/astrology-api-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/astrologyapi
-  - type: Portal
-    url: https://astrologyapi.com/
-    title: Astrology API Website
+- aid: astrology-api:astrology-api
+  name: Astrology API
+  description: The AstrologyAPI JSON API — 158 documented operations covering Vedic (Jyotish) and Western
+    astrology, Human Design and AstroCartoGraphy. Includes birth details, planetary positions, divisional
+    and KP charts, Vimshottari/Yogini/Char dashas, Shadbala and Bhavabala strength scoring, panchang and
+    muhurta, dosha analysis, Ashtakoot and Dashakoot matchmaking, tropical natal charts, house cusps,
+    aspects, synastry and composite charts, transits, numerology and sun-sign horoscope content feeds.
+    All operations are POST; authentication is HTTP Basic (User ID + API key) or a wallet access token
+    in an x-astrologyapi-key header.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Astrology
+  - Horoscopes
+  - Vedic
+  - Western
+  properties:
   - type: Documentation
-    url: https://astrologyapi.com/docs
-    title: Documentation
-  - type: Signup
-    url: https://astrologyapi.com/signup
-    title: Sign Up
-  - type: Pricing
-    url: https://astrologyapi.com/pricing
-    title: Pricing
-  - type: Features
-    data:
-      - name: Indian (Vedic) Astrology
-        description: >-
-          Vedic astrology data including birth chart basics, horoscope dosha
-          analysis, yearly predictions (Varshaphal), daily nakshatra forecasts,
-          and panchang (Hindu almanac) data.
-      - name: Western Astrology
-        description: >-
-          Western astrology data including birth chart basics, numerology,
-          synastry (relationship analysis), moon phases, planetary transits,
-          and zodiac compatibility.
-      - name: Horoscope Predictions
-        description: >-
-          Daily, weekly, and monthly horoscope predictions for all sun signs
-          in both Western and Vedic astrology traditions.
-      - name: Tarot API
-        description: >-
-          General tarot card readings and yes/no tarot predictions for
-          integrating tarot functionality into applications.
-      - name: PDF Report Generation
-        description: >-
-          Generate detailed PDF horoscope reports in five types covering
-          both Western and Indian astrology formats for end-user delivery.
-  - type: UseCases
-    data:
-      - name: Astrology App Development
-        description: >-
-          Developers build mobile and web astrology applications integrating
-          daily horoscopes, birth charts, and compatibility analysis.
-      - name: Horoscope Website Integration
-        description: >-
-          Content websites add personalized horoscope sections using the
-          Astrology API's daily and monthly prediction endpoints.
-      - name: Vedic Consultation Platforms
-        description: >-
-          Astrology consultation platforms use the Vedic API for birth chart
-          calculations and panchang data to support professional astrologers.
-  - type: Integrations
-    data:
-      - name: Postman Collection
-        description: >-
-          Official Postman collection available for testing Astrology API
-          endpoints before integration.
-      - name: SDK Downloads
-        description: >-
-          Language-specific SDK downloads available for easier integration
-          with the Astrology API.
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: OpenAPI
+    url: openapi/astrology-api-json-openapi.yml
+  - type: Overlay
+    url: overlays/astrology-api-json-overlay.yaml
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
+- aid: astrology-api:astrology-api-pdf
+  name: AstrologyAPI PDF Reports API
+  description: White-labeled PDF report generation for Vedic and Western astrology — mini, basic and professional
+    Kundli, matchmaking, gemstone, Varshaphal, pro numerology, natal, solar return, life forecast, synastry
+    and star sign compatibility reports. Each operation returns a hosted pdf_url and accepts eleven per-request
+    branding fields (logo, domain, footer link and company contact details). Reports are billed per generation
+    from the credit wallet, from INR 1.50 to INR 100 depending on the report.
+  humanURL: https://astrologyapi.com/developers/v1/pdf
+  baseURL: https://pdf.astrologyapi.com/v1
+  tags:
+  - PDF Reports
+  - Vedic
+  - Western
+  - White Label
+  properties:
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: OpenAPI
+    url: openapi/astrology-api-pdf-openapi.yml
+  - type: Overlay
+    url: overlays/astrology-api-pdf-overlay.yaml
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
+- aid: astrology-api:astrology-api-palmistry
+  name: AstrologyAPI Palmistry API
+  description: Image-based palm reading. Submit a palm photograph as a public URL or base64 data URL (jpeg,
+    jpg, png or webp, up to 5MB) together with a date of birth and gender to obtain a palm_id, then read
+    structured hand type, finger, mount, major and minor line and special-feature analysis, per-aspect
+    readings covering personality, career, money, love, marriage, health, challenges and luck, and a processed
+    overlay image. This is the only AstrologyAPI surface with a first-party OpenAPI published by the provider.
+  humanURL: https://astrologyapi.com/developers/v1/palm-reading-api
+  baseURL: https://vision.astrologyapi.com
+  tags:
+  - Palmistry
+  - Computer Vision
+  - Readings
+  properties:
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: OpenAPI
+    url: openapi/astrology-api-palmistry-openapi.json
+  - type: OpenAPI
+    url: https://vision.astrologyapi.com/openapi.json
+    title: First-party OpenAPI 3.1.0 served by the provider
+  - type: Overlay
+    url: overlays/astrology-api-palmistry-overlay.yaml
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
+- aid: astrology-api:astrology-api-face-reading
+  name: AstrologyAPI Face Reading API
+  description: Image-based face reading. Submit a face photograph with date of birth and gender to obtain
+    a face_id, then read structured analysis of face shape, eyes, nose, cheeks and cheekbones, mouth,
+    chin and jaw, ears, skin complexion, symmetry, proportions, facial hair and face outline, plus ten
+    interpretive readings covering career, challenges, family, health, love, luck, marriage, personality,
+    wealth and wisdom, and a mask outline image.
+  humanURL: https://astrologyapi.com/face-reading-api
+  baseURL: https://vision.astrologyapi.com/face-reading
+  tags:
+  - Face Reading
+  - Computer Vision
+  - Readings
+  properties:
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+  - type: OpenAPI
+    url: openapi/astrology-api-face-reading-openapi.yml
+  - type: Overlay
+    url: overlays/astrology-api-face-reading-overlay.yaml
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
+- aid: astrology-api:astrology-api-mcp
+  name: AstrologyAPI MCP Server
+  description: First-party hosted Model Context Protocol server exposing AstrologyAPI's calculation engine
+    to LLM agents and IDEs. The provider advertises 109 tools spanning Vedic and Western astrology, configured
+    with a wallet access token in an x-astrologyapi-key header. The server also advertises OAuth with
+    RFC 8414 and RFC 9728 discovery documents. tools/list is authentication-gated.
+  humanURL: https://astrologyapi.com/developers/v1/mcp-server
+  baseURL: https://mcp.astrologyapi.com/mcp
+  tags:
+  - MCP
+  - AI Agents
+  - Model Context Protocol
+  properties:
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/mcp-server
+  - type: MCPServer
+    url: mcp/astrology-api-mcp.yml
+  - type: ToolCrosswalk
+    url: mcp/astrology-api-tool-crosswalk.yml
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
+common:
+- type: Website
+  url: https://www.astrologyapi.com/
+- type: DeveloperPortal
+  url: https://astrologyapi.com/developers/v1
+  title: Developer Hub
+- type: Documentation
+  url: https://astrologyapi.com/docs
+  title: Documentation
+- type: APIReference
+  url: https://astrologyapi.com/developers/v1/api-reference
+  title: API Reference
+- type: Documentation
+  url: https://astrologyapi.com/developers/v1/guides
+  title: Guides & Tutorials
+- type: GettingStarted
+  url: https://astrologyapi.com/developers/v1/quick-start
+  title: Quick Start
+- type: SignUp
+  url: https://astrologyapi.com/signup
+  title: Sign Up — 150 free credits
+- type: Login
+  url: https://astrologyapi.com/login
+  title: Sign In
+- type: Pricing
+  url: https://astrologyapi.com/pricing
+  title: Pricing
+- type: Support
+  url: https://astrologyapi.com/contact
+  title: Contact Support
+- type: HelpCenter
+  url: https://www.astrologyapi.com/faq
+  title: FAQ
+- type: Blog
+  url: https://astrologyapi.com/blog
+  title: Blog
+- type: GitHubOrganization
+  url: https://github.com/astrologyapi
+- type: Postman
+  url: https://astrologyapi.com/developers/v1/postman-collection
+  title: Postman Collections
+- type: TermsOfService
+  url: https://astrologyapi.com/legal/terms-service
+  title: Terms of Service
+- type: PrivacyPolicy
+  url: https://astrologyapi.com/legal/privacy-policy
+  title: Privacy Policy
+- type: StatusPage
+  url: https://www.astrologyapi.com/api-status
+  title: API Status
+- type: ChangeLog
+  url: https://astrologyapi.com/developers/v1/change-log
+  title: Change Log
+- type: ChangeLog
+  url: changelog/astrology-api-changelog.yml
+- type: Lifecycle
+  url: lifecycle/astrology-api-lifecycle.yml
+- type: SDKs
+  url: packages/astrology-api-packages.yml
+- type: Packages
+  url: packages/astrology-api-packages.yml
+- type: MCPServer
+  url: mcp/astrology-api-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/astrology-api-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/astrology-api-llms.txt
+- type: WellKnown
+  url: well-known/astrology-api-well-known.yml
+- type: Authentication
+  url: authentication/astrology-api-authentication.yml
+- type: OAuthScopes
+  url: scopes/astrology-api-scopes.yml
+- type: Conventions
+  url: conventions/astrology-api-conventions.yml
+- type: ErrorCatalog
+  url: errors/astrology-api-problem-types.yml
+- type: Conformance
+  url: conformance/astrology-api-conformance.yml
+- type: DataModel
+  url: data-model/astrology-api-data-model.yml
+- type: Components
+  url: components/astrology-api-components.yml
+- type: Sandbox
+  url: sandbox/astrology-api-sandbox.yml
+- type: Plans
+  url: plans/astrology-api-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/astrology-api-rate-limits.yml
+- type: FinOps
+  url: finops/astrology-api-finops.yml
+- type: DomainSecurity
+  url: security/astrology-api-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/astrology-api-vulnerability-disclosure.yml
+- type: Features
+  data:
+  - name: Indian (Vedic) Astrology
+    description: Vedic astrology data including birth chart basics, horoscope dosha analysis, yearly predictions
+      (Varshaphal), daily nakshatra forecasts, and panchang (Hindu almanac) data.
+  - name: Western Astrology
+    description: Western astrology data including birth chart basics, numerology, synastry (relationship
+      analysis), moon phases, planetary transits, and zodiac compatibility.
+  - name: Horoscope Predictions
+    description: Daily, weekly, and monthly horoscope predictions for all sun signs in both Western and
+      Vedic astrology traditions.
+  - name: Tarot API
+    description: General tarot card readings and yes/no tarot predictions for integrating tarot functionality
+      into applications.
+  - name: PDF Report Generation
+    description: Generate detailed PDF horoscope reports in five types covering both Western and Indian
+      astrology formats for end-user delivery.
+- type: UseCases
+  data:
+  - name: Astrology App Development
+    description: Developers build mobile and web astrology applications integrating daily horoscopes,
+      birth charts, and compatibility analysis.
+  - name: Horoscope Website Integration
+    description: Content websites add personalized horoscope sections using the Astrology API's daily
+      and monthly prediction endpoints.
+  - name: Vedic Consultation Platforms
+    description: Astrology consultation platforms use the Vedic API for birth chart calculations and panchang
+      data to support professional astrologers.
+- type: Integrations
+  data:
+  - name: Postman Collection
+    description: Official Postman collection available for testing Astrology API endpoints before integration.
+  - name: SDK Downloads
+    description: Language-specific SDK downloads available for easier integration with the Astrology API.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-07'
+  status: enriched
+  artifacts_added: 42
+  pass: local-v3

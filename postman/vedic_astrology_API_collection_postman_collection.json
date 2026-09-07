@@ -1,0 +1,6708 @@
+{
+  "info": {
+    "_postman_id": "58946ee0-4034-4a8c-8e16-d3752da6171d",
+    "name": "Premium Plan (User Collection)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22644900"
+  },
+  "item": [
+    {
+      "name": "geo details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "place",
+              "value": "mumbai",
+              "type": "text"
+            },
+            {
+              "key": "maxRows",
+              "value": "6",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/geo_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "geo_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "timezone_with_dst",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "latitude",
+              "value": "19.23",
+              "type": "text",
+              "uuid": "e3ac248b-28aa-4322-831b-298cf6abfca9"
+            },
+            {
+              "key": "longitude",
+              "value": "72.23",
+              "type": "text",
+              "uuid": "01658b60-24d0-45f1-9e23-c55f81cdeb95"
+            },
+            {
+              "key": "date",
+              "value": "12-5-1993",
+              "description": "mm-dd-yyyy",
+              "type": "text",
+              "uuid": "4840c583-fbf5-4ce5-910a-c798f3d3151d"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/timezone_with_dst",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "timezone_with_dst"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "birth_details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "uuid": "921f1c4a-f29b-4676-9709-c4adc1d74de5"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/birth_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "birth_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "astro_details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/astro_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "astro_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "planets",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "77c0dfda-2292-42c1-975c-825e31410e3f"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/planets",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "planets"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "planets extended",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "87c82b86-ca70-4b66-b70b-2977e7ad9d34"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/planets/extended",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "planets", "extended"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ghat_chakra",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "07608b00-ae28-455c-ae79-5f4cfb48f707"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/ghat_chakra",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "ghat_chakra"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ayanamsha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/ayanamsha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "ayanamsha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "bhav_madhya",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "d8d238b6-2dfc-4f87-a994-53fbc018402a"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/bhav_madhya",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "bhav_madhya"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "planet nature",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "59fd686f-8522-4849-abd7-3f712c8ea237"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/planet_nature",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "planet_nature"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "panchanda maitri",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "219c1515-4461-48bc-99f7-2a2c5a70d2fd"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/panchada_maitri",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "panchada_maitri"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ashtakvarga",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "aae2431a-b86c-437f-aaec-64f3b5037a0f"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/planet_ashtak/:planet_name",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "planet_ashtak", ":planet_name"],
+          "variable": [
+            {
+              "key": "planet_name",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sarvashtak",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sarvashtak",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sarvashtak"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "horo_chart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/horo_chart/:chartId",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "horo_chart", ":chartId"],
+          "variable": [
+            {
+              "key": "chartId",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "horo_chart_image",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "chartType",
+              "value": "north",
+              "description": "You can mention south, east",
+              "type": "text",
+              "uuid": "74f623ae-bc8f-486a-84c0-90a01277e1af"
+            },
+            {
+              "key": "image_type",
+              "value": "png",
+              "description": "To call in format other than svg",
+              "type": "text",
+              "uuid": "bd9945cc-702b-4932-863f-c035f4e32370"
+            },
+            {
+              "key": "planetColor",
+              "value": "ff0000",
+              "description": "Change the color of the planet. To set multiple colors, set a sequecne, for example - red,blue,black,green,orange,pink,maroon,purple,yellow",
+              "type": "text",
+              "uuid": "2f948c27-0062-4bbb-b622-2268f10ef149"
+            },
+            {
+              "key": "extended",
+              "value": "true",
+              "description": "To add outer planets - Neptune, Uranus and Pluto",
+              "type": "text",
+              "uuid": "6ca5821c-6a91-4df3-9564-1b7ea685ba83"
+            },
+            {
+              "key": "signColor",
+              "value": "ff0000",
+              "description": "To change the sign color",
+              "type": "text",
+              "uuid": "b69ad311-3f48-4b5e-8dfb-51131cf4d3dc"
+            },
+            {
+              "key": "lineColor",
+              "value": "ff0000",
+              "description": "To change the chart line color",
+              "type": "text",
+              "uuid": "dc31446f-e379-4e9d-aab5-aa0bb9b2d435"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "c2fa6f62-a115-4b85-9955-38eed9189a25"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/horo_chart_image/:chartId",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "horo_chart_image", ":chartId"],
+          "variable": [
+            {
+              "key": "chartId",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "horo_chart_extended",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "2cf78f4f-1303-4f82-9c3e-d5205e0b8499"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/horo_chart_extended",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "horo_chart_extended"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "current vdasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/current_vdasha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "current_vdasha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "current_vdasha_all",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/current_vdasha_all",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "current_vdasha_all"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "major vdasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/major_vdasha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "major_vdasha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pratyantar dasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sub_sub_vdasha/:md/:ad",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sub_sub_vdasha", ":md", ":ad"],
+          "variable": [
+            {
+              "key": "md",
+              "value": ""
+            },
+            {
+              "key": "ad",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Antar dasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sub_vdasha/:md",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sub_vdasha", ":md"],
+          "variable": [
+            {
+              "key": "md",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sookshma dasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sub_sub_sub_vdasha/:md/:ad/:pd",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sub_sub_sub_vdasha", ":md", ":ad", ":pd"],
+          "variable": [
+            {
+              "key": "md",
+              "value": ""
+            },
+            {
+              "key": "ad",
+              "value": ""
+            },
+            {
+              "key": "pd",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pran dasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sub_sub_sub_sub_vdasha/:md/:ad/:pd/:sd",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sub_sub_sub_sub_vdasha", ":md", ":ad", ":pd", ":sd"],
+          "variable": [
+            {
+              "key": "md",
+              "value": ""
+            },
+            {
+              "key": "ad",
+              "value": ""
+            },
+            {
+              "key": "pd",
+              "value": ""
+            },
+            {
+              "key": "sd",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "current_chardasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/current_chardasha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "current_chardasha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "major chardasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/major_chardasha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "major_chardasha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sub sub chardasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sub_chardasha/:md",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sub_chardasha", ":md"],
+          "variable": [
+            {
+              "key": "md",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "current_yogini_dasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/current_yogini_dasha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "current_yogini_dasha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "current yogini dasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/current_yogini_dasha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "current_yogini_dasha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "kalsarpa dosha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/kalsarpa_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "kalsarpa_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sadhesati_current_status",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sadhesati_current_status",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sadhesati_current_status"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sadhesati_life_details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sadhesati_life_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sadhesati_life_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pitra_dosha_report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/pitra_dosha_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "pitra_dosha_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "gemstone suggestion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/basic_gem_suggestion",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "basic_gem_suggestion"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "puja_suggestion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/puja_suggestion",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "puja_suggestion"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "rudraksha_suggestion",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/rudraksha_suggestion",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "rudraksha_suggestion"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sadhesati_remedies",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/sadhesati_remedies",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "sadhesati_remedies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_table",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_table",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_table"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_fav_time",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_fav_time",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_fav_time"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_place_vastu",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_place_vastu",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_place_vastu"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_fasts_report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_fasts_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_fasts_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_fav_lord",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_fav_lord",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_fav_lord"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_fav_mantra",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_fav_mantra",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_fav_mantra"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "numero_prediction/daily",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "name",
+              "value": "demo",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/numero_prediction/daily",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "numero_prediction", "daily"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "basic panchang",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/basic_panchang",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "basic_panchang"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "basic_panchang/sunrise",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/basic_panchang/sunrise",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "basic_panchang", "sunrise"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "advanced panchang",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/advanced_panchang",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "advanced_panchang"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "advanced_panchang/sunrise",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/advanced_panchang/sunrise",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "advanced_panchang", "sunrise"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "planet_panchang/sunrise",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/planet_panchang/sunrise",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "planet_panchang", "sunrise"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "planet_panchang",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/planet_panchang",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "planet_panchang"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "panchang_chart/sunrise",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/panchang_chart/sunrise",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "panchang_chart", "sunrise"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tamil_month_panchang",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/tamil_month_panchang",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "tamil_month_panchang"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "monthly panchang",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/monthly_panchang",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "monthly_panchang"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "tamil_panchang",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/tamil_panchang",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "tamil_panchang"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "panchang_festival",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/panchang_festival",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "panchang_festival"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "hora_muhurta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/hora_muhurta",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "hora_muhurta"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "hora_muhurta_dinman",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/hora_muhurta_dinman",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "hora_muhurta_dinman"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "chaughadiya_muhurta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/chaughadiya_muhurta",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "chaughadiya_muhurta"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "daily_nakshatra_prediction",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/daily_nakshatra_prediction",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "daily_nakshatra_prediction"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "daily_nakshatra_prediction next day",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/daily_nakshatra_prediction/next",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "daily_nakshatra_prediction", "next"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "daily_nakshatra_prediction previous day",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/daily_nakshatra_prediction/previous",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "daily_nakshatra_prediction", "previous"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general ascendant report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY",
+              "type": "text",
+              "uuid": "72cd90e9-1de6-4585-a4c7-56f7fcf45243"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_ascendant_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_ascendant_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_nakshatra_report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "gender",
+              "value": "female",
+              "type": "text",
+              "uuid": "3cee2e94-eeea-4c99-b239-59c0fc352739"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_nakshatra_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_nakshatra_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_house_report/:planet_name",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_house_report/:planet_name",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_house_report", ":planet_name"],
+          "variable": [
+            {
+              "key": "planet_name",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "general_rashi_report/:planet_name",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/general_rashi_report/:planet_name",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "general_rashi_report", ":planet_name"],
+          "variable": [
+            {
+              "key": "planet_name",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "biorhythm",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/biorhythm",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "biorhythm"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "moon biorhythm",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/moon_biorhythm",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "moon_biorhythm"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "kp_planets",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/kp_planets",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "kp_planets"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "kp_house_cusps",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/kp_house_cusps",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "kp_house_cusps"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "kp_birth_chart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/kp_birth_chart",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "kp_birth_chart"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "kp_house_significator",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/kp_house_significator",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "kp_house_significator"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "kp_planet_significator",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/kp_planet_significator",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "kp_planet_significator"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "kp_horoscope",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "aspects",
+              "value": "true",
+              "type": "text",
+              "uuid": "9a35e294-1b25-497f-8fc3-1bda50bf9c0f"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/kp_horoscope",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "kp_horoscope"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lalkitab_horoscope",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/lalkitab_horoscope",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "lalkitab_horoscope"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lalkitab_debts",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/lalkitab_debts",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "lalkitab_debts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lalkitab_remedies/:planet_name",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/lalkitab_remedies/:planet_name",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "lalkitab_remedies", ":planet_name"],
+          "variable": [
+            {
+              "key": "planet_name",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lalkitab_houses",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/lalkitab_houses",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "lalkitab_houses"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lalkitab_planets",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/lalkitab_planets",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "lalkitab_planets"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_year_chart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_year_chart",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_year_chart"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_month_chart",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_month_chart",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_month_chart"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_planets",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_planets",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_planets"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_muntha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_muntha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_muntha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_mudda_dasha",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_mudda_dasha",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_mudda_dasha"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "bhavabala",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "11",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "2026",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "11",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "16",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.07",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "72.877",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/bhavabala",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "bhavabala"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "shadbala",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "11",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "2026",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "11",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "16",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.07",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "72.877",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/shadbala",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "shadbala"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_panchavargeeya_bala",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_panchavargeeya_bala",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_panchavargeeya_bala"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_harsha_bala",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_harsha_bala",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_harsha_bala"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_yoga",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_yoga",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_yoga"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "varshaphal_saham_points",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/varshaphal_saham_points",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "varshaphal_saham_points"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match birth details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_birth_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_birth_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_obstructions",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_obstructions",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_obstructions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_astro_details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_astro_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_astro_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_planet_details",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_planet_details",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_planet_details"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_manglik_report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_manglik_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_manglik_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_ashtakoot_points",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_ashtakoot_points",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_ashtakoot_points"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_dashakoot_points",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_dashakoot_points",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_dashakoot_points"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_percentage",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_percentage",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_percentage"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_making_report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_making_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_making_report"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "match_making_detailed_report",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "ma",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "m_day",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "m_month",
+              "value": "5",
+              "type": "text"
+            },
+            {
+              "key": "m_year",
+              "value": "1990",
+              "type": "text"
+            },
+            {
+              "key": "m_hour",
+              "value": "19",
+              "type": "text"
+            },
+            {
+              "key": "m_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "m_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "m_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "m_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "f_day",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_month",
+              "value": "10",
+              "type": "text"
+            },
+            {
+              "key": "f_year",
+              "value": "1993",
+              "type": "text"
+            },
+            {
+              "key": "f_hour",
+              "value": "20",
+              "type": "text"
+            },
+            {
+              "key": "f_min",
+              "value": "55",
+              "type": "text"
+            },
+            {
+              "key": "f_lat",
+              "value": "19.20",
+              "type": "text"
+            },
+            {
+              "key": "f_lon",
+              "value": "25.2",
+              "type": "text"
+            },
+            {
+              "key": "f_tzone",
+              "value": "5.5",
+              "type": "text"
+            },
+            {
+              "key": "ayanamsha",
+              "value": "LAHIRI",
+              "type": "text",
+              "description": "other values : KP_OLD, KP_NEW,YUKTESHWAR,,RAMAN,JN_BHASIN,FAGAN_BRADLEY"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/match_making_detailed_report",
+          "protocol": "https",
+          "host": ["json", "astrologyapi", "com"],
+          "path": ["v1", "match_making_detailed_report"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "password",
+        "value": "api key",
+        "type": "string"
+      },
+      {
+        "key": "username",
+        "value": "user id",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    }
+  ]
+}

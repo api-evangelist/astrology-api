@@ -1,0 +1,220 @@
+{
+  "info": {
+    "_postman_id": "1b2ca391-bf1b-4f4d-a79c-e741399a654e",
+    "name": "Human Design APIs Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52126420",
+    "_collection_link": "https://go.postman.co/collection/52126420-1b2ca391-bf1b-4f4d-a79c-e741399a654e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST /v1/human-design",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ajeet\",\n  \"gender\": \"male\",\n  \"day\": 15,\n  \"month\": 8,\n  \"year\": 1990,\n  \"hour\": 10,\n  \"min\": 30,\n  \"lat\": 39.9526,\n  \"lon\": -75.1652,\n  \"tzone\": -5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/human-design",
+          "host": [
+            "json.astrologyapi.com"
+          ],
+          "path": [
+            "v1",
+            "human-design"
+          ],
+          "protocol": "https"
+        },
+        "description": "Builds a person's core Human Design bodygraph from birth details."
+      },
+      "response": []
+    },
+    {
+      "name": "POST /v1/human-design/chart-data",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ajeet\",\n  \"gender\": \"male\",\n  \"day\": 15,\n  \"month\": 8,\n  \"year\": 1990,\n  \"hour\": 10,\n  \"min\": 30,\n  \"lat\": 39.9526,\n  \"lon\": -75.1652,\n  \"tzone\": -5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/human-design/chart-data",
+          "host": [
+            "json.astrologyapi.com"
+          ],
+          "path": [
+            "v1",
+            "human-design",
+            "chart-data"
+          ],
+          "protocol": "https"
+        },
+        "description": "Returns detailed Human Design chart payload including computed chart data."
+      },
+      "response": []
+    },
+    {
+      "name": "POST /v1/human-design/analysis",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ajeet\",\n  \"gender\": \"male\",\n  \"day\": 15,\n  \"month\": 8,\n  \"year\": 1990,\n  \"hour\": 10,\n  \"min\": 30,\n  \"lat\": 39.9526,\n  \"lon\": -75.1652,\n  \"tzone\": -5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/human-design/analysis",
+          "host": [
+            "json.astrologyapi.com"
+          ],
+          "path": [
+            "v1",
+            "human-design",
+            "analysis"
+          ],
+          "protocol": "https"
+        },
+        "description": "Summarizes a Human Design chart into concise analysis blocks."
+      },
+      "response": []
+    },
+    {
+      "name": "POST /v1/human-design/chart-interpretation",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ajeet\",\n  \"gender\": \"male\",\n  \"day\": 15,\n  \"month\": 8,\n  \"year\": 1990,\n  \"hour\": 10,\n  \"min\": 30,\n  \"lat\": 39.9526,\n  \"lon\": -75.1652,\n  \"tzone\": -5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/human-design/chart-interpretation",
+          "host": [
+            "json.astrologyapi.com"
+          ],
+          "path": [
+            "v1",
+            "human-design",
+            "chart-interpretation"
+          ],
+          "protocol": "https"
+        },
+        "description": "Returns an interpretation focused on chart-level Human Design insights."
+      },
+      "response": []
+    },
+    {
+      "name": "POST /v1/human-design/traits-interpretation",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-astrologyapi-key",
+            "value": "{{access_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ajeet\",\n  \"gender\": \"male\",\n  \"day\": 15,\n  \"month\": 8,\n  \"year\": 1990,\n  \"hour\": 10,\n  \"min\": 30,\n  \"lat\": 39.9526,\n  \"lon\": -75.1652,\n  \"tzone\": -5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://json.astrologyapi.com/v1/human-design/traits-interpretation",
+          "host": [
+            "json.astrologyapi.com"
+          ],
+          "path": [
+            "v1",
+            "human-design",
+            "traits-interpretation"
+          ],
+          "protocol": "https"
+        },
+        "description": "Returns trait-level interpretation for Human Design insights."
+      },
+      "response": []
+    }
+  ]
+}

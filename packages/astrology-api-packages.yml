@@ -1,0 +1,178 @@
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/developers/v1/sdk-reference + registry metadata endpoints (registry.npmjs.org,
+  pypi.org, rubygems.org, repo.packagist.org, api.nuget.org) + https://github.com/astrologyapi
+description: >-
+  First-party AstrologyAPI client libraries. Nine SDKs are advertised on the provider's SDK Reference
+  page. Only two of them are actually published to a language package registry — npm and PyPI. The
+  other seven are distributed as GitHub source only, with no registry release, so a consumer installs
+  them by cloning rather than by declaring a dependency. Every version/date below was read from the
+  registry metadata endpoint or, for source-only SDKs, from the manifest committed in the repository.
+provider: AstrologyAPI
+docs: https://astrologyapi.com/developers/v1/sdk-reference
+github_organization: https://github.com/astrologyapi
+packages:
+  - name: astrologyapi
+    language: JavaScript/TypeScript
+    registry: npm
+    official: true
+    url: https://www.npmjs.com/package/astrologyapi
+    repository: https://github.com/astrologyapi/astro-api-nodejs-client
+    version: 1.0.1
+    published: '2025-01-29'
+    note: >-
+      PUBLISH GAP. The registry still serves 1.0.1 from 2025-01-29, but package.json on the
+      repository default branch declares 2.0.0 and the repo was last pushed 2026-05-07. The 2.0
+      rewrite was never published to npm, so `npm i astrologyapi` installs a build more than 19
+      months older than the source the provider points developers at. Registry metadata records only
+      two published versions in total.
+  - name: astrologyapi
+    language: Python
+    registry: pypi
+    official: true
+    url: https://pypi.org/project/astrologyapi/
+    repository: https://github.com/astrologyapi/astro-api-python-client
+    version: 2.0.0
+    published: '2026-05-12'
+    note: >-
+      Current. The only AstrologyAPI SDK whose registry release matches the source. Declared author
+      "AstrologyAPI <support@astrologyapi.com>"; a single published release. Its project_urls point
+      Documentation at https://docs.astrologyapi.com, a hostname that does not resolve in public DNS
+      (NXDOMAIN, probed 2026-09-07) — the live docs are at https://astrologyapi.com/developers/v1.
+  - name: astrologyapi/astrologyapi-php
+    language: PHP
+    registry: null
+    official: true
+    url: https://github.com/astrologyapi/astro-api-php-client
+    repository: https://github.com/astrologyapi/astro-api-php-client
+    version: 2.0.0
+    published: null
+    note: >-
+      Source-only. composer.json declares name "astrologyapi/astrologyapi-php" version 2.0.0, but the
+      package is absent from Packagist (repo.packagist.org returns 404 for both
+      astrologyapi/astrologyapi-php and astrologyapi/astro-api-php-client), so `composer require`
+      cannot resolve it. Version read from the committed composer.json; no release date exists
+      because there is no registry release. Repo last pushed 2026-05-07.
+  - name: AstrologyAPI (Swift)
+    language: Swift
+    registry: swift-package-manager
+    official: true
+    url: https://github.com/astrologyapi/astro-api-swift
+    repository: https://github.com/astrologyapi/astro-api-swift
+    version: null
+    published: null
+    note: >-
+      Distributed via Swift Package Manager straight from the git repository, which has no central
+      metadata endpoint to query. Package.swift declares swift-tools-version 6.0 and platforms
+      iOS 15 / macOS 12 / watchOS 8 / tvOS 15. No semantic-version git tag was published, so a
+      consumer pinning by version has nothing to pin to. Repo last pushed 2026-05-12.
+  - name: astro-api-kotlin
+    language: Kotlin
+    registry: null
+    official: true
+    url: https://github.com/astrologyapi/astro-api-kotlin
+    repository: https://github.com/astrologyapi/astro-api-kotlin
+    version: null
+    published: null
+    note: >-
+      Source-only Gradle project. Not on Maven Central — a search for "astrologyapi" on
+      search.maven.org returned no artifact. No registry release, so no version or date to record.
+      Repo last pushed 2026-05-11.
+  - name: astro-api-java-client
+    language: Java
+    registry: null
+    official: true
+    url: https://github.com/astrologyapi/astro-api-java-client
+    repository: https://github.com/astrologyapi/astro-api-java-client
+    version: null
+    published: null
+    note: >-
+      Source-only. Not on Maven Central. Repo last pushed 2025-01-30 — over 19 months stale against
+      an API that shipped Human Design, Astrocartography, Palmistry, Face Reading and a rebuilt
+      transits engine during 2026.
+  - name: astro-api-net-client
+    language: C# / .NET
+    registry: null
+    official: true
+    url: https://github.com/astrologyapi/astro-api-net-client
+    repository: https://github.com/astrologyapi/astro-api-net-client
+    version: null
+    published: null
+    note: >-
+      Source-only .csproj. Absent from NuGet (api.nuget.org returns 404 for astrologyapi). Repo last
+      pushed 2025-01-30.
+  - name: astro-api-ruby-client
+    language: Ruby
+    registry: null
+    official: true
+    url: https://github.com/astrologyapi/astro-api-ruby-client
+    repository: https://github.com/astrologyapi/astro-api-ruby-client
+    version: null
+    published: null
+    note: >-
+      Source-only loose .rb files with a Gemfile; not packaged as a gem. Absent from RubyGems
+      (rubygems.org returns 404 for astrologyapi, astrology_api and astro-api). Repo last pushed
+      2025-01-30.
+  - name: astro-api-android-client
+    language: Android
+    registry: null
+    official: true
+    url: https://github.com/astrologyapi/astro-api-android-client
+    repository: https://github.com/astrologyapi/astro-api-android-client
+    version: null
+    published: null
+    note: >-
+      ADVERTISED BUT EMPTY. The SDK Reference page lists an Android SDK, but the repository contains
+      only a README — no source. Last pushed 2017-02-18.
+  - name: pdf-api-php-client
+    language: PHP
+    registry: null
+    official: true
+    url: https://github.com/astrologyapi/pdf-api-php-client
+    repository: https://github.com/astrologyapi/pdf-api-php-client
+    version: null
+    published: null
+    note: >-
+      Source-only helper for the PDF Reports API; not listed on the SDK Reference page and not on
+      Packagist. Repo last pushed 2022-12-30.
+components:
+  - name: D3 Horoscope Chart
+    language: JavaScript
+    registry: null
+    official: true
+    url: https://astrologyapi.com/developers/v1/sdk-reference
+    version: null
+    published: null
+    note: >-
+      Advertised on the SDK Reference page as a JavaScript chart library for horoscope
+      visualisations. It is a rendering component rather than an API client — see
+      components/astrology-api-components.yml. No registry listing and no public repository in the
+      astrologyapi GitHub organisation was found, so there is no version or date to record.
+registries_checked:
+  - registry: npm
+    result: 1 package found (astrologyapi)
+  - registry: pypi
+    result: 1 package found (astrologyapi)
+  - registry: rubygems
+    result: none
+  - registry: packagist
+    result: none
+  - registry: nuget
+    result: none
+  - registry: maven-central
+    result: none
+  - registry: crates.io
+    result: none
+  - registry: pkg.go.dev
+    result: not applicable — no Go SDK is advertised
+summary:
+  advertised: 9
+  official: 10
+  registry_published: 2
+  source_only: 8
+  empty: 1
+  currency_finding: >-
+    Two of nine advertised SDKs are installable from a package manager. The JavaScript SDK — the one
+    most likely to be reached for — is 19 months behind its own source. Four SDKs (Java, .NET, Ruby,
+    Android) have not been touched since January 2025 or earlier and predate five product launches
+    the provider shipped in 2026.

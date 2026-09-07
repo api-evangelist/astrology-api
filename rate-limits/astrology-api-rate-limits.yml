@@ -1,92 +1,92 @@
 specification: API Commons Rate Limits
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
-provider: Astrology API
+provider: AstrologyAPI
 providerId: astrology-api
+generated: '2026-09-07'
+method: searched
+source: https://astrologyapi.com/pricing, https://astrologyapi.com/pricing/indian-astrology-pricing,
+  https://astrologyapi.com/pricing/western-astrology-pricing,
+  https://astrologyapi.com/developers/v1/guides/production-checklist
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+note: >-
+  Replaces the generated scaffold written by the 2026-05-04 bulk sweep. That file asserted
+  X-RateLimit-* headers, a 429 status and per-minute limits of 10/100/1000 for free, professional and
+  enterprise tiers. None of those values appears anywhere in AstrologyAPI's published documentation —
+  they were placeholder defaults, and they were the only rate-limit facts the catalog held. The
+  honest finding, recorded below, is that AstrologyAPI publishes no rate limits at all.
 tags:
   - Astrology
-  - Horoscopes
-  - Zodiac
-  - Vedic Astrology
-  - Western Astrology
   - Rate Limiting
   - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Astrology API API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
+description: >-
+  AstrologyAPI documents no rate limit, no throttling behaviour and no rate-limit response headers on
+  any public page. Consumption is governed commercially by a credit wallet rather than technically by
+  a request ceiling: exceeding an included quota bills overage instead of returning an error.
+limit_count: 0
+limits: []
 headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  published: false
+  limit: null
+  remaining: null
+  reset: null
+  retryAfter: null
+  policy: null
+  detail: >-
+    No X-RateLimit-*, RateLimit-* (RFC 9331 style) or Retry-After header is documented on any
+    endpoint, and none is mentioned in the production checklist, the quick start, the access-token
+    guide or any of the eight published Postman collections. An agent has no runtime signal telling
+    it how much budget remains before it is throttled.
 responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Astrology API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Astrology API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Astrology API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Astrology API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
+  throttled: null
+  quotaExceeded: null
+  detail: >-
+    No status code is documented for exhaustion. The published error handling guidance covers only
+    generic 4xx (do not retry) and 5xx (retry with exponential backoff); 429 is never mentioned. The
+    only status codes observed live on the API hosts were 401 (authentication failed) and 404
+    (unknown endpoint).
+commercial_controls:
+  - name: Included quota
+    scope: subscription plan
+    detail: Each suite subscription tier carries a monthly included call allocation, shown on the suite pricing pages.
+  - name: Overage billing
+    scope: subscription plan
+    detail: Calls past the included quota bill at ₹20 per 1,000 (≈$1 per 1,000) rather than being refused.
+    price: '20.00'
+    currency: INR
+    unit: 1000 calls
+  - name: Usage alert
+    scope: account
+    detail: An automated alert fires at 80% of the included quota so the account can top up or change tier.
+  - name: Credit wallet
+    scope: account
+    detail: >-
+      Pay-as-you-go calls draw down a prepaid credit balance. The effective ceiling is the wallet
+      balance — when credits run out, calls stop being billable rather than being rate limited. The
+      provider's production checklist advises monitoring the wallet and firing an alert if it runs low.
+  - name: Enterprise custom limits
     scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Astrology API
+    detail: >-
+      The Western pricing page offers "custom rate limits, dedicated support, and infrastructure
+      tuning" on the Enterprise tier, and the Indian page offers to "tune infrastructure around your
+      launch window" for higher burst limits. No numbers are published for any of it.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Retry and backoff
+    description: >-
+      Retry on 5xx and network errors only, with exponential backoff (the provider's reference
+      wrapper uses 1s/2s/4s over four attempts with a 10-second request timeout). Never retry a 4xx.
+    source: https://astrologyapi.com/developers/v1/guides/production-checklist
+  - name: Cache to reduce call volume
+    description: >-
+      The provider positions caching, not rate limiting, as the volume-control mechanism — cache
+      daily horoscope content keyed on (sign, date) and natal chart data keyed on the birth-detail
+      tuple, both of which are stable by construction.
+    source: https://astrologyapi.com/developers/v1/guides/production-checklist
+finding: >-
+  An honest zero. AstrologyAPI states volumes in credits and rupees but never in requests per second,
+  minute or hour, and returns no rate-limit headers. An integrator can predict what a call costs but
+  not how fast they may make calls, and an autonomous agent has nothing to back off against.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

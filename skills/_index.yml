@@ -1,0 +1,70 @@
+generated: '2026-09-07'
+method: generated
+source: openapi/astrology-api-json-openapi.yml, openapi/astrology-api-pdf-openapi.yml,
+  https://astrologyapi.com/developers/v1/guides
+description: >-
+  Packaged Agent Skills for the AstrologyAPI platform, one per marquee flow. Every operationId
+  referenced was verified against the OpenAPI documents in openapi/ — none is invented. Each skill
+  carries the platform's real runtime rules: retry only on 5xx, never on 4xx; cache on the birth
+  tuple; there is no idempotency key and no rate-limit header.
+provider: AstrologyAPI
+skills:
+  - name: astrology-api-vedic-kundli
+    file: astrology-api-vedic-kundli.md
+    title: Build a Vedic Kundli
+    surface: Vedic Astrology
+    host: https://json.astrologyapi.com/v1
+    operations: 9
+    summary: >-
+      Place resolution, historical timezone offset, birth details, planets, divisional charts,
+      current Vimshottari dasha, and planetary/house strength ranking.
+  - name: astrology-api-western-natal
+    file: astrology-api-western-natal.md
+    title: Build a Western natal chart
+    surface: Western Astrology
+    host: https://json.astrologyapi.com/v1
+    operations: 11
+    summary: >-
+      Tropical planets, house cusps and aspects, interpretation text, rendered wheel image, and the
+      distinction between per-person natal transits and shared daily tropical transits.
+  - name: astrology-api-kundli-matching
+    file: astrology-api-kundli-matching.md
+    title: Kundli matching (guna milan)
+    surface: Vedic Astrology
+    host: https://json.astrologyapi.com/v1
+    operations: 10
+    summary: >-
+      Two-subject m_/f_ request shape, Ashtakoot vs Dashakoot scoring, Manglik and obstruction
+      analysis, missing-birth-time handling, and responsible dosha presentation.
+  - name: astrology-api-pdf-reports
+    file: astrology-api-pdf-reports.md
+    title: Generate a white-labeled PDF report
+    surface: PDF Reports
+    host: https://pdf.astrologyapi.com/v1
+    operations: 12
+    summary: >-
+      The separate PDF host, the eleven per-request branding fields, the short-form vs long-form
+      field-name split that breaks most first integrations, and why a PDF call must never sit inside
+      a generic retry wrapper.
+  - name: astrology-api-daily-horoscope
+    file: astrology-api-daily-horoscope.md
+    title: Serve daily horoscope content at scale
+    surface: Horoscopes
+    host: https://json.astrologyapi.com/v1
+    operations: 5
+    summary: >-
+      The one flow with no birth data. Generate once per sign per day and cache — 12 calls a day, not
+      12 per visitor.
+cross_cutting_rules:
+  authentication: >-
+    HTTP Basic (User ID + API key) with form-encoded bodies, or an x-astrologyapi-key access token
+    with JSON bodies. Server-side only — no CORS headers are sent.
+  retries: Retry on 5xx and network errors with exponential backoff; never retry a 4xx.
+  idempotency: >-
+    None. No idempotency key exists on any operation, so a retry after a timeout re-bills. This
+    matters most on the PDF operations, which mint a billed, non-refundable artifact.
+  rate_limits: None published, and no rate-limit response headers. Consumption is bounded by wallet credits.
+  caching: >-
+    Cache on the birth tuple (day, month, year, hour, min, lat, lon, tzone) plus ayanamsha or
+    house_type. Natal results never change; daily content changes once a day and is shared by all users.
+  errors: See errors/astrology-api-problem-types.yml — three incompatible error envelopes across hosts.

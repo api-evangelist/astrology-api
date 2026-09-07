@@ -1,0 +1,181 @@
+generated: '2026-09-07'
+method: probed
+source: live probes of mcp.astrologyapi.com discovery documents and the API hosts, plus
+  https://astrologyapi.com/developers/v1 documentation, 2026-09-07
+description: >-
+  Standards conformance for AstrologyAPI. The platform's REST surface is a plain JSON-over-HTTP API
+  with no cross-cutting standard applied. The MCP server is where the standards story sits: it speaks
+  Model Context Protocol and it serves both OAuth discovery documents — but both documents are
+  malformed in the same way, which is the single most consequential conformance finding here.
+conformance:
+  - id: mcp
+    name: Model Context Protocol
+    conforms: true
+    evidence: >-
+      A first-party hosted MCP server at https://mcp.astrologyapi.com/mcp, documented by the provider
+      with client configuration for Cursor, VS Code, Claude Code and Claude Desktop, and advertising
+      109 tools. A JSON-RPC POST reaches a real MCP handler — it returns a structured 401
+      invalid_token challenge rather than a transport error.
+    url: https://astrologyapi.com/developers/v1/mcp-server
+    verified: probed
+  - id: rfc9728
+    name: 'RFC 9728: OAuth 2.0 Protected Resource Metadata'
+    conforms: partial
+    evidence: >-
+      https://mcp.astrologyapi.com/.well-known/oauth-protected-resource returns HTTP 200 with a valid
+      JSON object carrying resource, authorization_servers, bearer_methods_supported and
+      scopes_supported. The document is served and well-formed JSON, but its authorization_servers
+      entry is the string '"https://mcp.astrologyapi.com/mcp"' — with literal double-quote characters
+      embedded inside the value — so the issuer it names is not a resolvable URL.
+    url: https://mcp.astrologyapi.com/.well-known/oauth-protected-resource
+    verified: probed
+  - id: rfc8414
+    name: 'RFC 8414: OAuth 2.0 Authorization Server Metadata'
+    conforms: partial
+    evidence: >-
+      https://mcp.astrologyapi.com/.well-known/oauth-authorization-server returns HTTP 200 with the
+      required metadata keys. It is NOT usable as published: the issuer value is
+      '"https://mcp.astrologyapi.com/mcp"' with embedded quote characters, and because the endpoint
+      URLs are built by concatenating that value, authorization_endpoint renders as
+      '"https://mcp.astrologyapi.com/mcp"/oauth/authorize', token_endpoint and registration_endpoint
+      likewise. RFC 8414 requires issuer to be a URL using the https scheme; a strict client fails
+      discovery and a lenient one attempts an unresolvable host. This looks like a single unquoted
+      string interpolation in the server that emits these documents, and fixing it would fix both
+      documents at once.
+    url: https://mcp.astrologyapi.com/.well-known/oauth-authorization-server
+    verified: probed
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: partial
+    evidence: >-
+      The protected-resource document advertises authorization_code, client_credentials and
+      refresh_token grants, PKCE with S256 and plain, bearer tokens in the header, an offline_access
+      scope, and a dynamic client registration endpoint. The advertised endpoints resolve to live
+      paths (/mcp/oauth/authorize returns 400, /mcp/oauth/token and /mcp/oauth/register return 401 —
+      all real handlers, not 404s), so the implementation exists behind the malformed metadata. Note
+      that token_endpoint_auth_methods_supported is ["none"] only.
+    url: https://mcp.astrologyapi.com/.well-known/oauth-protected-resource
+    verified: probed
+  - id: pkce
+    name: 'RFC 7636: PKCE'
+    conforms: true
+    evidence: 'code_challenge_methods_supported: ["S256","plain"] in the published authorization server metadata.'
+    url: https://mcp.astrologyapi.com/.well-known/oauth-authorization-server
+    verified: probed
+  - id: rfc7591
+    name: 'RFC 7591: Dynamic Client Registration'
+    conforms: partial
+    evidence: >-
+      A registration_endpoint is advertised and the path answers 401 rather than 404, so a handler
+      exists. The advertised URL itself is unusable for the embedded-quote reason above.
+    verified: probed
+  - id: llmstxt
+    name: llms.txt
+    conforms: true
+    evidence: >-
+      https://astrologyapi.com/llms.txt returns HTTP 200 with 24,864 bytes of real, well-structured
+      llms.txt — a summary, a citable key-facts block, and linked sections for products, endpoints,
+      guides, pricing and legal. One of the more complete llms.txt documents in the catalog.
+    url: https://astrologyapi.com/llms.txt
+    verified: probed
+  - id: openapi
+    name: OpenAPI
+    conforms: partial
+    evidence: >-
+      One first-party OpenAPI 3.1.0 is served, at https://vision.astrologyapi.com/openapi.json
+      ("Palmistry Service API", 22 operations with component schemas), together with Swagger UI at
+      /docs and ReDoc at /redoc. It covers the Palmistry product only. The other ~194 operations —
+      the entire Vedic, Western, Horoscope, PDF and Face Reading surface — have no published OpenAPI;
+      those specs in this repository were derived from the provider's Postman collections.
+    url: https://vision.astrologyapi.com/openapi.json
+    verified: probed
+  - id: postman-collection-v2.1
+    name: Postman Collection Format v2.1
+    conforms: true
+    evidence: >-
+      Eight collections published at https://astrologyapi.com/postman/, each declaring
+      https://schema.getpostman.com/json/collection/v2.1.0/collection.json and together covering 218
+      requests across four API hosts. This is the provider's real machine-readable contract.
+    url: https://astrologyapi.com/developers/v1/postman-collection
+    verified: probed
+  - id: rfc9457
+    name: 'RFC 9457: Problem Details for HTTP APIs'
+    conforms: false
+    evidence: >-
+      Errors are proprietary JSON with no application/problem+json media type. Two different
+      envelopes are returned by the same host — 401 uses {"status":false,"msg":...} while 404 uses
+      {"status":false,"statusCode":404,"error_msg":...} — so there is not even one internally
+      consistent error shape.
+    verified: probed
+  - id: rfc9116
+    name: 'RFC 9116: security.txt'
+    conforms: false
+    evidence: /.well-known/security.txt returns 404 on every host probed (six hosts, 2026-09-07).
+    verified: probed
+  - id: rfc8594
+    name: 'RFC 8594: Sunset HTTP Header'
+    conforms: false
+    evidence: No Sunset or Deprecation header and no deprecation policy is published anywhere on the site.
+    verified: searched
+  - id: rfc9331
+    name: RateLimit header fields
+    conforms: false
+    evidence: No rate-limit response headers are documented or advertised. See rate-limits/astrology-api-rate-limits.yml.
+    verified: searched
+  - id: api-catalog
+    name: 'RFC 9727: /.well-known/api-catalog'
+    conforms: false
+    evidence: Returns 404 on every host probed.
+    verified: probed
+  - id: a2a
+    name: A2A Agent Card
+    conforms: false
+    evidence: >-
+      /.well-known/agent-card.json and /.well-known/agent.json return 404 on astrologyapi.com,
+      www, json, pdf and vision, and 401 on the MCP host — where the 401 is the same authentication
+      wall every path returns, not a card. No agent card is published.
+    verified: probed
+  - id: openid-connect
+    name: OpenID Connect Discovery
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404 on all API hosts and 401 on the MCP host.
+    verified: probed
+  - id: cors
+    name: CORS
+    conforms: false
+    evidence: >-
+      Deliberate, not an oversight. The provider documents that json.astrologyapi.com sends no CORS
+      headers and instructs developers to route calls through their own server.
+    url: https://astrologyapi.com/developers/v1/guides/production-checklist
+    verified: searched
+domain_standard:
+  applicable: false
+  detail: >-
+    Astrology and divination have no interoperability standard — no schema registry, message format,
+    identifier scheme or conformance body exists for birth-chart or horoscope data, and none of the
+    regulatory regimes in scoring.yml covers this sector. The nearest thing to a shared reference is
+    the Swiss Ephemeris astronomical calculation library, which the provider positions itself against
+    with a dedicated migration guide rather than claiming conformance to. This is a reward-only check
+    and there is nothing here to conform to; recorded as not applicable rather than as a failure.
+  candidates_checked:
+    - name: Swiss Ephemeris
+      result: >-
+        Not a conformance standard. It is an ephemeris calculation library; AstrologyAPI publishes a
+        "Move from self-hosted Swiss Ephemeris" migration guide, which is a competitive positioning
+        document, not a conformance claim.
+      url: https://astrologyapi.com/developers/v1/guides/swiss-ephemeris-migration
+compliance:
+  certifications: []
+  trust_center: false
+  detail: >-
+    No SOC 2, ISO 27001, PCI DSS, HIPAA, GDPR or other certification is claimed anywhere on the site,
+    and no trust centre or security page exists. This matters more than usual for this provider
+    because the API ingests date, time and place of birth for named individuals, and the Palmistry and
+    Face Reading products ingest photographs of a person's hand and face — biometric-adjacent
+    personal data — with no published retention period, deletion endpoint or certification behind it.
+    See security/astrology-api-vulnerability-disclosure.yml.
+summary:
+  conforms: 4
+  partial: 5
+  does_not_conform: 8
+  not_applicable: 1

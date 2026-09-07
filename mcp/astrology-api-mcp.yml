@@ -1,0 +1,118 @@
+generated: '2026-09-07'
+method: probed
+source: https://astrologyapi.com/developers/v1/mcp-server
+description: >-
+  AstrologyAPI operates a first-party hosted MCP server that exposes its astrology calculation
+  engine to LLM agents and IDEs. The endpoint, the header name and the tool count below are quoted
+  from the provider's own MCP documentation page; the authentication behaviour and the discovery
+  documents were confirmed by live probes on 2026-09-07.
+name: AstrologyAPI MCP Server
+provider: AstrologyAPI
+status: live
+deployment:
+  mode: remote
+  endpoint: https://mcp.astrologyapi.com/mcp
+  auth: api-key
+  verified: probed
+  note: >-
+    Remote only. The provider documents no npx/stdio package and none was found on npm, PyPI or the
+    astrologyapi GitHub organisation, so there is nothing to install locally — an agent reaches this
+    server by POSTing to the URL above.
+transport:
+  protocol: Model Context Protocol
+  type: streamable-http
+  endpoint: https://mcp.astrologyapi.com/mcp
+authentication:
+  primary:
+    scheme: api-key
+    header: x-astrologyapi-key
+    credential: AstrologyAPI Wallet Access Token
+    source: https://astrologyapi.com/developers/v1/mcp-server
+    note: >-
+      The documented client configuration passes the wallet access token in an x-astrologyapi-key
+      header. The provider states a wallet access token is sufficient — no subscription is required
+      to mint an MCP credential.
+  alternative:
+    scheme: oauth2
+    note: >-
+      The server also advertises OAuth. An unauthenticated request returns
+      {"error":"invalid_token","error_description":"Missing authentication. Provide Bearer token or
+      x-astrology headers.","requires_reauth":true} with HTTP 401, and the host serves RFC 8414 and
+      RFC 9728 discovery documents. Those documents are malformed — see
+      well-known/astrology-api-well-known.yml and conformance/astrology-api-conformance.yml.
+    authorization_server_metadata: https://mcp.astrologyapi.com/.well-known/oauth-authorization-server
+    protected_resource_metadata: https://mcp.astrologyapi.com/.well-known/oauth-protected-resource
+    grant_types_supported:
+      - authorization_code
+      - client_credentials
+      - refresh_token
+    code_challenge_methods_supported:
+      - S256
+      - plain
+    scopes_supported:
+      - offline_access
+    dynamic_client_registration: advertised
+tools:
+  count: 109
+  count_source: >-
+    "Access 109 specialized tools covering both Vedic (Jyotish) and Western astrology systems" —
+    https://astrologyapi.com/developers/v1/mcp-server
+  schemas_available: false
+  schema_note: >-
+    tools/list is authentication-gated. An anonymous JSON-RPC tools/list POST returns HTTP 401
+    invalid_token, so the live inputSchema for each tool could not be read. The tool names and
+    argument shape below are taken from the provider's own documented example, not invented.
+  documented_example:
+    method: tools/call
+    tool: birth_details
+    arguments:
+      day: 1
+      month: 11
+      year: 1976
+      hour: 19
+      min: 45
+      lat: 19.17
+      lon: 73.7
+      tzone: 5.5
+      language: en
+    source: https://astrologyapi.com/developers/v1/mcp-server
+probes:
+  - url: https://mcp.astrologyapi.com/mcp
+    method: POST
+    body: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+    status: 401
+    response: >-
+      {"error":"invalid_token","error_description":"Missing authentication. Provide Bearer token or
+      x-astrology headers.","requires_reauth":true}
+    checked: '2026-09-07'
+  - url: https://mcp.astrologyapi.com/mcp
+    method: POST
+    body: '{"jsonrpc":"2.0","id":1,"method":"initialize"}'
+    status: 401
+    checked: '2026-09-07'
+  - url: https://mcp.astrologyapi.com/.well-known/oauth-authorization-server
+    method: GET
+    status: 200
+    checked: '2026-09-07'
+  - url: https://mcp.astrologyapi.com/.well-known/oauth-protected-resource
+    method: GET
+    status: 200
+    checked: '2026-09-07'
+client_configuration:
+  source: https://astrologyapi.com/developers/v1/mcp-server
+  clients_documented:
+    - Cursor
+    - VS Code
+    - Claude Code
+    - Claude Desktop
+    - cURL / other
+  example:
+    mcpServers:
+      astrology:
+        url: https://mcp.astrologyapi.com/mcp
+        headers:
+          x-astrologyapi-key: <YOUR_ACCESS_TOKEN>
+documentation:
+  technical: https://astrologyapi.com/developers/v1/mcp-server
+  product: https://www.astrologyapi.com/astro-ai/mcp-server
+  related_guide: https://astrologyapi.com/developers/v1/guides/llm-grounding

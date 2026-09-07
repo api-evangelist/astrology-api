@@ -1,0 +1,1172 @@
+{
+ "info": {
+  "_postman_id": "d7e1274f-35c9-4fc4-96d0-6b8031f3f98e",
+  "name": "Indian Astrology PDF API collection (User Collection)",
+  "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+  "_exporter_id": "22644900",
+  "_apievangelist_redaction": "API Evangelist redacted a populated HTTP Basic auth block that AstrologyAPI ships in this publicly downloadable collection. The original values were not exercised and are not stored in this repository. See security/astrology-api-vulnerability-disclosure.yml."
+ },
+ "item": [
+  {
+   "name": "Mini Kundli PDF",
+   "request": {
+    "auth": {
+     "type": "basic",
+     "basic": [
+      {
+       "key": "password",
+       "value": "ByVOIaODH57QRVi6CqswHXGlcpDvj7tZBRoorY",
+       "type": "string"
+      },
+      {
+       "key": "username",
+       "value": "4545",
+       "type": "string"
+      }
+     ]
+    },
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention access token key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Ajeet",
+       "type": "text",
+       "uuid": "5ea6837c-6472-4bcf-9531-b0956518dfcf"
+      },
+      {
+       "key": "day",
+       "value": "9",
+       "type": "text"
+      },
+      {
+       "key": "month",
+       "value": "1",
+       "type": "text"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text"
+      },
+      {
+       "key": "hour",
+       "value": "11",
+       "type": "text"
+      },
+      {
+       "key": "min",
+       "value": "40",
+       "type": "text"
+      },
+      {
+       "key": "lat",
+       "value": "19.31",
+       "type": "text"
+      },
+      {
+       "key": "lon",
+       "value": "72.86",
+       "type": "text"
+      },
+      {
+       "key": "tzone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "gender",
+       "value": "male",
+       "type": "text"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text"
+      },
+      {
+       "key": "chart_style",
+       "value": "NORTH_INDIAN",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_name",
+       "value": "rnb",
+       "type": "text"
+      },
+      {
+       "key": "company_info",
+       "value": "company info",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "company_email",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_landline",
+       "value": "123456789",
+       "type": "text"
+      },
+      {
+       "key": "company_mobile",
+       "value": "123456789",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/mini_horoscope_pdf",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "mini_horoscope_pdf"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Basic PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "metion_access_token_key_here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Ajeet",
+       "type": "text",
+       "uuid": "fe848eb0-9ffa-4f14-bed8-06f454a8d717"
+      },
+      {
+       "key": "day",
+       "value": "9",
+       "type": "text"
+      },
+      {
+       "key": "month",
+       "value": "1",
+       "type": "text"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text"
+      },
+      {
+       "key": "hour",
+       "value": "11",
+       "type": "text"
+      },
+      {
+       "key": "min",
+       "value": "40",
+       "type": "text"
+      },
+      {
+       "key": "lat",
+       "value": "19.31",
+       "type": "text"
+      },
+      {
+       "key": "lon",
+       "value": "72.86",
+       "type": "text"
+      },
+      {
+       "key": "tzone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "gender",
+       "value": "male",
+       "type": "text"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text"
+      },
+      {
+       "key": "chart_style",
+       "value": "NORTH_INDIAN",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_name",
+       "value": "rnb",
+       "type": "text"
+      },
+      {
+       "key": "company_info",
+       "value": "company info",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "company_email",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_landline",
+       "value": "123456789",
+       "type": "text"
+      },
+      {
+       "key": "company_mobile",
+       "value": "123456789",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/basic_horoscope_pdf",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "basic_horoscope_pdf"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Gemstone Report PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "Content-Type",
+      "value": "application/x-www-form-urlencoded",
+      "type": "text"
+     },
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention token access key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Ajeet",
+       "type": "text"
+      },
+      {
+       "key": "day",
+       "value": "19",
+       "type": "text"
+      },
+      {
+       "key": "month",
+       "value": "1",
+       "type": "text"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text"
+      },
+      {
+       "key": "hour",
+       "value": "11",
+       "type": "text"
+      },
+      {
+       "key": "min",
+       "value": "40",
+       "type": "text"
+      },
+      {
+       "key": "lat",
+       "value": "19.31",
+       "type": "text"
+      },
+      {
+       "key": "lon",
+       "value": "72.86",
+       "type": "text"
+      },
+      {
+       "key": "tzone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "gender",
+       "value": "male",
+       "type": "text"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text"
+      },
+      {
+       "key": "chart_style",
+       "value": "NORTH_INDIAN",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_name",
+       "value": "astrologyapi",
+       "type": "text"
+      },
+      {
+       "key": "company_info",
+       "value": "company info",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "company_email",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_landline",
+       "value": "123456789",
+       "type": "text"
+      },
+      {
+       "key": "company_mobile",
+       "value": "123456789",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/basic_gemstone_report_pdf",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "basic_gemstone_report_pdf"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Pro Numerology Report PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "Content-Type",
+      "value": "application/x-www-form-urlencoded",
+      "type": "text"
+     },
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention token access key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Ajeet",
+       "type": "text"
+      },
+      {
+       "key": "day",
+       "value": "10",
+       "type": "text"
+      },
+      {
+       "key": "month",
+       "value": "5",
+       "type": "text"
+      },
+      {
+       "key": "year",
+       "value": "1990",
+       "type": "text"
+      },
+      {
+       "key": "hour",
+       "value": "11",
+       "type": "text"
+      },
+      {
+       "key": "min",
+       "value": "30",
+       "type": "text"
+      },
+      {
+       "key": "lat",
+       "value": "19.31",
+       "type": "text"
+      },
+      {
+       "key": "lon",
+       "value": "72.86",
+       "type": "text"
+      },
+      {
+       "key": "tzone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "gender",
+       "value": "male",
+       "type": "text"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text"
+      },
+      {
+       "key": "chart_style",
+       "value": "NORTH_INDIAN",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_name",
+       "value": "rnb",
+       "type": "text"
+      },
+      {
+       "key": "company_info",
+       "value": "company info",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "company_email",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_landline",
+       "value": "123456789",
+       "type": "text"
+      },
+      {
+       "key": "company_mobile",
+       "value": "",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/pro_numerology_report",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "pro_numerology_report"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Professional PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention access token key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "day",
+       "value": "9",
+       "type": "text"
+      },
+      {
+       "key": "month",
+       "value": "1",
+       "type": "text"
+      },
+      {
+       "key": "year",
+       "value": "2001",
+       "type": "text"
+      },
+      {
+       "key": "hour",
+       "value": "11",
+       "type": "text"
+      },
+      {
+       "key": "min",
+       "value": "40",
+       "type": "text"
+      },
+      {
+       "key": "lat",
+       "value": "19.31",
+       "type": "text"
+      },
+      {
+       "key": "lon",
+       "value": "72.86",
+       "type": "text"
+      },
+      {
+       "key": "tzone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "gender",
+       "value": "male",
+       "type": "text"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text"
+      },
+      {
+       "key": "place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text"
+      },
+      {
+       "key": "chart_style",
+       "value": "NORTH_INDIAN",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_name",
+       "value": "rnb",
+       "type": "text"
+      },
+      {
+       "key": "company_info",
+       "value": "company info",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "https:",
+       "type": "text"
+      },
+      {
+       "key": "company_email",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_landline",
+       "value": "123456789",
+       "type": "text"
+      },
+      {
+       "key": "company_mobile",
+       "value": "123456789",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/pro_horoscope_pdf",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "pro_horoscope_pdf"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Match Making PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention access token key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "m_first_name",
+       "value": "adarsh",
+       "type": "text"
+      },
+      {
+       "key": "m_last_name",
+       "value": "sharma",
+       "type": "text"
+      },
+      {
+       "key": "m_day",
+       "value": "1",
+       "type": "text"
+      },
+      {
+       "key": "m_month",
+       "value": "5",
+       "type": "text"
+      },
+      {
+       "key": "m_year",
+       "value": "2000",
+       "type": "text"
+      },
+      {
+       "key": "m_hour",
+       "value": "7",
+       "type": "text"
+      },
+      {
+       "key": "m_minute",
+       "value": "10",
+       "type": "text"
+      },
+      {
+       "key": "m_latitude",
+       "value": "19.23",
+       "type": "text"
+      },
+      {
+       "key": "m_longitude",
+       "value": "72.42",
+       "type": "text"
+      },
+      {
+       "key": "m_timezone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "m_place",
+       "value": "Mumbai, Maharashtra, India",
+       "type": "text"
+      },
+      {
+       "key": "f_first_name",
+       "value": "sneha",
+       "type": "text"
+      },
+      {
+       "key": "f_last_name",
+       "value": "gupta",
+       "type": "text"
+      },
+      {
+       "key": "f_day",
+       "value": "23",
+       "type": "text"
+      },
+      {
+       "key": "f_month",
+       "value": "4",
+       "type": "text"
+      },
+      {
+       "key": "f_year",
+       "value": "2000",
+       "type": "text"
+      },
+      {
+       "key": "f_hour",
+       "value": "21",
+       "type": "text"
+      },
+      {
+       "key": "f_minute",
+       "value": "12",
+       "type": "text"
+      },
+      {
+       "key": "f_latitude",
+       "value": "19.23",
+       "type": "text"
+      },
+      {
+       "key": "f_longitude",
+       "value": "72.42",
+       "type": "text"
+      },
+      {
+       "key": "f_timezone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "f_place",
+       "value": "Mumbai, Mahrashtra, India",
+       "type": "text"
+      },
+      {
+       "key": "language",
+       "value": "en",
+       "type": "text"
+      },
+      {
+       "key": "ashtakoot",
+       "value": "true",
+       "type": "text"
+      },
+      {
+       "key": "papasyam",
+       "value": "true",
+       "type": "text"
+      },
+      {
+       "key": "chart_style",
+       "value": "SOUTH_INDIAN",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "astrologyapi.com",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "https://www.astrologyapi.com",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "dashakoot",
+       "value": "true",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/match_making_pdf",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "match_making_pdf"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "Varshaphal Horoscope PDF",
+   "request": {
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "mention access token key here",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "name",
+       "value": "Neethu",
+       "type": "text"
+      },
+      {
+       "key": "day",
+       "value": "28",
+       "type": "text"
+      },
+      {
+       "key": "month",
+       "value": "7",
+       "type": "text"
+      },
+      {
+       "key": "year",
+       "value": "1992",
+       "type": "text"
+      },
+      {
+       "key": "hour",
+       "value": "00",
+       "type": "text"
+      },
+      {
+       "key": "min",
+       "value": "05",
+       "type": "text"
+      },
+      {
+       "key": "latitude",
+       "value": "9.2666",
+       "type": "text"
+      },
+      {
+       "key": "longitude",
+       "value": "76.78",
+       "type": "text"
+      },
+      {
+       "key": "tzone",
+       "value": "5.5",
+       "type": "text"
+      },
+      {
+       "key": "gender",
+       "value": "female",
+       "type": "text"
+      },
+      {
+       "key": "place",
+       "value": "Kerala, INDIA",
+       "type": "text"
+      },
+      {
+       "key": "logo_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "chart_style",
+       "value": "SOUTH_INDIAN",
+       "type": "text"
+      },
+      {
+       "key": "footer_link",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_name",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_info",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "domain_url",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_email",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_landline",
+       "value": "",
+       "type": "text"
+      },
+      {
+       "key": "company_mobile",
+       "value": "+919999999",
+       "type": "text"
+      },
+      {
+       "key": "varshaphal_year",
+       "value": "2027",
+       "type": "text"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://pdf.astrologyapi.com/v1/varshphal_horoscope_pdf",
+     "protocol": "https",
+     "host": [
+      "pdf",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "varshphal_horoscope_pdf"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "geo_details",
+   "request": {
+    "auth": {
+     "type": "noauth"
+    },
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "place",
+       "value": "mumbai",
+       "type": "text",
+       "uuid": "429700d7-b8d5-4394-bf90-b2bbbeb6188c"
+      },
+      {
+       "key": "maxRows",
+       "value": "6",
+       "type": "text",
+       "uuid": "255ab66e-5a97-4d5d-a4ad-1ff4329c1d2e"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://json.astrologyapi.com/v1/geo_details",
+     "protocol": "https",
+     "host": [
+      "json",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "geo_details"
+     ]
+    }
+   },
+   "response": []
+  },
+  {
+   "name": "timezone_with_dst",
+   "request": {
+    "auth": {
+     "type": "noauth"
+    },
+    "method": "POST",
+    "header": [
+     {
+      "key": "x-astrologyapi-key",
+      "value": "",
+      "type": "text"
+     }
+    ],
+    "body": {
+     "mode": "urlencoded",
+     "urlencoded": [
+      {
+       "key": "latitude",
+       "value": "5.866",
+       "type": "text"
+      },
+      {
+       "key": "longitude",
+       "value": "-55.166",
+       "type": "text"
+      },
+      {
+       "key": "date",
+       "value": "04-11-1978",
+       "type": "text",
+       "description": "mm-dd-yyyy"
+      }
+     ]
+    },
+    "url": {
+     "raw": "https://json.astrologyapi.com/v1/timezone_with_dst",
+     "protocol": "https",
+     "host": [
+      "json",
+      "astrologyapi",
+      "com"
+     ],
+     "path": [
+      "v1",
+      "timezone_with_dst"
+     ]
+    }
+   },
+   "response": []
+  }
+ ],
+ "auth": {
+  "type": "basic",
+  "basic": [
+   {
+    "key": "password",
+    "value": "REDACTED_API_KEY_SEE_security_vulnerability_disclosure_yml",
+    "type": "string"
+   },
+   {
+    "key": "username",
+    "value": "REDACTED_USER_ID",
+    "type": "string"
+   }
+  ]
+ },
+ "event": [
+  {
+   "listen": "prerequest",
+   "script": {
+    "type": "text/javascript",
+    "packages": {},
+    "exec": [
+     ""
+    ]
+   }
+  },
+  {
+   "listen": "test",
+   "script": {
+    "type": "text/javascript",
+    "packages": {},
+    "exec": [
+     ""
+    ]
+   }
+  }
+ ]
+}
