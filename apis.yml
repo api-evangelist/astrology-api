@@ -55,118 +55,19 @@ created: '2025-01-07'
 modified: '2026-09-07'
 specificationVersion: '0.23'
 apis:
-- aid: astrology-api:astrology-api
-  name: Astrology API
-  description: The AstrologyAPI JSON API — 158 documented operations covering Vedic (Jyotish) and Western
-    astrology, Human Design and AstroCartoGraphy. Includes birth details, planetary positions, divisional
-    and KP charts, Vimshottari/Yogini/Char dashas, Shadbala and Bhavabala strength scoring, panchang and
-    muhurta, dosha analysis, Ashtakoot and Dashakoot matchmaking, tropical natal charts, house cusps,
-    aspects, synastry and composite charts, transits, numerology and sun-sign horoscope content feeds.
-    All operations are POST; authentication is HTTP Basic (User ID + API key) or a wallet access token
-    in an x-astrologyapi-key header.
-  humanURL: https://astrologyapi.com/developers/v1
-  baseURL: https://json.astrologyapi.com/v1
-  tags:
-  - Astrology
-  - Horoscopes
-  - Vedic
-  - Western
-  properties:
-  - type: Documentation
-    url: https://astrologyapi.com/developers/v1/vedic
-  - type: APIReference
-    url: https://astrologyapi.com/developers/v1/api-reference
-  - type: GettingStarted
-    url: https://astrologyapi.com/developers/v1/quick-start
-  - type: OpenAPI
-    url: openapi/astrology-api-json-openapi.yml
-  - type: Overlay
-    url: overlays/astrology-api-json-overlay.yaml
-  - type: Postman
-    url: https://astrologyapi.com/developers/v1/postman-collection
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
-- aid: astrology-api:astrology-api-pdf
-  name: AstrologyAPI PDF Reports API
-  description: White-labeled PDF report generation for Vedic and Western astrology — mini, basic and professional
-    Kundli, matchmaking, gemstone, Varshaphal, pro numerology, natal, solar return, life forecast, synastry
-    and star sign compatibility reports. Each operation returns a hosted pdf_url and accepts eleven per-request
-    branding fields (logo, domain, footer link and company contact details). Reports are billed per generation
-    from the credit wallet, from INR 1.50 to INR 100 depending on the report.
-  humanURL: https://astrologyapi.com/developers/v1/pdf
-  baseURL: https://pdf.astrologyapi.com/v1
-  tags:
-  - PDF Reports
-  - Vedic
-  - Western
-  - White Label
-  properties:
-  - type: Documentation
-    url: https://astrologyapi.com/developers/v1/pdf
-  - type: OpenAPI
-    url: openapi/astrology-api-pdf-openapi.yml
-  - type: Overlay
-    url: overlays/astrology-api-pdf-overlay.yaml
-  - type: Postman
-    url: https://astrologyapi.com/developers/v1/postman-collection
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
-- aid: astrology-api:astrology-api-palmistry
-  name: AstrologyAPI Palmistry API
-  description: Image-based palm reading. Submit a palm photograph as a public URL or base64 data URL (jpeg,
-    jpg, png or webp, up to 5MB) together with a date of birth and gender to obtain a palm_id, then read
-    structured hand type, finger, mount, major and minor line and special-feature analysis, per-aspect
-    readings covering personality, career, money, love, marriage, health, challenges and luck, and a processed
-    overlay image. This is the only AstrologyAPI surface with a first-party OpenAPI published by the provider.
-  humanURL: https://astrologyapi.com/developers/v1/palm-reading-api
-  baseURL: https://vision.astrologyapi.com
-  tags:
-  - Palmistry
-  - Computer Vision
-  - Readings
-  properties:
-  - type: Documentation
-    url: https://astrologyapi.com/developers/v1/palm-reading-api
-  - type: OpenAPI
-    url: openapi/astrology-api-palmistry-openapi.json
-  - type: OpenAPI
-    url: https://vision.astrologyapi.com/openapi.json
-    title: First-party OpenAPI 3.1.0 served by the provider
-  - type: Overlay
-    url: overlays/astrology-api-palmistry-overlay.yaml
-  - type: Postman
-    url: https://astrologyapi.com/developers/v1/postman-collection
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
-- aid: astrology-api:astrology-api-face-reading
-  name: AstrologyAPI Face Reading API
-  description: Image-based face reading. Submit a face photograph with date of birth and gender to obtain
-    a face_id, then read structured analysis of face shape, eyes, nose, cheeks and cheekbones, mouth,
-    chin and jaw, ears, skin complexion, symmetry, proportions, facial hair and face outline, plus ten
-    interpretive readings covering career, challenges, family, health, love, luck, marriage, personality,
-    wealth and wisdom, and a mask outline image.
-  humanURL: https://astrologyapi.com/face-reading-api
-  baseURL: https://vision.astrologyapi.com/face-reading
-  tags:
-  - Face Reading
-  - Computer Vision
-  - Readings
-  properties:
-  - type: Documentation
-    url: https://astrologyapi.com/face-reading-api
-  - type: OpenAPI
-    url: openapi/astrology-api-face-reading-openapi.yml
-  - type: Overlay
-    url: overlays/astrology-api-face-reading-overlay.yaml
-  - type: Postman
-    url: https://astrologyapi.com/developers/v1/postman-collection
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
 - aid: astrology-api:astrology-api-mcp
   name: AstrologyAPI MCP Server
-  description: First-party hosted Model Context Protocol server exposing AstrologyAPI's calculation engine
-    to LLM agents and IDEs. The provider advertises 109 tools spanning Vedic and Western astrology, configured
+  description: >-
+    First-party hosted Model Context Protocol server exposing AstrologyAPI's calculation engine to LLM
+    agents and IDEs. The provider advertises 109 tools spanning Vedic and Western astrology, configured
     with a wallet access token in an x-astrologyapi-key header. The server also advertises OAuth with
     RFC 8414 and RFC 9728 discovery documents. tools/list is authentication-gated.
   humanURL: https://astrologyapi.com/developers/v1/mcp-server
   baseURL: https://mcp.astrologyapi.com/mcp
   tags:
+  - MCP
+  - AI Agents
+  tags_raw:
   - MCP
   - AI Agents
   - Model Context Protocol
@@ -178,7 +79,232 @@ apis:
   - type: ToolCrosswalk
     url: mcp/astrology-api-tool-crosswalk.yml
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/astrology-api.png
+- aid: astrology-api:astrology-api-astrocartography-api
+  name: Astrology API Astrocartography API
+  description: The Astrocartography API from Astrology API — 3 operation(s) for astrocartography.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Astrocartography
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-astrocartography-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-face-reading-api
+  name: Astrology API Face Reading API
+  description: The Face Reading API from Astrology API — 24 operation(s) for face reading.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Face Reading
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-face-reading-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-human-design-api
+  name: Astrology API Human Design API
+  description: The Human Design API from Astrology API — 5 operation(s) for human design.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Human Design
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-human-design-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-palm-reading-api
+  name: Astrology API Palm Reading API
+  description: The Palm Reading API from Astrology API — 18 operation(s) for palm reading.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Palm Reading
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-palm-reading-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-palmistry-service-api-api
+  name: Astrology API Palmistry Service API
+  description: >-
+    The Palmistry Service API API from Astrology API — 1 operation(s) for palmistry service api.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Palmistry Service API
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-palmistry-service-api-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-pdf-reports-api
+  name: Astrology API PDF Reports API
+  description: The PDF Reports API from Astrology API — 12 operation(s) for pdf reports.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - PDF Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-pdf-reports-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-prediction-api
+  name: Astrology API Prediction API
+  description: The Prediction API from Astrology API — 3 operation(s) for prediction.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Prediction
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-prediction-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-vedic-astrology-api
+  name: Astrology API Vedic Astrology API
+  description: The Vedic Astrology API from Astrology API — 99 operation(s) for vedic astrology.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Vedic Astrology
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-vedic-astrology-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-western-astrology-api
+  name: Astrology API Western Astrology API
+  description: The Western Astrology API from Astrology API — 51 operation(s) for western astrology.
+  humanURL: https://astrologyapi.com/developers/v1
+  baseURL: https://json.astrologyapi.com/v1
+  tags:
+  - Western Astrology
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-western-astrology-api-openapi.yml
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/vedic
+  - type: APIReference
+    url: https://astrologyapi.com/developers/v1/api-reference
+  - type: GettingStarted
+    url: https://astrologyapi.com/developers/v1/quick-start
+  - type: Postman
+    url: https://astrologyapi.com/developers/v1/postman-collection
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/pdf
+  - type: Documentation
+    url: https://astrologyapi.com/developers/v1/palm-reading-api
+  - type: Documentation
+    url: https://astrologyapi.com/face-reading-api
 common:
+- type: Overlay
+  url: overlays/astrology-api-json-overlay.yaml
+- type: Overlay
+  url: overlays/astrology-api-pdf-overlay.yaml
+- type: Overlay
+  url: overlays/astrology-api-palmistry-overlay.yaml
+- type: Overlay
+  url: overlays/astrology-api-face-reading-overlay.yaml
 - type: Website
   url: https://www.astrologyapi.com/
 - type: DeveloperPortal
