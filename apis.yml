@@ -230,6 +230,8 @@ apis:
   humanURL: https://astrologyapi.com/developers/v1
   baseURL: https://json.astrologyapi.com/v1
   tags:
+  - Predictions
+  tags_raw:
   - Prediction
   properties:
   - type: OpenAPI
