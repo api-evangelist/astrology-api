@@ -1,0 +1,3739 @@
+openapi: 3.2.0
+info:
+  title: AstrologyAPI JSON Western Astrology API
+  version: 1.0.0
+  description: Vedic (Jyotish), Western, Human Design and AstroCartoGraphy calculation endpoints served from the AstrologyAPI JSON host. Every operation is a POST that takes birth or location details and returns computed astrological data.
+  contact:
+    name: AstrologyAPI Support
+    email: support@astrologyapi.com
+    url: https://astrologyapi.com/contact
+  termsOfService: https://astrologyapi.com/legal/terms-service
+  license:
+    name: Proprietary
+    url: https://astrologyapi.com/legal/terms-service
+servers:
+- url: https://json.astrologyapi.com/v1
+  description: AstrologyAPI JSON API production host
+security:
+- basicAuth: []
+- accessToken: []
+tags:
+- name: Western Astrology
+paths:
+  /challenge_numbers:
+    post:
+      operationId: challenge_numbers
+      summary: challenge_numbers
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /chinese_year_forecast:
+    post:
+      operationId: chinese_year_forecast
+      summary: chinese_year_forecast
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /chinese_zodiac:
+    post:
+      operationId: chinese_zodiac
+      summary: chinese_zodiac
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /composite_horoscope:
+    post:
+      operationId: composite_horoscope
+      summary: composite_horoscope
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                p_day:
+                  type: string
+                p_month:
+                  type: string
+                p_year:
+                  type: string
+                p_hour:
+                  type: string
+                p_min:
+                  type: string
+                p_lat:
+                  type: string
+                p_lon:
+                  type: string
+                p_tzone:
+                  type: string
+                s_day:
+                  type: string
+                s_month:
+                  type: string
+                s_year:
+                  type: string
+                s_hour:
+                  type: string
+                s_min:
+                  type: string
+                s_lat:
+                  type: string
+                s_lon:
+                  type: string
+                s_tzone:
+                  type: string
+              required:
+              - p_day
+              - p_month
+              - p_year
+              - p_hour
+              - p_min
+              - p_lat
+              - p_lon
+              - p_tzone
+              - s_day
+              - s_month
+              - s_year
+              - s_hour
+              - s_min
+              - s_lat
+              - s_lon
+              - s_tzone
+            example:
+              p_day: '1'
+              p_month: '8'
+              p_year: '2000'
+              p_hour: '21'
+              p_min: '30'
+              p_lat: '19.20'
+              p_lon: '25.20'
+              p_tzone: '5.5'
+              s_day: '1'
+              s_month: '3'
+              s_year: '2000'
+              s_hour: '07'
+              s_min: '00'
+              s_lat: '19.33'
+              s_lon: '25.20'
+              s_tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /expression_number:
+    post:
+      operationId: expression_number
+      summary: expression_number
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /friendship_report/tropical:
+    post:
+      operationId: friendship_report_tropical
+      summary: friendship_report/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /general_ascendant_report/tropical:
+    post:
+      operationId: general_ascendant_report_tropical
+      summary: general_ascendant_report/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /general_house_report/tropical/{planetName}:
+    post:
+      operationId: general_house_report_tropical_planetName
+      summary: general_house_report
+      tags:
+      - Western Astrology
+      parameters:
+      - name: planetName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /general_sign_report/tropical/{planetName}:
+    post:
+      operationId: general_sign_report_tropical_planetName
+      summary: general_sign_report
+      tags:
+      - Western Astrology
+      parameters:
+      - name: planetName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /horoscope_prediction/monthly/{zodiacName}:
+    post:
+      operationId: horoscope_prediction_monthly_zodiacName
+      summary: horoscope_prediction/monthly
+      tags:
+      - Western Astrology
+      parameters:
+      - name: zodiacName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                timezone:
+                  type: string
+              required:
+              - timezone
+            example:
+              timezone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /house_cusps/tropical:
+    post:
+      operationId: house_cusps_tropical
+      summary: house_cusps/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /house_cusps_report/tropical:
+    post:
+      operationId: house_cusps_report_tropical
+      summary: house_cusps_report/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /karma_destiny_report:
+    post:
+      operationId: karma_destiny_report
+      summary: karma_destiny_report
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /lifepath_number:
+    post:
+      operationId: lifepath_number
+      summary: lifepath_number
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /lunar_metrics:
+    post:
+      operationId: lunar_metrics
+      summary: lunar metrics
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /moon_phase_report:
+    post:
+      operationId: moon_phase_report
+      summary: moon_phase_report
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /natal_chart_interpretation:
+    post:
+      operationId: natal_chart_interpretation
+      summary: natal_chart_interpretation
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /natal_house_cusp_report:
+    post:
+      operationId: natal_house_cusp_report
+      summary: natal_house_cusp_report
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /natal_transits/daily:
+    post:
+      operationId: natal_transits_daily
+      summary: natal_transits/daily
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /natal_transits/weekly:
+    post:
+      operationId: natal_transits_weekly
+      summary: natal_transits/weekly
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /natal_wheel_chart:
+    post:
+      operationId: natal_wheel_chart
+      summary: natal_wheel_chart
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /numerological_numbers:
+    post:
+      operationId: numerological_numbers
+      summary: numeroloigcal numbers
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /personal_day_prediction:
+    post:
+      operationId: personal_day_prediction
+      summary: personal_day_prediction
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /personal_month_prediction:
+    post:
+      operationId: personal_month_prediction
+      summary: personal_month_prediction
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /personal_year_prediction:
+    post:
+      operationId: personal_year_prediction
+      summary: personal_year_prediction
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /personality_number:
+    post:
+      operationId: personality_number
+      summary: personality_number
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /personality_report/tropical:
+    post:
+      operationId: personality_report_tropical
+      summary: personality_report/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /planets/tropical:
+    post:
+      operationId: planets_tropical
+      summary: planets/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /romantic_forecast_report/tropical:
+    post:
+      operationId: romantic_forecast_report_tropical
+      summary: romantic_forecast_report/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /romantic_personality_report/tropical:
+    post:
+      operationId: romantic_personality_report_tropical
+      summary: romantic_personality_report/tropical
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /solar_return_aspects_report:
+    post:
+      operationId: solar_return_aspects_report
+      summary: solar_return_aspects_report
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                solar_year:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - solar_year
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+              solar_year: '2027'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /solar_return_details:
+    post:
+      operationId: solar_return_details
+      summary: solar_return_details
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /solar_return_house_cusps:
+    post:
+      operationId: solar_return_house_cusps
+      summary: solar_return_house_cusps
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                solar_year:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - solar_year
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+              solar_year: '2027'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /solar_return_planet_aspects:
+    post:
+      operationId: solar_return_planet_aspects
+      summary: solar_return_planet_aspects
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                solar_year:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - solar_year
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+              solar_year: '2027'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /solar_return_planet_report:
+    post:
+      operationId: solar_return_planet_report
+      summary: solar_return_planet_report
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                solar_year:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - solar_year
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+              solar_year: '2027'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /solar_return_planets:
+    post:
+      operationId: solar_return_planets
+      summary: solar_return_planets
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                solar_year:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - solar_year
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+              solar_year: '2027'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /soul_urge_number:
+    post:
+      operationId: soul_urge_number
+      summary: soul_urge_number
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /sub_conscious_self_number:
+    post:
+      operationId: sub_conscious_self_number
+      summary: sub_conscious_self_number
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                full name:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - full name
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              full name: demo
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /sun_sign_consolidated/daily/{zodiacName}:
+    post:
+      operationId: sun_sign_consolidated_daily_zodiacName
+      summary: sun_sign_consolidated/daily
+      tags:
+      - Western Astrology
+      parameters:
+      - name: zodiacName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                timezone:
+                  type: string
+              required:
+              - timezone
+            example:
+              timezone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /sun_sign_prediction/daily/{zodiacName}:
+    post:
+      operationId: sun_sign_prediction_daily_zodiacName
+      summary: sun_sign_prediction/daily
+      tags:
+      - Western Astrology
+      parameters:
+      - name: zodiacName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                timezone:
+                  type: string
+              required:
+              - timezone
+            example:
+              timezone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /sun_sign_prediction/next/{zodiacName}:
+    post:
+      operationId: sun_sign_prediction_next_zodiacName
+      summary: sun_sign_prediction/next
+      tags:
+      - Western Astrology
+      parameters:
+      - name: zodiacName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                timezone:
+                  type: string
+              required:
+              - timezone
+            example:
+              timezone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /sun_sign_prediction/previous/{zodiacName}:
+    post:
+      operationId: sun_sign_prediction_previous_zodiacName
+      summary: sun_sign_prediction/previous
+      tags:
+      - Western Astrology
+      parameters:
+      - name: zodiacName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                timezone:
+                  type: string
+              required:
+              - timezone
+            example:
+              timezone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /synastry_horoscope:
+    post:
+      operationId: synastry_horoscope
+      summary: synastry_horoscope
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                p_day:
+                  type: string
+                p_month:
+                  type: string
+                p_year:
+                  type: string
+                p_hour:
+                  type: string
+                p_min:
+                  type: string
+                p_lat:
+                  type: string
+                p_lon:
+                  type: string
+                p_tzone:
+                  type: string
+                s_day:
+                  type: string
+                s_month:
+                  type: string
+                s_year:
+                  type: string
+                s_hour:
+                  type: string
+                s_min:
+                  type: string
+                s_lat:
+                  type: string
+                s_lon:
+                  type: string
+                s_tzone:
+                  type: string
+              required:
+              - p_day
+              - p_month
+              - p_year
+              - p_hour
+              - p_min
+              - p_lat
+              - p_lon
+              - p_tzone
+              - s_day
+              - s_month
+              - s_year
+              - s_hour
+              - s_min
+              - s_lat
+              - s_lon
+              - s_tzone
+            example:
+              p_day: '1'
+              p_month: '8'
+              p_year: '2000'
+              p_hour: '21'
+              p_min: '30'
+              p_lat: '19.20'
+              p_lon: '25.20'
+              p_tzone: '5.5'
+              s_day: '1'
+              s_month: '3'
+              s_year: '2000'
+              s_hour: '07'
+              s_min: '00'
+              s_lat: '19.33'
+              s_lon: '25.20'
+              s_tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /tarot_predictions:
+    post:
+      operationId: tarot_predictions
+      summary: tarot_predictions
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                love:
+                  type: string
+                career:
+                  type: string
+                finance:
+                  type: string
+              required:
+              - love
+              - career
+              - finance
+            example:
+              love: '12'
+              career: '23'
+              finance: '45'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /tropical_transits/daily:
+    post:
+      operationId: tropical_transits_daily
+      summary: tropical_transits/daily
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /tropical_transits/monthly:
+    post:
+      operationId: tropical_transits_monthly
+      summary: tropical_transits/monthly
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /tropical_transits/weekly:
+    post:
+      operationId: tropical_transits_weekly
+      summary: tropical_transits/weekly
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /western_chart_data:
+    post:
+      operationId: western_chart_data
+      summary: western_chart_data
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /western_horoscope:
+    post:
+      operationId: western_horoscope
+      summary: western_horoscope
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              day: '10'
+              month: '5'
+              year: '1992'
+              hour: '21'
+              min: '30'
+              lat: '19.20'
+              lon: '25.2'
+              tzone: '5.5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /yes_no_tarot:
+    post:
+      operationId: yes_no_tarot
+      summary: yes_no_tarot
+      tags:
+      - Western Astrology
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                tarot_id:
+                  type: string
+              required:
+              - tarot_id
+            example:
+              tarot_id: '5'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+  /zodiac_compatibility/{zodiacName}/{partnerZodiacName}:
+    post:
+      operationId: zodiac_compatibility_zodiacName_partnerZodiacName
+      summary: zodiac_compatibility
+      tags:
+      - Western Astrology
+      parameters:
+      - name: zodiacName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: partnerZodiacName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Western Astrology documentation
+        url: https://www.astrologyapi.com/western-api-docs
+      x-postman-collection: Business Plan (User Collection)
+components:
+  schemas:
+    NotFound:
+      type: object
+      properties:
+        status:
+          type: boolean
+        statusCode:
+          type: integer
+        error_msg:
+          type: string
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Username is your AstrologyAPI User ID, password is your API key. Used with form-encoded request bodies on subscription endpoints.
+    accessToken:
+      type: apiKey
+      in: header
+      name: x-astrologyapi-key
+      description: Wallet Access Token sent in the x-astrologyapi-key header, used with JSON request bodies on wallet-billed and Chat endpoints.
+externalDocs:
+  description: AstrologyAPI developer hub
+  url: https://astrologyapi.com/developers/v1
+x-generated-from: postman-collection
+x-generated-note: Derived operation-by-operation from the eight Postman collections AstrologyAPI publishes at https://astrologyapi.com/developers/v1/postman-collection. Paths, HTTP methods, request fields and example values are taken verbatim from those collections. The 401 and 404 response envelopes were observed on live unauthenticated requests to the host on 2026-09-07. The provider publishes no response schemas, so 200 bodies are typed only as objects rather than invented. This is an API Evangelist derivation, not a contract published by AstrologyAPI.
+x-source-collections:
+- https://astrologyapi.com/postman/ACG.postman_collection.json
+- https://astrologyapi.com/postman/HD%20Collection.postman_collection.json
+- https://astrologyapi.com/postman/face_reading_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/palm_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_pdf_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_pdf_API_collection_postman_collection.json

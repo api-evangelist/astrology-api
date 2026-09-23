@@ -1,0 +1,48 @@
+{
+  "provider": "astrology-api",
+  "sources": [
+    "_original/astrology-api-face-reading-openapi.yml",
+    "_original/astrology-api-json-openapi.yml",
+    "_original/astrology-api-palmistry-openapi.json",
+    "_original/astrology-api-pdf-openapi.yml"
+  ],
+  "outputs": [
+    "astrology-api-face-reading-api-openapi.yml",
+    "astrology-api-astrocartography-api-openapi.yml",
+    "astrology-api-human-design-api-openapi.yml",
+    "astrology-api-vedic-astrology-api-openapi.yml",
+    "astrology-api-western-astrology-api-openapi.yml",
+    "astrology-api-palm-reading-api-openapi.yml",
+    "astrology-api-palmistry-service-api-api-openapi.yml",
+    "astrology-api-prediction-api-openapi.yml",
+    "astrology-api-pdf-reports-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (4 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "astrology-api-face-reading-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "astrology-api-json-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "astrology-api-palmistry-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "astrology-api-palmistry-openapi.json: tagged paths GET / -> Palmistry Service API",
+    "astrology-api-palmistry-openapi.json: declared missing tag: Palm Reading",
+    "astrology-api-palmistry-openapi.json: declared missing tag: Palmistry Service API",
+    "astrology-api-palmistry-openapi.json: declared missing tag: Prediction",
+    "astrology-api-pdf-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "_original/astrology-api-palmistry-openapi_2.json: archived document superseded by a larger archived document",
+    "astrology-api-astrocartography-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-face-reading-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-human-design-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-palm-reading-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-palmistry-service-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-pdf-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-prediction-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-vedic-astrology-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "astrology-api-western-astrology-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}

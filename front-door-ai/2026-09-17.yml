@@ -1,0 +1,33 @@
+# Front Door AI Index — astrology-api — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: astrology-api
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.astrologyapi.com
+  final_host: www.astrologyapi.com
+  ownership: own
+  owner: astrology-api
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 27
+  host_score: 27
+  density: 18.47
+  words: 1462
+  tiers:
+    agentic: 3
+    core: 16
+    model: 8
+  ambiguous: 2
+  top_terms:
+    AI: 13
+    Claude: 3
+    Gemini: 3
+    LLMs: 3
+    MCP: 2
+    agent: 2
+    ChatGPT: 1
+    GPT: 1
+    model context protocol: 1

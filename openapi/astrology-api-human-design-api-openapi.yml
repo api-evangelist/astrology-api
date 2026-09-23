@@ -1,0 +1,494 @@
+openapi: 3.2.0
+info:
+  title: AstrologyAPI JSON Human Design API
+  version: 1.0.0
+  description: Vedic (Jyotish), Western, Human Design and AstroCartoGraphy calculation endpoints served from the AstrologyAPI JSON host. Every operation is a POST that takes birth or location details and returns computed astrological data.
+  contact:
+    name: AstrologyAPI Support
+    email: support@astrologyapi.com
+    url: https://astrologyapi.com/contact
+  termsOfService: https://astrologyapi.com/legal/terms-service
+  license:
+    name: Proprietary
+    url: https://astrologyapi.com/legal/terms-service
+servers:
+- url: https://json.astrologyapi.com/v1
+  description: AstrologyAPI JSON API production host
+security:
+- basicAuth: []
+- accessToken: []
+tags:
+- name: Human Design
+paths:
+  /human-design:
+    post:
+      operationId: human_design
+      summary: POST /v1/human-design
+      tags:
+      - Human Design
+      description: Builds a person's core Human Design bodygraph from birth details.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gender:
+                  type: string
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                lat:
+                  type: number
+                lon:
+                  type: number
+                tzone:
+                  type: integer
+              required:
+              - name
+              - gender
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              name: Ajeet
+              gender: male
+              day: 15
+              month: 8
+              year: 1990
+              hour: 10
+              min: 30
+              lat: 39.9526
+              lon: -75.1652
+              tzone: -5
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Human Design documentation
+        url: https://astrologyapi.com/products/human-design-api
+      x-postman-collection: Human Design APIs Collection
+  /human-design/analysis:
+    post:
+      operationId: human_design_analysis
+      summary: POST /v1/human-design/analysis
+      tags:
+      - Human Design
+      description: Summarizes a Human Design chart into concise analysis blocks.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gender:
+                  type: string
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                lat:
+                  type: number
+                lon:
+                  type: number
+                tzone:
+                  type: integer
+              required:
+              - name
+              - gender
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              name: Ajeet
+              gender: male
+              day: 15
+              month: 8
+              year: 1990
+              hour: 10
+              min: 30
+              lat: 39.9526
+              lon: -75.1652
+              tzone: -5
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Human Design documentation
+        url: https://astrologyapi.com/products/human-design-api
+      x-postman-collection: Human Design APIs Collection
+  /human-design/chart-data:
+    post:
+      operationId: human_design_chart_data
+      summary: POST /v1/human-design/chart-data
+      tags:
+      - Human Design
+      description: Returns detailed Human Design chart payload including computed chart data.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gender:
+                  type: string
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                lat:
+                  type: number
+                lon:
+                  type: number
+                tzone:
+                  type: integer
+              required:
+              - name
+              - gender
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              name: Ajeet
+              gender: male
+              day: 15
+              month: 8
+              year: 1990
+              hour: 10
+              min: 30
+              lat: 39.9526
+              lon: -75.1652
+              tzone: -5
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Human Design documentation
+        url: https://astrologyapi.com/products/human-design-api
+      x-postman-collection: Human Design APIs Collection
+  /human-design/chart-interpretation:
+    post:
+      operationId: human_design_chart_interpretation
+      summary: POST /v1/human-design/chart-interpretation
+      tags:
+      - Human Design
+      description: Returns an interpretation focused on chart-level Human Design insights.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gender:
+                  type: string
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                lat:
+                  type: number
+                lon:
+                  type: number
+                tzone:
+                  type: integer
+              required:
+              - name
+              - gender
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              name: Ajeet
+              gender: male
+              day: 15
+              month: 8
+              year: 1990
+              hour: 10
+              min: 30
+              lat: 39.9526
+              lon: -75.1652
+              tzone: -5
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Human Design documentation
+        url: https://astrologyapi.com/products/human-design-api
+      x-postman-collection: Human Design APIs Collection
+  /human-design/traits-interpretation:
+    post:
+      operationId: human_design_traits_interpretation
+      summary: POST /v1/human-design/traits-interpretation
+      tags:
+      - Human Design
+      description: Returns trait-level interpretation for Human Design insights.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                gender:
+                  type: string
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                lat:
+                  type: number
+                lon:
+                  type: number
+                tzone:
+                  type: integer
+              required:
+              - name
+              - gender
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+            example:
+              name: Ajeet
+              gender: male
+              day: 15
+              month: 8
+              year: 1990
+              hour: 10
+              min: 30
+              lat: 39.9526
+              lon: -75.1652
+              tzone: -5
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Human Design documentation
+        url: https://astrologyapi.com/products/human-design-api
+      x-postman-collection: Human Design APIs Collection
+components:
+  schemas:
+    NotFound:
+      type: object
+      properties:
+        status:
+          type: boolean
+        statusCode:
+          type: integer
+        error_msg:
+          type: string
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Username is your AstrologyAPI User ID, password is your API key. Used with form-encoded request bodies on subscription endpoints.
+    accessToken:
+      type: apiKey
+      in: header
+      name: x-astrologyapi-key
+      description: Wallet Access Token sent in the x-astrologyapi-key header, used with JSON request bodies on wallet-billed and Chat endpoints.
+externalDocs:
+  description: AstrologyAPI developer hub
+  url: https://astrologyapi.com/developers/v1
+x-generated-from: postman-collection
+x-generated-note: Derived operation-by-operation from the eight Postman collections AstrologyAPI publishes at https://astrologyapi.com/developers/v1/postman-collection. Paths, HTTP methods, request fields and example values are taken verbatim from those collections. The 401 and 404 response envelopes were observed on live unauthenticated requests to the host on 2026-09-07. The provider publishes no response schemas, so 200 bodies are typed only as objects rather than invented. This is an API Evangelist derivation, not a contract published by AstrologyAPI.
+x-source-collections:
+- https://astrologyapi.com/postman/ACG.postman_collection.json
+- https://astrologyapi.com/postman/HD%20Collection.postman_collection.json
+- https://astrologyapi.com/postman/face_reading_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/palm_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_pdf_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_pdf_API_collection_postman_collection.json

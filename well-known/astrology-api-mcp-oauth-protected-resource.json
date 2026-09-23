@@ -1,0 +1,1 @@
+{"resource":"https://mcp.astrologyapi.com/mcp","authorization_servers":["\"https://mcp.astrologyapi.com/mcp\""],"bearer_methods_supported":["header"],"scopes_supported":["offline_access"]}

@@ -1,0 +1,1631 @@
+openapi: 3.2.0
+info:
+  title: AstrologyAPI PDF Reports API
+  version: 1.0.0
+  description: White-labeled PDF report generation for Vedic and Western astrology. Each operation returns a hosted download URL (pdf_url) for the generated report.
+  contact:
+    name: AstrologyAPI Support
+    email: support@astrologyapi.com
+    url: https://astrologyapi.com/contact
+  termsOfService: https://astrologyapi.com/legal/terms-service
+  license:
+    name: Proprietary
+    url: https://astrologyapi.com/legal/terms-service
+servers:
+- url: https://pdf.astrologyapi.com/v1
+  description: AstrologyAPI PDF Reports API production host
+security:
+- basicAuth: []
+- accessToken: []
+tags:
+- name: PDF Reports
+paths:
+  /basic_gemstone_report_pdf:
+    post:
+      operationId: basic_gemstone_report_pdf
+      summary: Gemstone Report PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                gender:
+                  type: string
+                language:
+                  type: string
+                place:
+                  type: string
+                chart_style:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - gender
+              - language
+              - place
+              - chart_style
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+            example:
+              name: Ajeet
+              day: '19'
+              month: '1'
+              year: '2001'
+              hour: '11'
+              min: '40'
+              lat: '19.31'
+              lon: '72.86'
+              tzone: '5.5'
+              gender: male
+              language: en
+              place: Mumbai, Maharashtra, India
+              chart_style: NORTH_INDIAN
+              footer_link: 'https:'
+              company_name: astrologyapi
+              company_info: company info
+              domain_url: 'https:'
+              company_landline: '123456789'
+              company_mobile: '123456789'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Indian Astrology PDF API collection (User Collection)
+  /basic_horoscope_pdf:
+    post:
+      operationId: basic_horoscope_pdf
+      summary: Basic PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                gender:
+                  type: string
+                language:
+                  type: string
+                place:
+                  type: string
+                chart_style:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - gender
+              - language
+              - place
+              - chart_style
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+            example:
+              name: Ajeet
+              day: '9'
+              month: '1'
+              year: '2001'
+              hour: '11'
+              min: '40'
+              lat: '19.31'
+              lon: '72.86'
+              tzone: '5.5'
+              gender: male
+              language: en
+              place: Mumbai, Maharashtra, India
+              chart_style: NORTH_INDIAN
+              footer_link: 'https:'
+              company_name: rnb
+              company_info: company info
+              domain_url: 'https:'
+              company_landline: '123456789'
+              company_mobile: '123456789'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Indian Astrology PDF API collection (User Collection)
+  /life_forecast_report/tropical:
+    post:
+      operationId: life_forecast_report_tropical
+      summary: Life Forecast Report PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                minute:
+                  type: string
+                latitude:
+                  type: string
+                longitude:
+                  type: string
+                timezone:
+                  type: string
+                place:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+                language:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - minute
+              - latitude
+              - longitude
+              - timezone
+              - place
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+              - language
+            example:
+              name: Linda Ray
+              day: '6'
+              month: '10'
+              year: '2001'
+              hour: '7'
+              minute: '45'
+              latitude: '19.20'
+              longitude: '25.20'
+              timezone: '5.5'
+              place: Mumbai, Maharashtra, India
+              footer_link: astrologyapi.com
+              company_name: astrologyapi
+              company_info: this is astrologyapi
+              domain_url: astrologyapi.com
+              company_email: mail@astrologyapi.com
+              company_landline: +91- 221232 22
+              company_mobile: +91 1212 1212 12
+              language: en
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Western Astrology PDF API (User Collection)
+  /match_making_pdf:
+    post:
+      operationId: match_making_pdf
+      summary: Match Making PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                m_first_name:
+                  type: string
+                m_last_name:
+                  type: string
+                m_day:
+                  type: string
+                m_month:
+                  type: string
+                m_year:
+                  type: string
+                m_hour:
+                  type: string
+                m_minute:
+                  type: string
+                m_latitude:
+                  type: string
+                m_longitude:
+                  type: string
+                m_timezone:
+                  type: string
+                m_place:
+                  type: string
+                f_first_name:
+                  type: string
+                f_last_name:
+                  type: string
+                f_day:
+                  type: string
+                f_month:
+                  type: string
+                f_year:
+                  type: string
+                f_hour:
+                  type: string
+                f_minute:
+                  type: string
+                f_latitude:
+                  type: string
+                f_longitude:
+                  type: string
+                f_timezone:
+                  type: string
+                f_place:
+                  type: string
+                language:
+                  type: string
+                ashtakoot:
+                  type: string
+                papasyam:
+                  type: string
+                chart_style:
+                  type: string
+                footer_link:
+                  type: string
+                domain_url:
+                  type: string
+                logo_url:
+                  type: string
+                dashakoot:
+                  type: string
+              required:
+              - m_first_name
+              - m_last_name
+              - m_day
+              - m_month
+              - m_year
+              - m_hour
+              - m_minute
+              - m_latitude
+              - m_longitude
+              - m_timezone
+              - m_place
+              - f_first_name
+              - f_last_name
+              - f_day
+              - f_month
+              - f_year
+              - f_hour
+              - f_minute
+              - f_latitude
+              - f_longitude
+              - f_timezone
+              - f_place
+              - language
+              - ashtakoot
+              - papasyam
+              - chart_style
+              - footer_link
+              - domain_url
+              - logo_url
+              - dashakoot
+            example:
+              m_first_name: adarsh
+              m_last_name: sharma
+              m_day: '1'
+              m_month: '5'
+              m_year: '2000'
+              m_hour: '7'
+              m_minute: '10'
+              m_latitude: '19.23'
+              m_longitude: '72.42'
+              m_timezone: '5.5'
+              m_place: Mumbai, Maharashtra, India
+              f_first_name: sneha
+              f_last_name: gupta
+              f_day: '23'
+              f_month: '4'
+              f_year: '2000'
+              f_hour: '21'
+              f_minute: '12'
+              f_latitude: '19.23'
+              f_longitude: '72.42'
+              f_timezone: '5.5'
+              f_place: Mumbai, Mahrashtra, India
+              language: en
+              ashtakoot: 'true'
+              papasyam: 'true'
+              chart_style: SOUTH_INDIAN
+              footer_link: astrologyapi.com
+              domain_url: https://www.astrologyapi.com
+              dashakoot: 'true'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Indian Astrology PDF API collection (User Collection)
+  /mini_horoscope_pdf:
+    post:
+      operationId: mini_horoscope_pdf
+      summary: Mini Kundli PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                gender:
+                  type: string
+                language:
+                  type: string
+                place:
+                  type: string
+                chart_style:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - gender
+              - language
+              - place
+              - chart_style
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+            example:
+              name: Ajeet
+              day: '9'
+              month: '1'
+              year: '2001'
+              hour: '11'
+              min: '40'
+              lat: '19.31'
+              lon: '72.86'
+              tzone: '5.5'
+              gender: male
+              language: en
+              place: Mumbai, Maharashtra, India
+              chart_style: NORTH_INDIAN
+              footer_link: 'https:'
+              company_name: rnb
+              company_info: company info
+              domain_url: 'https:'
+              company_landline: '123456789'
+              company_mobile: '123456789'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Indian Astrology PDF API collection (User Collection)
+  /natal_horoscope_report/tropical:
+    post:
+      operationId: natal_horoscope_report_tropical
+      summary: Natal Chart PDF Report
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                minute:
+                  type: string
+                latitude:
+                  type: string
+                longitude:
+                  type: string
+                timezone:
+                  type: string
+                place:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+                language:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - minute
+              - latitude
+              - longitude
+              - timezone
+              - place
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+              - language
+            example:
+              name: Linda Ray
+              day: '6'
+              month: '10'
+              year: '2001'
+              hour: '7'
+              minute: '45'
+              latitude: '19.20'
+              longitude: '25.20'
+              timezone: '5.5'
+              place: Mumbai, Maharashtra, India
+              footer_link: astrologyapi.com
+              company_name: astrologyapi
+              company_info: this is astrologyapi
+              domain_url: astrologyapi.com
+              company_email: mail@astrologyapi.com
+              company_landline: +91- 221232 22
+              company_mobile: +91 1212 1212 12
+              language: en
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Western Astrology PDF API (User Collection)
+  /pro_horoscope_pdf:
+    post:
+      operationId: pro_horoscope_pdf
+      summary: Professional PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                gender:
+                  type: string
+                language:
+                  type: string
+                place:
+                  type: string
+                chart_style:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - gender
+              - language
+              - place
+              - chart_style
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+            example:
+              day: '9'
+              month: '1'
+              year: '2001'
+              hour: '11'
+              min: '40'
+              lat: '19.31'
+              lon: '72.86'
+              tzone: '5.5'
+              gender: male
+              language: en
+              place: Mumbai, Maharashtra, India
+              chart_style: NORTH_INDIAN
+              footer_link: 'https:'
+              company_name: rnb
+              company_info: company info
+              domain_url: 'https:'
+              company_landline: '123456789'
+              company_mobile: '123456789'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Indian Astrology PDF API collection (User Collection)
+  /pro_numerology_report:
+    post:
+      operationId: pro_numerology_report
+      summary: Pro Numerology Report PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                lat:
+                  type: string
+                lon:
+                  type: string
+                tzone:
+                  type: string
+                gender:
+                  type: string
+                language:
+                  type: string
+                place:
+                  type: string
+                chart_style:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - lat
+              - lon
+              - tzone
+              - gender
+              - language
+              - place
+              - chart_style
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+            example:
+              name: Ajeet
+              day: '10'
+              month: '5'
+              year: '1990'
+              hour: '11'
+              min: '30'
+              lat: '19.31'
+              lon: '72.86'
+              tzone: '5.5'
+              gender: male
+              language: en
+              place: Mumbai, Maharashtra, India
+              chart_style: NORTH_INDIAN
+              footer_link: 'https:'
+              company_name: rnb
+              company_info: company info
+              domain_url: 'https:'
+              company_landline: '123456789'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Indian Astrology PDF API collection (User Collection)
+  /solar_return_report/tropical:
+    post:
+      operationId: solar_return_report_tropical
+      summary: Solar Return PDF Report
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                minute:
+                  type: string
+                latitude:
+                  type: string
+                longitude:
+                  type: string
+                timezone:
+                  type: string
+                place:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+                solar_year:
+                  type: string
+                language:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - minute
+              - latitude
+              - longitude
+              - timezone
+              - place
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+              - solar_year
+              - language
+            example:
+              name: Linda Ray
+              day: '6'
+              month: '10'
+              year: '2001'
+              hour: '7'
+              minute: '45'
+              latitude: '19.20'
+              longitude: '25.20'
+              timezone: '5.5'
+              place: Mumbai, Maharashtra, India
+              footer_link: astrologyapi.com
+              company_name: astrologyapi
+              company_info: this is astrologyapi
+              domain_url: astrologyapi.com
+              company_email: mail@astrologyapi.com
+              company_landline: +91- 221232 22
+              company_mobile: +91 1212 1212 12
+              solar_year: '2025'
+              language: en
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Western Astrology PDF API (User Collection)
+  /star_sign_compatibility_report:
+    post:
+      operationId: star_sign_compatibility_report
+      summary: Star Sign Compatibility Report PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                minute:
+                  type: string
+                latitude:
+                  type: string
+                longitude:
+                  type: string
+                timezone:
+                  type: string
+                place:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+                language:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - minute
+              - latitude
+              - longitude
+              - timezone
+              - place
+              - footer_link
+              - logo_url
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+              - language
+            example:
+              name: Linda Ray
+              day: '6'
+              month: '10'
+              year: '2001'
+              hour: '7'
+              minute: '45'
+              latitude: '19.20'
+              longitude: '25.20'
+              timezone: '5.5'
+              place: Mumbai, Maharashtra, India
+              footer_link: astrologyapi.com
+              company_name: astrologyapi
+              company_info: this is astrologyapi
+              domain_url: astrologyapi.com
+              company_email: mail@astrologyapi.com
+              company_landline: +91- 221232 22
+              company_mobile: +91 1212 1212 12
+              language: en
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Western Astrology PDF API (User Collection)
+  /synastry_couple_report/tropical:
+    post:
+      operationId: synastry_couple_report_tropical
+      summary: Synastry PDF Report
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                p_first_name:
+                  type: string
+                p_last_name:
+                  type: string
+                p_day:
+                  type: string
+                p_month:
+                  type: string
+                p_year:
+                  type: string
+                p_hour:
+                  type: string
+                p_minute:
+                  type: string
+                p_latitude:
+                  type: string
+                p_longitude:
+                  type: string
+                p_timezone:
+                  type: string
+                s_first_name:
+                  type: string
+                s_last_name:
+                  type: string
+                s_day:
+                  type: string
+                s_month:
+                  type: string
+                s_year:
+                  type: string
+                s_hour:
+                  type: string
+                s_minute:
+                  type: string
+                s_latitude:
+                  type: string
+                s_longitude:
+                  type: string
+                s_timezone:
+                  type: string
+                p_place:
+                  type: string
+                s_place:
+                  type: string
+                language:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+                footer_link:
+                  type: string
+                logo_url:
+                  type: string
+              required:
+              - p_first_name
+              - p_last_name
+              - p_day
+              - p_month
+              - p_year
+              - p_hour
+              - p_minute
+              - p_latitude
+              - p_longitude
+              - p_timezone
+              - s_first_name
+              - s_last_name
+              - s_day
+              - s_month
+              - s_year
+              - s_hour
+              - s_minute
+              - s_latitude
+              - s_longitude
+              - s_timezone
+              - p_place
+              - s_place
+              - language
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+              - footer_link
+              - logo_url
+            example:
+              p_first_name: Trent
+              p_last_name: Rodrigues
+              p_day: '19'
+              p_month: '04'
+              p_year: '1980'
+              p_hour: '10'
+              p_minute: '30'
+              p_latitude: '-23.6938'
+              p_longitude: '-46.565'
+              p_timezone: '-3'
+              s_first_name: Brenda
+              s_last_name: Newman
+              s_day: '22'
+              s_month: 08
+              s_year: '1980'
+              s_hour: '10'
+              s_minute: '00'
+              s_latitude: '-23.66389'
+              s_longitude: '-46.565'
+              s_timezone: '3'
+              p_place: São Bernardo, Spain
+              s_place: Santo André
+              language: en
+              company_name: astrologyapi
+              company_info: this is astrologyapi
+              domain_url: astrologyapi.com
+              company_email: mail@astrologyapi.com
+              company_landline: +91- 221232 22
+              company_mobile: +91 1212 1212 12
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Western Astrology PDF API (User Collection)
+  /varshphal_horoscope_pdf:
+    post:
+      operationId: varshphal_horoscope_pdf
+      summary: Varshaphal Horoscope PDF
+      tags:
+      - PDF Reports
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                day:
+                  type: string
+                month:
+                  type: string
+                year:
+                  type: string
+                hour:
+                  type: string
+                min:
+                  type: string
+                latitude:
+                  type: string
+                longitude:
+                  type: string
+                tzone:
+                  type: string
+                gender:
+                  type: string
+                place:
+                  type: string
+                logo_url:
+                  type: string
+                chart_style:
+                  type: string
+                footer_link:
+                  type: string
+                company_name:
+                  type: string
+                company_info:
+                  type: string
+                domain_url:
+                  type: string
+                company_email:
+                  type: string
+                company_landline:
+                  type: string
+                company_mobile:
+                  type: string
+                varshaphal_year:
+                  type: string
+              required:
+              - name
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - latitude
+              - longitude
+              - tzone
+              - gender
+              - place
+              - logo_url
+              - chart_style
+              - footer_link
+              - company_name
+              - company_info
+              - domain_url
+              - company_email
+              - company_landline
+              - company_mobile
+              - varshaphal_year
+            example:
+              name: Neethu
+              day: '28'
+              month: '7'
+              year: '1992'
+              hour: '00'
+              min: '05'
+              latitude: '9.2666'
+              longitude: '76.78'
+              tzone: '5.5'
+              gender: female
+              place: Kerala, INDIA
+              chart_style: SOUTH_INDIAN
+              company_mobile: '+919999999'
+              varshaphal_year: '2027'
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: PDF Reports documentation
+        url: https://astrologyapi.com/developers/v1/pdf
+      x-postman-collection: Indian Astrology PDF API collection (User Collection)
+components:
+  schemas:
+    NotFound:
+      type: object
+      properties:
+        status:
+          type: boolean
+        statusCode:
+          type: integer
+        error_msg:
+          type: string
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Username is your AstrologyAPI User ID, password is your API key. Used with form-encoded request bodies on subscription endpoints.
+    accessToken:
+      type: apiKey
+      in: header
+      name: x-astrologyapi-key
+      description: Wallet Access Token sent in the x-astrologyapi-key header, used with JSON request bodies on wallet-billed and Chat endpoints.
+externalDocs:
+  description: AstrologyAPI developer hub
+  url: https://astrologyapi.com/developers/v1
+x-generated-from: postman-collection
+x-generated-note: Derived operation-by-operation from the eight Postman collections AstrologyAPI publishes at https://astrologyapi.com/developers/v1/postman-collection. Paths, HTTP methods, request fields and example values are taken verbatim from those collections. The 401 and 404 response envelopes were observed on live unauthenticated requests to the host on 2026-09-07. The provider publishes no response schemas, so 200 bodies are typed only as objects rather than invented. This is an API Evangelist derivation, not a contract published by AstrologyAPI.
+x-source-collections:
+- https://astrologyapi.com/postman/ACG.postman_collection.json
+- https://astrologyapi.com/postman/HD%20Collection.postman_collection.json
+- https://astrologyapi.com/postman/face_reading_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/palm_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_pdf_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_pdf_API_collection_postman_collection.json

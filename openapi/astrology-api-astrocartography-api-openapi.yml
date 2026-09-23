@@ -1,0 +1,381 @@
+openapi: 3.2.0
+info:
+  title: AstrologyAPI JSON Astrocartography API
+  version: 1.0.0
+  description: Vedic (Jyotish), Western, Human Design and AstroCartoGraphy calculation endpoints served from the AstrologyAPI JSON host. Every operation is a POST that takes birth or location details and returns computed astrological data.
+  contact:
+    name: AstrologyAPI Support
+    email: support@astrologyapi.com
+    url: https://astrologyapi.com/contact
+  termsOfService: https://astrologyapi.com/legal/terms-service
+  license:
+    name: Proprietary
+    url: https://astrologyapi.com/legal/terms-service
+servers:
+- url: https://json.astrologyapi.com/v1
+  description: AstrologyAPI JSON API production host
+security:
+- basicAuth: []
+- accessToken: []
+tags:
+- name: Astrocartography
+paths:
+  /acg/location/{category}:
+    post:
+      operationId: acg_location_category
+      summary: Category Based Location
+      tags:
+      - Astrocartography
+      description: 'Returns only the astrocartography lines for the planets tied to a chosen life category.
+
+
+        **What it does** — Maps a life theme (love, career, money, etc.) to its associated planets and returns just those planets'' angle lines, so you can highlight the places on Earth that favor that area of life rather than drawing the whole map. Use it for themed "best places for love/career" map views.
+
+
+        **Send** — Standard `birth_details` (see the collection overview), all nine required. Path parameter `category` — the life area to filter by, e.g. `LOVE`, `CAREER`, `MONEY`, `HEALTH`, `SPIRITUALITY`, `ADVENTURE`, `CREATIVITY`, `POWER`, `COMMUNICATION`.
+
+
+        **Returns** — A JSON object with `meta`, the echoed `category`, and a `lines` array structured exactly like the Travel endpoint but limited to the category''s planets: each entry carries that planet''s `asc`/`dsc` rising/setting curves (a `points` list of `{latitude_deg, longitude_deg}`) and MC/IC meridian longitudes. Longitudes are east-positive.
+
+
+        **Errors** — An unknown `category` or invalid/missing `birth_details` returns `400` with the offending field in `field_errors`; see the collection overview for the full error format.'
+      parameters:
+      - name: category
+        in: path
+        required: true
+        schema:
+          type: string
+        example: LOVE
+        description: 'Life category: LOVE, CAREER, MONEY, HEALTH, SPIRITUALITY, ADVENTURE, CREATIVITY, POWER, COMMUNICATION'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                second:
+                  type: integer
+                tzone:
+                  type: number
+                lat:
+                  type: number
+                lon:
+                  type: number
+                include_parans:
+                  type: boolean
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - second
+              - tzone
+              - lat
+              - lon
+              - include_parans
+            example:
+              day: 22
+              month: 8
+              year: 1999
+              hour: 18
+              min: 50
+              second: 0
+              tzone: 5.5
+              lat: 19.0759837
+              lon: 72.8776559
+              include_parans: false
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Astrocartography documentation
+        url: https://astrologyapi.com/products/astrocartography-api
+      x-postman-collection: Astrocartography Collection
+  /acg/planetary-line/{category}/{planet}:
+    post:
+      operationId: acg_planetary_line_category_planet
+      summary: Planetary Line Report
+      tags:
+      - Astrocartography
+      description: 'Returns the geometry of one single planet-and-angle astrocartography line.
+
+
+        **What it does** — Computes just one line: a specific planet on a specific angle (its Midheaven, IC, Ascendant, or Descendant line). Use it when you want the coordinates of one line in isolation rather than a whole map.
+
+
+        **Send** — Standard `birth_details` (see the collection overview), all nine required. Path parameter `category` — the line/angle type: `MC`, `IC`, `AC`, or `DC`. Path parameter `planet` — the body, `SUN` through `PLUTO`.
+
+
+        **Returns** — A JSON object with `meta` (engine info, the latitude step, the east-positive longitude convention, and the reference location) and a `line` object. For MC/IC the line is a `meridian` with a single `longitude_deg`, the `object` (planet) name, and the `zenith_latitude_deg` where the planet is directly overhead. For AC/DC it comes back as a `curve` with a `points` array of `{latitude_deg, longitude_deg}` samples tracing the rising/setting line.
+
+
+        **Errors** — A bad `category`/`planet` or invalid `birth_details` returns `400` with the offending field in `field_errors`; see the collection overview for the full error format.'
+      parameters:
+      - name: category
+        in: path
+        required: true
+        schema:
+          type: string
+        example: MC
+        description: 'Angle type: MC, IC, AC, or DC'
+      - name: planet
+        in: path
+        required: true
+        schema:
+          type: string
+        example: MOON
+        description: 'Planet: SUN through PLUTO'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                second:
+                  type: integer
+                tzone:
+                  type: number
+                lat:
+                  type: number
+                lon:
+                  type: number
+                include_parans:
+                  type: boolean
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - second
+              - tzone
+              - lat
+              - lon
+              - include_parans
+            example:
+              day: 22
+              month: 8
+              year: 1999
+              hour: 18
+              min: 50
+              second: 0
+              tzone: 5.5
+              lat: 19.0759837
+              lon: 72.8776559
+              include_parans: false
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Astrocartography documentation
+        url: https://astrologyapi.com/products/astrocartography-api
+      x-postman-collection: Astrocartography Collection
+  /acg/travel:
+    post:
+      operationId: acg_travel
+      summary: Travel (Plot Coordinates)
+      tags:
+      - Astrocartography
+      description: 'Returns all of a chart''s astrocartography line coordinates so you can draw a full ACG map.
+
+
+        **What it does** — For each planet it computes where on Earth that planet is exactly on one of the four angles — the MC/IC meridians (the longitudes where the planet is overhead or underfoot) and the AC/DC curves (the winding lines where it''s rising or setting). Plotting these lines shows which places amplify each planet''s themes for the person. Use it to render an interactive relocation/astrocartography map.
+
+
+        **Send** — Standard `birth_details` (see the collection overview), all nine required. `include_parans` (boolean, default `false`) — set `true` to also return the latitude-crossing paran lines. Longitudes are reported east-positive.
+
+
+        **Returns** — A JSON object with `meta` and a `lines` array, one entry per planet. Each entry holds that planet''s four angle lines: the `asc`/`dsc` are `curve` objects with a `points` array of `{latitude_deg, longitude_deg}` samples (stepped by latitude) tracing the rising/setting curve, while the MC/IC come back as `meridian` objects carrying a single `longitude_deg`. When `include_parans=true`, paran latitude crossings are included in the response.
+
+
+        **Errors** — Invalid, missing, or out-of-range input returns `400` with the offending field in `field_errors`; see the collection overview for the full error format.'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                day:
+                  type: integer
+                month:
+                  type: integer
+                year:
+                  type: integer
+                hour:
+                  type: integer
+                min:
+                  type: integer
+                second:
+                  type: integer
+                tzone:
+                  type: number
+                lat:
+                  type: number
+                lon:
+                  type: number
+                include_parans:
+                  type: boolean
+              required:
+              - day
+              - month
+              - year
+              - hour
+              - min
+              - second
+              - tzone
+              - lat
+              - lon
+              - include_parans
+            example:
+              day: 22
+              month: 8
+              year: 1999
+              hour: 18
+              min: 50
+              second: 0
+              tzone: 5.5
+              lat: 19.0759837
+              lon: 72.8776559
+              include_parans: false
+      responses:
+        '200':
+          description: Computed result. The provider does not publish a response schema for this operation; see the endpoint reference for the returned fields.
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Authentication failed — missing or invalid credentials.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                status: false
+                msg: API authentication failed!
+        '404':
+          description: The requested API endpoint is not available.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFound'
+              example:
+                status: false
+                statusCode: 404
+                error_msg: The requested API endpoint is not available. Kindly check your api name/url or HTTP method type.
+      externalDocs:
+        description: Astrocartography documentation
+        url: https://astrologyapi.com/products/astrocartography-api
+      x-postman-collection: Astrocartography Collection
+components:
+  schemas:
+    NotFound:
+      type: object
+      properties:
+        status:
+          type: boolean
+        statusCode:
+          type: integer
+        error_msg:
+          type: string
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication. Username is your AstrologyAPI User ID, password is your API key. Used with form-encoded request bodies on subscription endpoints.
+    accessToken:
+      type: apiKey
+      in: header
+      name: x-astrologyapi-key
+      description: Wallet Access Token sent in the x-astrologyapi-key header, used with JSON request bodies on wallet-billed and Chat endpoints.
+externalDocs:
+  description: AstrologyAPI developer hub
+  url: https://astrologyapi.com/developers/v1
+x-generated-from: postman-collection
+x-generated-note: Derived operation-by-operation from the eight Postman collections AstrologyAPI publishes at https://astrologyapi.com/developers/v1/postman-collection. Paths, HTTP methods, request fields and example values are taken verbatim from those collections. The 401 and 404 response envelopes were observed on live unauthenticated requests to the host on 2026-09-07. The provider publishes no response schemas, so 200 bodies are typed only as objects rather than invented. This is an API Evangelist derivation, not a contract published by AstrologyAPI.
+x-source-collections:
+- https://astrologyapi.com/postman/ACG.postman_collection.json
+- https://astrologyapi.com/postman/HD%20Collection.postman_collection.json
+- https://astrologyapi.com/postman/face_reading_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/palm_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/vedic_astrology_pdf_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_API_collection_postman_collection.json
+- https://astrologyapi.com/postman/western_astrology_pdf_API_collection_postman_collection.json
