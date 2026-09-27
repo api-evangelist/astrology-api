@@ -89,15 +89,15 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
-    PredictRequestBase64:
+    PredictRequestPalmID:
       properties:
-        image_url:
+        palm_id:
           type: string
-          title: Image Url
+          title: Palm Id
       type: object
       required:
-      - image_url
-      title: PredictRequestBase64
+      - palm_id
+      title: PredictRequestPalmID
     PredictRequestUrl:
       properties:
         url:
@@ -112,15 +112,15 @@ components:
           title: Image Url
       type: object
       title: PredictRequestUrl
-    PredictRequestPalmID:
+    PredictRequestBase64:
       properties:
-        palm_id:
+        image_url:
           type: string
-          title: Palm Id
+          title: Image Url
       type: object
       required:
-      - palm_id
-      title: PredictRequestPalmID
+      - image_url
+      title: PredictRequestBase64
     ValidationError:
       properties:
         loc:
