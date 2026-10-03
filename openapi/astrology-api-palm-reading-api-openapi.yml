@@ -491,15 +491,6 @@ components:
           title: Detail
       type: object
       title: HTTPValidationError
-    PalmIDRequest:
-      properties:
-        palm_id:
-          type: string
-          title: Palm Id
-      type: object
-      required:
-      - palm_id
-      title: PalmIDRequest
     ValidationError:
       properties:
         loc:
@@ -570,3 +561,12 @@ components:
           title: Gender
       type: object
       title: PalmReadingRequest
+    PalmIDRequest:
+      properties:
+        palm_id:
+          type: string
+          title: Palm Id
+      type: object
+      required:
+      - palm_id
+      title: PalmIDRequest

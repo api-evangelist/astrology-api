@@ -80,15 +80,15 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    HTTPValidationError:
+    PredictRequestBase64:
       properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
+        image_url:
+          type: string
+          title: Image Url
       type: object
-      title: HTTPValidationError
+      required:
+      - image_url
+      title: PredictRequestBase64
     PredictRequestPalmID:
       properties:
         palm_id:
@@ -98,6 +98,15 @@ components:
       required:
       - palm_id
       title: PredictRequestPalmID
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
     PredictRequestUrl:
       properties:
         url:
@@ -112,15 +121,6 @@ components:
           title: Image Url
       type: object
       title: PredictRequestUrl
-    PredictRequestBase64:
-      properties:
-        image_url:
-          type: string
-          title: Image Url
-      type: object
-      required:
-      - image_url
-      title: PredictRequestBase64
     ValidationError:
       properties:
         loc:
