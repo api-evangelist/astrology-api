@@ -8268,6 +8268,13 @@ paths:
       x-postman-collection: Premium Plan (User Collection)
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
+          type: string
     NotFound:
       type: object
       properties:
@@ -8276,13 +8283,6 @@ components:
         statusCode:
           type: integer
         error_msg:
-          type: string
-    Error:
-      type: object
-      properties:
-        status:
-          type: boolean
-        msg:
           type: string
   securitySchemes:
     basicAuth:

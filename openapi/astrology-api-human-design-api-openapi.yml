@@ -452,6 +452,13 @@ paths:
       x-postman-collection: Human Design APIs Collection
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
+          type: string
     NotFound:
       type: object
       properties:
@@ -460,13 +467,6 @@ components:
         statusCode:
           type: integer
         error_msg:
-          type: string
-    Error:
-      type: object
-      properties:
-        status:
-          type: boolean
-        msg:
           type: string
   securitySchemes:
     basicAuth:
