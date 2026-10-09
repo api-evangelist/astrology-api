@@ -192,3 +192,45 @@ refunds:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - negotiated
+  - subscription
+  units:
+  - request
+  plans:
+  - name: Pay As You Go
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - request
+    periods:
+    - none
+  - name: Indian Astrology Suite
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Western Astrology Suite
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Horoscope Suite
+    access: other
+    model: subscription
+    model_how: stated
+    units: []
+    periods: []
+  - name: Enterprise
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
