@@ -482,24 +482,6 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
-    PalmIDRequest:
-      properties:
-        palm_id:
-          type: string
-          title: Palm Id
-      type: object
-      required:
-      - palm_id
-      title: PalmIDRequest
     PalmReadingRequest:
       properties:
         image_url:
@@ -544,6 +526,24 @@ components:
           title: Gender
       type: object
       title: PalmReadingRequest
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    PalmIDRequest:
+      properties:
+        palm_id:
+          type: string
+          title: Palm Id
+      type: object
+      required:
+      - palm_id
+      title: PalmIDRequest
     ValidationError:
       properties:
         loc:

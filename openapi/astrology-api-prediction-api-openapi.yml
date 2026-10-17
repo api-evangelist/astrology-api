@@ -80,6 +80,47 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    PredictRequestPalmID:
+      properties:
+        palm_id:
+          type: string
+          title: Palm Id
+      type: object
+      required:
+      - palm_id
+      title: PredictRequestPalmID
+    PredictRequestBase64:
+      properties:
+        image_url:
+          type: string
+          title: Image Url
+      type: object
+      required:
+      - image_url
+      title: PredictRequestBase64
+    PredictRequestUrl:
+      properties:
+        url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Url
+        image_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Image Url
+      type: object
+      title: PredictRequestUrl
     ValidationError:
       properties:
         loc:
@@ -106,44 +147,3 @@ components:
       - msg
       - type
       title: ValidationError
-    PredictRequestPalmID:
-      properties:
-        palm_id:
-          type: string
-          title: Palm Id
-      type: object
-      required:
-      - palm_id
-      title: PredictRequestPalmID
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
-    PredictRequestUrl:
-      properties:
-        url:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Url
-        image_url:
-          anyOf:
-          - type: string
-          - type: 'null'
-          title: Image Url
-      type: object
-      title: PredictRequestUrl
-    PredictRequestBase64:
-      properties:
-        image_url:
-          type: string
-          title: Image Url
-      type: object
-      required:
-      - image_url
-      title: PredictRequestBase64

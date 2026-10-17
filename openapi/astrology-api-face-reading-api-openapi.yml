@@ -1216,13 +1216,6 @@ paths:
       x-postman-collection: Face Reading Service API - Production
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        status:
-          type: boolean
-        msg:
-          type: string
     NotFound:
       type: object
       properties:
@@ -1231,6 +1224,13 @@ components:
         statusCode:
           type: integer
         error_msg:
+          type: string
+    Error:
+      type: object
+      properties:
+        status:
+          type: boolean
+        msg:
           type: string
   securitySchemes:
     basicAuth:
