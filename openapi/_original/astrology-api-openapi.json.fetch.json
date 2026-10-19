@@ -1,0 +1,12 @@
+{
+ "url": "https://vision.astrologyapi.com/openapi.json",
+ "final": "https://vision.astrologyapi.com/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 24645,
+ "sha256": "2d27a103e33b87a85562bc8d2ad607d97bb77637033c1be89dfb6929f32f64ef",
+ "fetched_at": "2026-10-19",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "re-archived: the provider's current document replaced a stale archive (roadmap#793); the old files are in openapi/_superseded/2026-10-19-stale"
+}

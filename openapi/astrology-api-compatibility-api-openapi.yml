@@ -1,0 +1,300 @@
+openapi: 3.2.0
+info:
+  title: Palmistry Service Compatibility API
+  description: API for Palmistry Service - AI Power Palm Reading
+  version: 1.0.0
+tags:
+- name: Compatibility
+paths:
+  /palmistry/get-compatibility-id:
+    post:
+      tags:
+      - Compatibility
+      summary: Get Compatibility Id
+      description: Validate + scan both palms like get-palm-id, then return one compatibility_id.
+      operationId: get_compatibility_id_palmistry_get_compatibility_id_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompatibilityIDRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /palmistry/compatibility-connection:
+    post:
+      tags:
+      - Compatibility
+      summary: Get Compatibility Connection
+      description: Overall score + element match + element harmony, emotional connection, communication, romance & attraction.
+      operationId: get_compatibility_connection_palmistry_compatibility_connection_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompatibilityRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /palmistry/compatibility-life:
+    post:
+      tags:
+      - Compatibility
+      summary: Get Compatibility Life
+      description: Commitment & marriage, life goals, energy & lifestyle, and both partner profiles.
+      operationId: get_compatibility_life_palmistry_compatibility_life_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompatibilityRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /palmistry/compatibility-guidance:
+    post:
+      tags:
+      - Compatibility
+      summary: Get Compatibility Guidance
+      description: Strengths, growth areas, advice and the closing thought.
+      operationId: get_compatibility_guidance_palmistry_compatibility_guidance_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompatibilityRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    CompatibilityRequest:
+      properties:
+        compatibility_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Compatibility Id
+        partner_1_palm_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 1 Palm Id
+        partner_2_palm_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 2 Palm Id
+      type: object
+      title: CompatibilityRequest
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    PalmReadingRequest:
+      properties:
+        image_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Image Url
+        url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Url
+        img_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Img Url
+        image:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Image
+        day:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Day
+        month:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Month
+        year:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Year
+        gender:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Gender
+      type: object
+      title: PalmReadingRequest
+    CompatibilityIDRequest:
+      properties:
+        partner_1_image_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 1 Image Url
+        partner_1_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 1 Url
+        partner_1_img_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 1 Img Url
+        partner_1_image:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 1 Image
+        partner_1_day:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Partner 1 Day
+        partner_1_month:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Partner 1 Month
+        partner_1_year:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Partner 1 Year
+        partner_1_gender:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 1 Gender
+        partner_2_image_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 2 Image Url
+        partner_2_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 2 Url
+        partner_2_img_url:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 2 Img Url
+        partner_2_image:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 2 Image
+        partner_2_day:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Partner 2 Day
+        partner_2_month:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Partner 2 Month
+        partner_2_year:
+          anyOf:
+          - type: integer
+          - type: 'null'
+          title: Partner 2 Year
+        partner_2_gender:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Partner 2 Gender
+        partner_1:
+          anyOf:
+          - $ref: '#/components/schemas/PalmReadingRequest'
+          - type: 'null'
+        partner_2:
+          anyOf:
+          - $ref: '#/components/schemas/PalmReadingRequest'
+          - type: 'null'
+      type: object
+      title: CompatibilityIDRequest

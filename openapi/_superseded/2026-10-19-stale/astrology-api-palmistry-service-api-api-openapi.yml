@@ -1,0 +1,20 @@
+openapi: 3.2.0
+info:
+  title: Palmistry Service API
+  description: API for Palmistry Service - AI Power Palm Reading
+  version: 1.0.0
+tags:
+- name: Palmistry Service API
+paths:
+  /:
+    get:
+      summary: Read Root
+      operationId: read_root__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+      tags:
+      - Palmistry Service API

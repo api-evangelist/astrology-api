@@ -455,6 +455,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
+  /palmistry/delete-palm-id:
+    post:
+      tags:
+      - Palm Reading
+      summary: Delete Palm Id
+      description: 'Soft-deletes a palm reading — or a compatibility_id — for the user.
+
+
+        Nothing is removed from our side: readings, categories, reports, compatibility
+
+        results and images all stay in D1/R2. The id is only flagged as deleted, after
+
+        which every endpoint (including this one) answers 404 "... does not exist".
+
+        Deleting is account housekeeping, not a reading — intentionally NOT sent to
+
+        palm analytics (every other successful endpoint is).'
+      operationId: delete_palm_id_palmistry_delete_palm_id_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
   /palmistry/legacy:
     post:
       tags:
@@ -482,6 +518,64 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
 components:
   schemas:
+    PalmIDRequest:
+      properties:
+        palm_id:
+          type: string
+          title: Palm Id
+      type: object
+      required:
+      - palm_id
+      title: PalmIDRequest
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    DeleteRequest:
+      properties:
+        palm_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Palm Id
+        compatibility_id:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Compatibility Id
+      type: object
+      title: DeleteRequest
     PalmReadingRequest:
       properties:
         image_url:
@@ -526,47 +620,3 @@ components:
           title: Gender
       type: object
       title: PalmReadingRequest
-    HTTPValidationError:
-      properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
-      type: object
-      title: HTTPValidationError
-    PalmIDRequest:
-      properties:
-        palm_id:
-          type: string
-          title: Palm Id
-      type: object
-      required:
-      - palm_id
-      title: PalmIDRequest
-    ValidationError:
-      properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-        input:
-          title: Input
-        ctx:
-          type: object
-          title: Context
-      type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError

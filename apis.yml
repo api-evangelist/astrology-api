@@ -298,6 +298,57 @@ apis:
     url: https://astrologyapi.com/developers/v1/palm-reading-api
   - type: Documentation
     url: https://astrologyapi.com/face-reading-api
+- aid: astrology-api:astrology-api-compatibility-api
+  name: Astrology API Compatibility API
+  description: The Compatibility API from Astrology API — 4 operation(s) for compatibility.
+  humanURL: https://astrologyapi.com/developers/v1/mcp-server
+  baseURL: https://mcp.astrologyapi.com/mcp
+  tags:
+  - Compatibility
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-compatibility-api-openapi.yml
+- aid: astrology-api:astrology-api-compatibility-report-api
+  name: Astrology API Compatibility Report API
+  description: >-
+    The Compatibility Report API from Astrology API — 1 operation(s) for compatibility report.
+  humanURL: https://astrologyapi.com/developers/v1/mcp-server
+  baseURL: https://mcp.astrologyapi.com/mcp
+  tags:
+  - Compatibility Report
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-compatibility-report-api-openapi.yml
+- aid: astrology-api:astrology-api-palm-query-api
+  name: Astrology API Palm Query API
+  description: The Palm Query API from Astrology API — 1 operation(s) for palm query.
+  humanURL: https://astrologyapi.com/developers/v1/mcp-server
+  baseURL: https://mcp.astrologyapi.com/mcp
+  tags:
+  - Palm Query
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-palm-query-api-openapi.yml
+- aid: astrology-api:astrology-api-palm-report-api
+  name: Astrology API Palm Report API
+  description: The Palm Report API from Astrology API — 1 operation(s) for palm report.
+  humanURL: https://astrologyapi.com/developers/v1/mcp-server
+  baseURL: https://mcp.astrologyapi.com/mcp
+  tags:
+  - Palm Report
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-palm-report-api-openapi.yml
+- aid: astrology-api:astrology-api-report-status-api
+  name: Astrology API Report Status API
+  description: The Report Status API from Astrology API — 1 operation(s) for report status.
+  humanURL: https://astrologyapi.com/developers/v1/mcp-server
+  baseURL: https://mcp.astrologyapi.com/mcp
+  tags:
+  - Report Status
+  properties:
+  - type: OpenAPI
+    url: openapi/astrology-api-report-status-api-openapi.yml
 common:
 - type: Overlay
   url: overlays/astrology-api-json-overlay.yaml

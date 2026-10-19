@@ -1,0 +1,84 @@
+openapi: 3.2.0
+info:
+  title: Palmistry Service Palm Query API
+  description: API for Palmistry Service - AI Power Palm Reading
+  version: 1.0.0
+tags:
+- name: Palm Query
+paths:
+  /palmistry/palm-query:
+    post:
+      tags:
+      - Palm Query
+      summary: Palm Query
+      description: Answer one question about the user's own life from their palm.
+      operationId: palm_query_palmistry_palm_query_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PalmQueryRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+        input:
+          title: Input
+        ctx:
+          type: object
+          title: Context
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    PalmQueryRequest:
+      properties:
+        palm_id:
+          type: string
+          title: Palm Id
+        query:
+          type: string
+          maxLength: 2000
+          title: Query
+      type: object
+      required:
+      - palm_id
+      - query
+      title: PalmQueryRequest
