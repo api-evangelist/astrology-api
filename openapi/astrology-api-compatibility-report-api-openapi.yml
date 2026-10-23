@@ -112,3 +112,9 @@ components:
           title: Webhook Url
       type: object
       title: CompatibilityReportRequest
+x-provenance:
+  method: harvested
+  publisher: Astrology API
+  source: https://vision.astrologyapi.com/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
