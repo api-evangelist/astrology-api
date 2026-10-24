@@ -42,43 +42,7 @@ artifacts:
   integrations/astrology-api-integration-edges.yml:
     method: searched
     evidence: declared in the artifact
-  kin/checks-2026-10-11T110117.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-12T062655.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-12T080032.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-12T204651.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-12T221936.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-13T214537.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-14T064754.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-14T210656.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-14T225847.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-15T211329.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-15T230249.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-16T210549.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-16T225339.yml:
+  kin/checks-2026-10-17T182844.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-17T211151.yml:
@@ -138,7 +102,22 @@ artifacts:
   kin/score-2026-10-03T024842.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-04T202412.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-04T225258.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-09T213714.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-17T153854.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-17T182844.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   lifecycle/astrology-api-lifecycle.yml:
@@ -173,8 +152,8 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/astrology-api-compatibility-report-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/astrology-api-face-reading-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
@@ -182,26 +161,26 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/astrology-api-palm-query-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/astrology-api-palm-reading-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/astrology-api-palm-report-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/astrology-api-palmistry-service-api-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/astrology-api-pdf-reports-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/astrology-api-prediction-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/astrology-api-report-status-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    method: harvested
+    evidence: declared in the artifact
   openapi/astrology-api-vedic-astrology-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
