@@ -1,0 +1,191 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://astrologyapi.com/pricing
+sources:
+- https://astrologyapi.com/pricing
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T141238
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+  managed_tier: Indian Astrology Pricing
+published: true
+note: Credits-based wallet model; calculator shows ₹ 1,000 for 10,000 API calls. 150 free credits on signup.
+  20% off annual suite billing; bulk credits up to 60% off. Additional PDF reports (Life Forecast, Solar
+  Return, Synastry, Star Sign Compatibility) also ₹ 100 /report.
+plan_count: 11
+currency: INR
+plans:
+- name: Indian Astrology
+  price_text: Starting from ₹ 1,500 / month
+  price: 1500
+  currency: INR
+  period: month
+  unit: suite subscription
+  included_quota: Kundli, panchang, muhurta & matchmaking APIs; regional languages; premium KP, Varshaphal,
+    Lalkitab APIs
+- name: Western Astrology
+  price_text: Starting from ₹ 2,999 / month
+  price: 2999
+  currency: INR
+  period: month
+  unit: suite subscription
+  included_quota: Natal, synastry & composite endpoints; interpretations; white-label PDF reports
+- name: Horoscope
+  price_text: Starting from ₹ 3,500 / month
+  price: 3500
+  currency: INR
+  period: month
+  unit: suite subscription
+  included_quota: Daily and Monthly JSON feed for 12 Zodiac Signs; monthly report with transits
+- name: Mini Horoscope PDF
+  price_text: ₹ 1.5 /report
+  price: 1.5
+  currency: INR
+  period: per-use
+  unit: report
+- name: Basic Horoscope PDF
+  price_text: ₹ 8 /report
+  price: 8
+  currency: INR
+  period: per-use
+  unit: report
+- name: Professional Horoscope PDF
+  price_text: ₹ 60 /report
+  price: 60
+  currency: INR
+  period: per-use
+  unit: report
+- name: Basic Gemstone Report PDF
+  price_text: ₹ 4 /report
+  price: 4
+  currency: INR
+  period: per-use
+  unit: report
+- name: Pro Numerology Report PDF
+  price_text: ₹ 50 /report
+  price: 50
+  currency: INR
+  period: per-use
+  unit: report
+- name: Varshphal Horoscope PDF
+  price_text: ₹ 90 /report
+  price: 90
+  currency: INR
+  period: per-use
+  unit: report
+- name: Match-making Horoscope PDF
+  price_text: ₹ 25 /report
+  price: 25
+  currency: INR
+  period: per-use
+  unit: report
+- name: Natal Horoscope PDF
+  price_text: ₹ 100 /report
+  price: 100
+  currency: INR
+  period: per-use
+  unit: report
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - object
+  plans:
+  - name: Indian Astrology
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Western Astrology
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Horoscope
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Mini Horoscope PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Basic Horoscope PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Professional Horoscope PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Basic Gemstone Report PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Pro Numerology Report PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Varshphal Horoscope PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Match-making Horoscope PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
+  - name: Natal Horoscope PDF
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - other
