@@ -35,6 +35,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  heartbeat/2026-11-02.yml:
+    method: unknown
+    evidence: no authorship recorded
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -44,7 +47,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-10-31T095417.yml:
+  kin/checks-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -99,6 +102,15 @@ artifacts:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-10-31T095417.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-01T171331.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-01T200237.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   lifecycle/astrology-api-lifecycle.yml:
@@ -183,6 +195,9 @@ artifacts:
   packages/astrology-api-packages.yml:
     method: searched
     evidence: declared in the artifact
+  patterns/astrology-api-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/astrology-api-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -213,6 +228,9 @@ artifacts:
   rate-limits/astrology-api-rate-limits.yml:
     method: searched
     evidence: declared in the artifact
+  rules/astrology-api-rules.yml:
+    method: generated
+    evidence: declared in the artifact
   sandbox/astrology-api-sandbox.yml:
     method: searched
     evidence: declared in the artifact
@@ -241,6 +259,9 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   skills/astrology-api-western-natal.md:
+    method: generated
+    evidence: declared in the artifact
+  sla/astrology-api-sla.yml:
     method: generated
     evidence: declared in the artifact
   well-known/astrology-api-mcp-oauth-protected-resource.json:
