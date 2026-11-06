@@ -93,20 +93,21 @@ plans:
   period: per-use
   unit: report
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
   - subscription
   units:
   - object
+  - period
   plans:
   - name: Indian Astrology
     access: other
     model: subscription
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - month
   - name: Western Astrology
@@ -114,7 +115,7 @@ x-canonical:
     model: subscription
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - month
   - name: Horoscope
@@ -122,7 +123,7 @@ x-canonical:
     model: subscription
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - month
   - name: Mini Horoscope PDF
